@@ -1,0 +1,2233 @@
+Training epoch 0/80:   0%|▏                                                                             | 10/5120 [01:44<4:20:41,  3.06s/it]
+0.03612579345703126
+tensor(0.6979, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.7046, Loss generator: 0.6979, Loss VMAF: 0.0361, Loss SSIM: 0.6609, Loss BCE: 0.8699, Content loss: 0.6971
+0.03378082275390626
+tensor(0.6345, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6872, Loss generator: 0.6345, Loss VMAF: 0.0338, Loss SSIM: 0.5995, Loss BCE: 1.2107, Content loss: 0.6333
+0.03355834960937498
+tensor(0.6496, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6748, Loss generator: 0.6496, Loss VMAF: 0.0336, Loss SSIM: 0.6151, Loss BCE: 0.8859, Content loss: 0.6487
+0.033134307861328094
+tensor(0.5978, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6608, Loss generator: 0.5978, Loss VMAF: 0.0331, Loss SSIM: 0.5639, Loss BCE: 0.7601, Content loss: 0.5970
+0.032591857910156286
+tensor(0.6429, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6502, Loss generator: 0.6429, Loss VMAF: 0.0326, Loss SSIM: 0.6094, Loss BCE: 0.8823, Content loss: 0.6420
+0.035680999755859366
+tensor(0.5531, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6476, Loss generator: 0.5531, Loss VMAF: 0.0357, Loss SSIM: 0.5164, Loss BCE: 0.9871, Content loss: 0.5521
+0.0332638549804688
+tensor(0.5482, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6325, Loss generator: 0.5482, Loss VMAF: 0.0333, Loss SSIM: 0.5140, Loss BCE: 0.9823, Content loss: 0.5472
+0.034010925292968786
+tensor(0.5186, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5841, Loss generator: 0.5186, Loss VMAF: 0.0340, Loss SSIM: 0.4836, Loss BCE: 0.9853, Content loss: 0.5176
+0.033308258056640616
+tensor(0.5513, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6051, Loss generator: 0.5513, Loss VMAF: 0.0333, Loss SSIM: 0.5171, Loss BCE: 0.8941, Content loss: 0.5504
+0.03542007446289064
+tensor(0.5035, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5885, Loss generator: 0.5035, Loss VMAF: 0.0354, Loss SSIM: 0.4672, Loss BCE: 0.9493, Content loss: 0.5026
+0.03533752441406246
+tensor(0.4928, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6009, Loss generator: 0.4928, Loss VMAF: 0.0353, Loss SSIM: 0.4564, Loss BCE: 1.0233, Content loss: 0.4918
+0.0328356170654297
+tensor(0.4739, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5466, Loss generator: 0.4739, Loss VMAF: 0.0328, Loss SSIM: 0.4399, Loss BCE: 1.1397, Content loss: 0.4727
+0.031166000366210977
+tensor(0.5260, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4785, Loss generator: 0.5260, Loss VMAF: 0.0312, Loss SSIM: 0.4934, Loss BCE: 1.3546, Content loss: 0.5246
+0.03319915771484372
+tensor(0.4440, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4522, Loss generator: 0.4440, Loss VMAF: 0.0332, Loss SSIM: 0.4094, Loss BCE: 1.4232, Content loss: 0.4426
+0.03364440917968747
+tensor(0.4960, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3985, Loss generator: 0.4960, Loss VMAF: 0.0336, Loss SSIM: 0.4607, Loss BCE: 1.6412, Content loss: 0.4943
+0.03360717773437505
+tensor(0.4494, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3259, Loss generator: 0.4494, Loss VMAF: 0.0336, Loss SSIM: 0.4143, Loss BCE: 1.5201, Content loss: 0.4479
+0.03473846435546879
+tensor(0.5347, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3655, Loss generator: 0.5347, Loss VMAF: 0.0347, Loss SSIM: 0.4981, Loss BCE: 1.8691, Content loss: 0.5329
+0.03299926757812499
+tensor(0.4598, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2401, Loss generator: 0.4598, Loss VMAF: 0.0330, Loss SSIM: 0.4240, Loss BCE: 2.7369, Content loss: 0.4570
+0.031118011474609353
+tensor(0.4225, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2387, Loss generator: 0.4225, Loss VMAF: 0.0311, Loss SSIM: 0.3883, Loss BCE: 3.1089, Content loss: 0.4194
+0.0352146911621094
+tensor(0.5071, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3049, Loss generator: 0.5071, Loss VMAF: 0.0352, Loss SSIM: 0.4696, Loss BCE: 2.3077, Content loss: 0.5048
+0.03414680480957033
+tensor(0.5234, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1758, Loss generator: 0.5234, Loss VMAF: 0.0341, Loss SSIM: 0.4857, Loss BCE: 3.4975, Content loss: 0.5199
+0.033081741333007786
+tensor(0.3766, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1977, Loss generator: 0.3766, Loss VMAF: 0.0331, Loss SSIM: 0.3400, Loss BCE: 3.5244, Content loss: 0.3731
+0.0319541931152344
+tensor(0.4684, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2956, Loss generator: 0.4684, Loss VMAF: 0.0320, Loss SSIM: 0.4340, Loss BCE: 2.4201, Content loss: 0.4659
+0.030950775146484366
+tensor(0.3877, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2098, Loss generator: 0.3877, Loss VMAF: 0.0310, Loss SSIM: 0.3527, Loss BCE: 4.0748, Content loss: 0.3837
+0.033790435791015594
+tensor(0.3991, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1216, Loss generator: 0.3991, Loss VMAF: 0.0338, Loss SSIM: 0.3594, Loss BCE: 5.8541, Content loss: 0.3932
+0.02858657836914058
+tensor(0.4158, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1597, Loss generator: 0.4158, Loss VMAF: 0.0286, Loss SSIM: 0.3776, Loss BCE: 9.5702, Content loss: 0.4062
+0.03463806152343751
+tensor(0.4002, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0699, Loss generator: 0.4002, Loss VMAF: 0.0346, Loss SSIM: 0.3600, Loss BCE: 5.6490, Content loss: 0.3946
+0.03490287780761714
+tensor(0.4338, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1137, Loss generator: 0.4338, Loss VMAF: 0.0349, Loss SSIM: 0.3957, Loss BCE: 3.2147, Content loss: 0.4306
+0.03038528442382815
+tensor(0.4025, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2003, Loss generator: 0.4025, Loss VMAF: 0.0304, Loss SSIM: 0.3681, Loss BCE: 4.0081, Content loss: 0.3985
+0.03450912475585932
+tensor(0.4224, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0466, Loss generator: 0.4224, Loss VMAF: 0.0345, Loss SSIM: 0.3822, Loss BCE: 5.6664, Content loss: 0.4167
+0.03537689208984374
+tensor(0.4724, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0182, Loss generator: 0.4724, Loss VMAF: 0.0354, Loss SSIM: 0.4302, Loss BCE: 6.8170, Content loss: 0.4656
+0.03673713684082036
+tensor(0.4431, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0368, Loss generator: 0.4431, Loss VMAF: 0.0367, Loss SSIM: 0.4012, Loss BCE: 5.1840, Content loss: 0.4379
+0.03394454956054682
+tensor(0.4551, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3905, Loss generator: 0.4551, Loss VMAF: 0.0339, Loss SSIM: 0.4140, Loss BCE: 7.2050, Content loss: 0.4479
+0.03567207336425782
+tensor(0.3912, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0620, Loss generator: 0.3912, Loss VMAF: 0.0357, Loss SSIM: 0.3483, Loss BCE: 7.2794, Content loss: 0.3840
+0.032379837036132786
+tensor(0.3956, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0580, Loss generator: 0.3956, Loss VMAF: 0.0324, Loss SSIM: 0.3549, Loss BCE: 8.3619, Content loss: 0.3872
+0.03361907958984378
+tensor(0.4066, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0533, Loss generator: 0.4066, Loss VMAF: 0.0336, Loss SSIM: 0.3665, Loss BCE: 6.4939, Content loss: 0.4001
+0.03604492187499997
+tensor(0.3799, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0691, Loss generator: 0.3799, Loss VMAF: 0.0360, Loss SSIM: 0.3384, Loss BCE: 5.4151, Content loss: 0.3745
+0.03348968505859373
+tensor(0.4757, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0420, Loss generator: 0.4757, Loss VMAF: 0.0335, Loss SSIM: 0.4376, Loss BCE: 4.6515, Content loss: 0.4711
+0.034446868896484406
+tensor(0.4473, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2413, Loss generator: 0.4473, Loss VMAF: 0.0344, Loss SSIM: 0.4060, Loss BCE: 6.8387, Content loss: 0.4405
+0.034100646972656246
+tensor(0.3910, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3417, Loss generator: 0.3910, Loss VMAF: 0.0341, Loss SSIM: 0.3514, Loss BCE: 5.4674, Content loss: 0.3855
+0.03347206115722656
+tensor(0.3907, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2553, Loss generator: 0.3907, Loss VMAF: 0.0335, Loss SSIM: 0.3503, Loss BCE: 6.8971, Content loss: 0.3838
+0.03235206604003904
+tensor(0.3856, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1289, Loss generator: 0.3856, Loss VMAF: 0.0324, Loss SSIM: 0.3447, Loss BCE: 8.5201, Content loss: 0.3771
+0.03208312988281248
+tensor(0.3579, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.1241, Loss generator: 0.3579, Loss VMAF: 0.0321, Loss SSIM: 0.3179, Loss BCE: 7.9325, Content loss: 0.3500
+0.03309677124023436
+tensor(0.4041, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4948, Loss generator: 0.4041, Loss VMAF: 0.0331, Loss SSIM: 0.3676, Loss BCE: 3.3665, Content loss: 0.4007
+0.03426101684570315
+tensor(0.3697, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3899, Loss generator: 0.3697, Loss VMAF: 0.0343, Loss SSIM: 0.3327, Loss BCE: 2.8128, Content loss: 0.3669
+0.033576583862304665
+tensor(0.3415, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5759, Loss generator: 0.3415, Loss VMAF: 0.0336, Loss SSIM: 0.3031, Loss BCE: 4.8489, Content loss: 0.3367
+0.03603240966796872
+tensor(0.4460, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0687, Loss generator: 0.4460, Loss VMAF: 0.0360, Loss SSIM: 0.4017, Loss BCE: 8.3368, Content loss: 0.4377
+0.0354487609863281
+tensor(0.4023, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0366, Loss generator: 0.4023, Loss VMAF: 0.0354, Loss SSIM: 0.3600, Loss BCE: 6.8826, Content loss: 0.3955
+0.03601974487304682
+tensor(0.4644, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2044, Loss generator: 0.4644, Loss VMAF: 0.0360, Loss SSIM: 0.4215, Loss BCE: 6.8689, Content loss: 0.4575
+0.03347702026367183
+tensor(0.4000, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3010, Loss generator: 0.4000, Loss VMAF: 0.0335, Loss SSIM: 0.3587, Loss BCE: 7.8907, Content loss: 0.3922
+0.03449295043945311
+tensor(0.3948, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0725, Loss generator: 0.3948, Loss VMAF: 0.0345, Loss SSIM: 0.3561, Loss BCE: 4.1925, Content loss: 0.3906
+0.034634933471679674
+tensor(0.4223, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1766, Loss generator: 0.4223, Loss VMAF: 0.0346, Loss SSIM: 0.3830, Loss BCE: 4.7166, Content loss: 0.4176
+0.03456748962402345
+tensor(0.4315, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.0111, Loss generator: 0.4315, Loss VMAF: 0.0346, Loss SSIM: 0.3940, Loss BCE: 2.9557, Content loss: 0.4285
+0.034106140136718754
+tensor(0.3776, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5391, Loss generator: 0.3776, Loss VMAF: 0.0341, Loss SSIM: 0.3382, Loss BCE: 5.2521, Content loss: 0.3723
+0.03478500366210935
+tensor(0.3428, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.8049, Loss generator: 0.3428, Loss VMAF: 0.0348, Loss SSIM: 0.2996, Loss BCE: 8.4223, Content loss: 0.3344
+0.03253112792968749
+tensor(0.3392, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2170, Loss generator: 0.3392, Loss VMAF: 0.0325, Loss SSIM: 0.3003, Loss BCE: 6.3640, Content loss: 0.3328
+0.03251495361328127
+tensor(0.3523, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.0391, Loss generator: 0.3523, Loss VMAF: 0.0325, Loss SSIM: 0.3146, Loss BCE: 5.2283, Content loss: 0.3471
+0.03245147705078122
+tensor(0.3145, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5823, Loss generator: 0.3145, Loss VMAF: 0.0325, Loss SSIM: 0.2803, Loss BCE: 1.8121, Content loss: 0.3127
+0.02965438842773438
+tensor(0.2720, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3259, Loss generator: 0.2720, Loss VMAF: 0.0297, Loss SSIM: 0.2408, Loss BCE: 1.5684, Content loss: 0.2705
+0.03342704772949223
+tensor(0.3211, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.3681, Loss generator: 0.3211, Loss VMAF: 0.0334, Loss SSIM: 0.2871, Loss BCE: 0.5226, Content loss: 0.3205
+0.03142227172851564
+tensor(0.3289, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.1594, Loss generator: 0.3289, Loss VMAF: 0.0314, Loss SSIM: 0.2959, Loss BCE: 1.6090, Content loss: 0.3273
+0.036451263427734415
+tensor(0.3825, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.0205, Loss generator: 0.3825, Loss VMAF: 0.0365, Loss SSIM: 0.3439, Loss BCE: 2.1660, Content loss: 0.3803
+0.03387214660644533
+tensor(0.3110, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6749, Loss generator: 0.3110, Loss VMAF: 0.0339, Loss SSIM: 0.2731, Loss BCE: 4.0364, Content loss: 0.3069
+0.0337881469726562
+tensor(0.3714, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3873, Loss generator: 0.3714, Loss VMAF: 0.0338, Loss SSIM: 0.3298, Loss BCE: 7.8601, Content loss: 0.3635
+0.03286300659179686
+tensor(0.3529, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5388, Loss generator: 0.3529, Loss VMAF: 0.0329, Loss SSIM: 0.3139, Loss BCE: 6.1095, Content loss: 0.3468
+0.03440643310546876
+tensor(0.2748, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.8526, Loss generator: 0.2748, Loss VMAF: 0.0344, Loss SSIM: 0.2347, Loss BCE: 5.6316, Content loss: 0.2691
+0.0339254760742187
+tensor(0.3157, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.0133, Loss generator: 0.3157, Loss VMAF: 0.0339, Loss SSIM: 0.2766, Loss BCE: 5.2376, Content loss: 0.3105
+0.03284294128417964
+tensor(0.2966, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3393, Loss generator: 0.2966, Loss VMAF: 0.0328, Loss SSIM: 0.2587, Loss BCE: 5.0441, Content loss: 0.2916
+0.031900253295898406
+tensor(0.2952, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3002, Loss generator: 0.2952, Loss VMAF: 0.0319, Loss SSIM: 0.2603, Loss BCE: 2.9786, Content loss: 0.2922
+0.03880104064941403
+tensor(0.3649, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5641, Loss generator: 0.3649, Loss VMAF: 0.0388, Loss SSIM: 0.3253, Loss BCE: 0.7406, Content loss: 0.3641
+0.031411132812499964
+tensor(0.2462, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5906, Loss generator: 0.2462, Loss VMAF: 0.0314, Loss SSIM: 0.2132, Loss BCE: 1.5341, Content loss: 0.2446
+0.031174926757812527
+tensor(0.2752, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3957, Loss generator: 0.2752, Loss VMAF: 0.0312, Loss SSIM: 0.2416, Loss BCE: 2.4243, Content loss: 0.2727
+0.030522155761718794
+tensor(0.2367, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6622, Loss generator: 0.2367, Loss VMAF: 0.0305, Loss SSIM: 0.2037, Loss BCE: 2.4549, Content loss: 0.2342
+0.03446334838867182
+tensor(0.2893, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3313, Loss generator: 0.2893, Loss VMAF: 0.0345, Loss SSIM: 0.2519, Loss BCE: 2.8786, Content loss: 0.2864
+0.03448638916015623
+tensor(0.3219, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0979, Loss generator: 0.3219, Loss VMAF: 0.0345, Loss SSIM: 0.2816, Loss BCE: 5.8569, Content loss: 0.3161
+0.03694816589355465
+tensor(0.3024, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2346, Loss generator: 0.3024, Loss VMAF: 0.0369, Loss SSIM: 0.2604, Loss BCE: 5.0346, Content loss: 0.2974
+0.032443695068359424
+tensor(0.2692, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3062, Loss generator: 0.2692, Loss VMAF: 0.0324, Loss SSIM: 0.2321, Loss BCE: 4.7389, Content loss: 0.2645
+0.03346176147460933
+tensor(0.2767, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3191, Loss generator: 0.2767, Loss VMAF: 0.0335, Loss SSIM: 0.2370, Loss BCE: 6.1972, Content loss: 0.2705
+0.03372634887695314
+tensor(0.3401, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.0941, Loss generator: 0.3401, Loss VMAF: 0.0337, Loss SSIM: 0.2981, Loss BCE: 8.2251, Content loss: 0.3318
+0.033347930908203094
+tensor(0.2648, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3686, Loss generator: 0.2648, Loss VMAF: 0.0333, Loss SSIM: 0.2270, Loss BCE: 4.4506, Content loss: 0.2603
+0.03440208435058589
+tensor(0.2886, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1448, Loss generator: 0.2886, Loss VMAF: 0.0344, Loss SSIM: 0.2527, Loss BCE: 1.5047, Content loss: 0.2871
+0.032593460083007786
+tensor(0.3088, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1314, Loss generator: 0.3088, Loss VMAF: 0.0326, Loss SSIM: 0.2748, Loss BCE: 1.4107, Content loss: 0.3074
+0.04012275695800782
+tensor(0.3653, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.4266, Loss generator: 0.3653, Loss VMAF: 0.0401, Loss SSIM: 0.3249, Loss BCE: 0.2602, Content loss: 0.3650
+0.03293769836425786
+tensor(0.2470, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.9548, Loss generator: 0.2470, Loss VMAF: 0.0329, Loss SSIM: 0.2120, Loss BCE: 2.0208, Content loss: 0.2450
+0.03381774902343748
+tensor(0.2699, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2823, Loss generator: 0.2699, Loss VMAF: 0.0338, Loss SSIM: 0.2330, Loss BCE: 3.0804, Content loss: 0.2669
+0.03523788452148435
+tensor(0.3397, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1306, Loss generator: 0.3397, Loss VMAF: 0.0352, Loss SSIM: 0.3008, Loss BCE: 3.6590, Content loss: 0.3360
+0.03240921020507814
+tensor(0.2114, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5933, Loss generator: 0.2114, Loss VMAF: 0.0324, Loss SSIM: 0.1720, Loss BCE: 6.9955, Content loss: 0.2044
+0.030357971191406263
+tensor(0.2232, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2777, Loss generator: 0.2232, Loss VMAF: 0.0304, Loss SSIM: 0.1876, Loss BCE: 5.2057, Content loss: 0.2180
+0.03196472167968745
+tensor(0.3231, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6946, Loss generator: 0.3231, Loss VMAF: 0.0320, Loss SSIM: 0.2852, Loss BCE: 5.9909, Content loss: 0.3172
+0.03174491882324215
+tensor(0.2329, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2311, Loss generator: 0.2329, Loss VMAF: 0.0317, Loss SSIM: 0.1960, Loss BCE: 5.1600, Content loss: 0.2277
+0.030016021728515585
+tensor(0.2591, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1516, Loss generator: 0.2591, Loss VMAF: 0.0300, Loss SSIM: 0.2242, Loss BCE: 4.8979, Content loss: 0.2542
+0.03283638000488276
+tensor(0.3201, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3385, Loss generator: 0.3201, Loss VMAF: 0.0328, Loss SSIM: 0.2852, Loss BCE: 2.0152, Content loss: 0.3180
+0.035747222900390674
+tensor(0.3103, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1404, Loss generator: 0.3103, Loss VMAF: 0.0357, Loss SSIM: 0.2727, Loss BCE: 1.8317, Content loss: 0.3085
+0.033735198974609415
+tensor(0.3189, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.7533, Loss generator: 0.3189, Loss VMAF: 0.0337, Loss SSIM: 0.2841, Loss BCE: 1.0141, Content loss: 0.3179
+0.033768386840820286
+tensor(0.2932, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4071, Loss generator: 0.2932, Loss VMAF: 0.0338, Loss SSIM: 0.2569, Loss BCE: 2.5350, Content loss: 0.2906
+0.03347984313964847
+tensor(0.2886, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.7272, Loss generator: 0.2886, Loss VMAF: 0.0335, Loss SSIM: 0.2538, Loss BCE: 1.2373, Content loss: 0.2873
+0.03135574340820313
+tensor(0.2602, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3395, Loss generator: 0.2602, Loss VMAF: 0.0314, Loss SSIM: 0.2229, Loss BCE: 5.9322, Content loss: 0.2543
+0.03318069458007811
+tensor(0.2753, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2961, Loss generator: 0.2753, Loss VMAF: 0.0332, Loss SSIM: 0.2389, Loss BCE: 3.2094, Content loss: 0.2721
+0.0342446136474609
+tensor(0.2866, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1433, Loss generator: 0.2866, Loss VMAF: 0.0342, Loss SSIM: 0.2481, Loss BCE: 4.1997, Content loss: 0.2824
+0.03162590026855472
+tensor(0.3033, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.9324, Loss generator: 0.3033, Loss VMAF: 0.0316, Loss SSIM: 0.2675, Loss BCE: 4.1800, Content loss: 0.2992
+0.03421226501464847
+tensor(0.2874, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2267, Loss generator: 0.2874, Loss VMAF: 0.0342, Loss SSIM: 0.2487, Loss BCE: 4.5508, Content loss: 0.2829
+0.03303413391113286
+tensor(0.2472, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3481, Loss generator: 0.2472, Loss VMAF: 0.0330, Loss SSIM: 0.2110, Loss BCE: 3.1385, Content loss: 0.2440
+0.03299583435058595
+tensor(0.2615, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2106, Loss generator: 0.2615, Loss VMAF: 0.0330, Loss SSIM: 0.2252, Loss BCE: 3.3041, Content loss: 0.2582
+0.03248908996582034
+tensor(0.2199, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1852, Loss generator: 0.2199, Loss VMAF: 0.0325, Loss SSIM: 0.1829, Loss BCE: 4.4875, Content loss: 0.2154
+0.03299034118652344
+tensor(0.2575, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2195, Loss generator: 0.2575, Loss VMAF: 0.0330, Loss SSIM: 0.2221, Loss BCE: 2.4856, Content loss: 0.2551
+0.03251434326171876
+tensor(0.2770, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5596, Loss generator: 0.2770, Loss VMAF: 0.0325, Loss SSIM: 0.2432, Loss BCE: 1.2709, Content loss: 0.2757
+0.03213165283203123
+tensor(0.2545, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1312, Loss generator: 0.2545, Loss VMAF: 0.0321, Loss SSIM: 0.2193, Loss BCE: 3.0515, Content loss: 0.2514
+0.03419860839843747
+tensor(0.2714, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.8058, Loss generator: 0.2714, Loss VMAF: 0.0342, Loss SSIM: 0.2365, Loss BCE: 0.6944, Content loss: 0.2707
+0.03149658203125005
+tensor(0.2209, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3438, Loss generator: 0.2209, Loss VMAF: 0.0315, Loss SSIM: 0.1869, Loss BCE: 2.4619, Content loss: 0.2184
+0.03231994628906254
+tensor(0.2799, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3902, Loss generator: 0.2799, Loss VMAF: 0.0323, Loss SSIM: 0.2455, Loss BCE: 2.0489, Content loss: 0.2778
+0.03119079589843754
+tensor(0.2499, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2579, Loss generator: 0.2499, Loss VMAF: 0.0312, Loss SSIM: 0.2145, Loss BCE: 4.2638, Content loss: 0.2457
+0.03561218261718746
+tensor(0.3165, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3893, Loss generator: 0.3165, Loss VMAF: 0.0356, Loss SSIM: 0.2788, Loss BCE: 2.0970, Content loss: 0.3144
+0.035439453124999964
+tensor(0.3411, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5107, Loss generator: 0.3411, Loss VMAF: 0.0354, Loss SSIM: 0.3019, Loss BCE: 3.7015, Content loss: 0.3374
+0.03183593750000002
+tensor(0.2810, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.1006, Loss generator: 0.2810, Loss VMAF: 0.0318, Loss SSIM: 0.2457, Loss BCE: 3.4338, Content loss: 0.2775
+0.03387527465820317
+tensor(0.3036, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4011, Loss generator: 0.3036, Loss VMAF: 0.0339, Loss SSIM: 0.2671, Loss BCE: 2.6361, Content loss: 0.3010
+0.03670364379882818
+tensor(0.3273, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5989, Loss generator: 0.3273, Loss VMAF: 0.0367, Loss SSIM: 0.2899, Loss BCE: 0.7358, Content loss: 0.3266
+0.03359146118164058
+tensor(0.3288, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2327, Loss generator: 0.3288, Loss VMAF: 0.0336, Loss SSIM: 0.2929, Loss BCE: 2.2346, Content loss: 0.3265
+0.03314102172851563
+tensor(0.2648, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5770, Loss generator: 0.2648, Loss VMAF: 0.0331, Loss SSIM: 0.2299, Loss BCE: 1.8106, Content loss: 0.2630
+0.03166702270507815
+tensor(0.2509, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3410, Loss generator: 0.2509, Loss VMAF: 0.0317, Loss SSIM: 0.2160, Loss BCE: 3.1731, Content loss: 0.2477
+0.031139831542968732
+tensor(0.2000, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5917, Loss generator: 0.2000, Loss VMAF: 0.0311, Loss SSIM: 0.1674, Loss BCE: 1.4778, Content loss: 0.1985
+0.0338618469238281
+tensor(0.2443, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4109, Loss generator: 0.2443, Loss VMAF: 0.0339, Loss SSIM: 0.2093, Loss BCE: 1.1523, Content loss: 0.2432
+0.03350021362304689
+tensor(0.2676, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2115, Loss generator: 0.2676, Loss VMAF: 0.0335, Loss SSIM: 0.2316, Loss BCE: 2.4889, Content loss: 0.2651
+0.03184555053710936
+tensor(0.2371, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2913, Loss generator: 0.2371, Loss VMAF: 0.0318, Loss SSIM: 0.2034, Loss BCE: 1.9145, Content loss: 0.2352
+0.03308685302734371
+tensor(0.2318, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3078, Loss generator: 0.2318, Loss VMAF: 0.0331, Loss SSIM: 0.1955, Loss BCE: 3.2471, Content loss: 0.2286
+0.03171226501464841
+tensor(0.2221, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1535, Loss generator: 0.2221, Loss VMAF: 0.0317, Loss SSIM: 0.1881, Loss BCE: 2.2921, Content loss: 0.2198
+0.03215728759765624
+tensor(0.2804, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2951, Loss generator: 0.2804, Loss VMAF: 0.0322, Loss SSIM: 0.2454, Loss BCE: 2.8712, Content loss: 0.2776
+0.031979141235351616
+tensor(0.2274, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2570, Loss generator: 0.2274, Loss VMAF: 0.0320, Loss SSIM: 0.1923, Loss BCE: 3.2126, Content loss: 0.2242
+0.031107864379882777
+tensor(0.2045, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.2242, Loss generator: 0.2045, Loss VMAF: 0.0311, Loss SSIM: 0.1687, Loss BCE: 4.7674, Content loss: 0.1998
+0.033170623779296915
+tensor(0.2435, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2875, Loss generator: 0.2435, Loss VMAF: 0.0332, Loss SSIM: 0.2086, Loss BCE: 1.8109, Content loss: 0.2417
+0.035808334350585946
+tensor(0.2890, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.9146, Loss generator: 0.2890, Loss VMAF: 0.0358, Loss SSIM: 0.2528, Loss BCE: 0.3921, Content loss: 0.2887
+0.031657104492187504
+tensor(0.2018, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4548, Loss generator: 0.2018, Loss VMAF: 0.0317, Loss SSIM: 0.1674, Loss BCE: 2.7480, Content loss: 0.1991
+0.031200485229492148
+tensor(0.2405, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3996, Loss generator: 0.2405, Loss VMAF: 0.0312, Loss SSIM: 0.2071, Loss BCE: 2.2223, Content loss: 0.2383
+0.03350952148437503
+tensor(0.2871, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1828, Loss generator: 0.2871, Loss VMAF: 0.0335, Loss SSIM: 0.2508, Loss BCE: 2.7324, Content loss: 0.2843
+0.03388366699218748
+tensor(0.2780, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3926, Loss generator: 0.2780, Loss VMAF: 0.0339, Loss SSIM: 0.2427, Loss BCE: 1.4315, Content loss: 0.2766
+0.03494377136230464
+tensor(0.2344, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5192, Loss generator: 0.2344, Loss VMAF: 0.0349, Loss SSIM: 0.1983, Loss BCE: 1.2192, Content loss: 0.2332
+0.032136993408203085
+tensor(0.2277, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3315, Loss generator: 0.2277, Loss VMAF: 0.0321, Loss SSIM: 0.1930, Loss BCE: 2.5169, Content loss: 0.2252
+0.034357681274414076
+tensor(0.2850, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3360, Loss generator: 0.2850, Loss VMAF: 0.0344, Loss SSIM: 0.2482, Loss BCE: 2.4621, Content loss: 0.2825
+0.03491836547851568
+tensor(0.2623, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3124, Loss generator: 0.2623, Loss VMAF: 0.0349, Loss SSIM: 0.2252, Loss BCE: 2.2395, Content loss: 0.2601
+0.03253494262695311
+tensor(0.2067, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3952, Loss generator: 0.2067, Loss VMAF: 0.0325, Loss SSIM: 0.1713, Loss BCE: 2.9074, Content loss: 0.2038
+0.033481826782226554
+tensor(0.2483, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3299, Loss generator: 0.2483, Loss VMAF: 0.0335, Loss SSIM: 0.2114, Loss BCE: 3.3696, Content loss: 0.2449
+0.03469604492187495
+tensor(0.2349, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2786, Loss generator: 0.2349, Loss VMAF: 0.0347, Loss SSIM: 0.1979, Loss BCE: 2.2678, Content loss: 0.2326
+0.034062194824218794
+tensor(0.3202, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5327, Loss generator: 0.3202, Loss VMAF: 0.0341, Loss SSIM: 0.2844, Loss BCE: 1.7379, Content loss: 0.3184
+0.035425491333007764
+tensor(0.2950, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3594, Loss generator: 0.2950, Loss VMAF: 0.0354, Loss SSIM: 0.2580, Loss BCE: 1.5847, Content loss: 0.2934
+0.031095199584960986
+tensor(0.2630, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5151, Loss generator: 0.2630, Loss VMAF: 0.0311, Loss SSIM: 0.2300, Loss BCE: 1.9012, Content loss: 0.2611
+0.03405059814453126
+tensor(0.2688, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5114, Loss generator: 0.2688, Loss VMAF: 0.0341, Loss SSIM: 0.2333, Loss BCE: 1.4725, Content loss: 0.2673
+0.03625335693359377
+tensor(0.3141, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.7015, Loss generator: 0.3141, Loss VMAF: 0.0363, Loss SSIM: 0.2768, Loss BCE: 1.0493, Content loss: 0.3131
+0.03179450988769528
+tensor(0.2166, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2931, Loss generator: 0.2166, Loss VMAF: 0.0318, Loss SSIM: 0.1821, Loss BCE: 2.7463, Content loss: 0.2139
+0.03024475097656254
+tensor(0.2272, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.8766, Loss generator: 0.2272, Loss VMAF: 0.0302, Loss SSIM: 0.1935, Loss BCE: 3.5044, Content loss: 0.2237
+0.03408889770507817
+tensor(0.2468, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6470, Loss generator: 0.2468, Loss VMAF: 0.0341, Loss SSIM: 0.2120, Loss BCE: 0.7626, Content loss: 0.2461
+0.03339492797851562
+tensor(0.2833, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3188, Loss generator: 0.2833, Loss VMAF: 0.0334, Loss SSIM: 0.2467, Loss BCE: 3.2508, Content loss: 0.2801
+0.034556808471679634
+tensor(0.2961, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4125, Loss generator: 0.2961, Loss VMAF: 0.0346, Loss SSIM: 0.2599, Loss BCE: 1.6714, Content loss: 0.2945
+0.03266952514648436
+tensor(0.2367, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2930, Loss generator: 0.2367, Loss VMAF: 0.0327, Loss SSIM: 0.2018, Loss BCE: 2.1940, Content loss: 0.2345
+0.03349464416503911
+tensor(0.3113, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3298, Loss generator: 0.3113, Loss VMAF: 0.0335, Loss SSIM: 0.2759, Loss BCE: 1.9536, Content loss: 0.3094
+0.032037506103515634
+tensor(0.2100, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3928, Loss generator: 0.2100, Loss VMAF: 0.0320, Loss SSIM: 0.1764, Loss BCE: 1.5957, Content loss: 0.2084
+0.03493164062499998
+tensor(0.3009, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5079, Loss generator: 0.3009, Loss VMAF: 0.0349, Loss SSIM: 0.2651, Loss BCE: 0.8848, Content loss: 0.3000
+0.0302098083496094
+tensor(0.1789, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2704, Loss generator: 0.1789, Loss VMAF: 0.0302, Loss SSIM: 0.1464, Loss BCE: 2.2952, Content loss: 0.1766
+0.03497863769531251
+tensor(0.3035, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3364, Loss generator: 0.3035, Loss VMAF: 0.0350, Loss SSIM: 0.2669, Loss BCE: 1.5959, Content loss: 0.3019
+0.03247436523437497
+tensor(0.2164, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2956, Loss generator: 0.2164, Loss VMAF: 0.0325, Loss SSIM: 0.1821, Loss BCE: 1.7843, Content loss: 0.2146
+0.03222053527832036
+tensor(0.2842, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1896, Loss generator: 0.2842, Loss VMAF: 0.0322, Loss SSIM: 0.2493, Loss BCE: 2.7291, Content loss: 0.2815
+0.03383407592773435
+tensor(0.2839, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2510, Loss generator: 0.2839, Loss VMAF: 0.0338, Loss SSIM: 0.2482, Loss BCE: 1.8318, Content loss: 0.2820
+0.03467323303222658
+tensor(0.2711, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3547, Loss generator: 0.2711, Loss VMAF: 0.0347, Loss SSIM: 0.2341, Loss BCE: 2.3607, Content loss: 0.2687
+0.03344612121582036
+tensor(0.2444, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3245, Loss generator: 0.2444, Loss VMAF: 0.0334, Loss SSIM: 0.2081, Loss BCE: 2.8843, Content loss: 0.2415
+0.03369216918945317
+tensor(0.2875, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2671, Loss generator: 0.2875, Loss VMAF: 0.0337, Loss SSIM: 0.2496, Loss BCE: 4.1404, Content loss: 0.2833
+0.03259223937988276
+tensor(0.2705, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2436, Loss generator: 0.2705, Loss VMAF: 0.0326, Loss SSIM: 0.2356, Loss BCE: 2.2744, Content loss: 0.2682
+0.0331573486328125
+tensor(0.2294, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2062, Loss generator: 0.2294, Loss VMAF: 0.0332, Loss SSIM: 0.1929, Loss BCE: 3.3066, Content loss: 0.2261
+0.03391975402832026
+tensor(0.2266, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3394, Loss generator: 0.2266, Loss VMAF: 0.0339, Loss SSIM: 0.1906, Loss BCE: 2.0445, Content loss: 0.2246
+0.0326551055908203
+tensor(0.2202, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4279, Loss generator: 0.2202, Loss VMAF: 0.0327, Loss SSIM: 0.1866, Loss BCE: 1.0165, Content loss: 0.2192
+0.0352120971679688
+tensor(0.3147, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4900, Loss generator: 0.3147, Loss VMAF: 0.0352, Loss SSIM: 0.2779, Loss BCE: 1.6108, Content loss: 0.3131
+0.03130187988281252
+tensor(0.2171, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2973, Loss generator: 0.2171, Loss VMAF: 0.0313, Loss SSIM: 0.1817, Loss BCE: 4.1167, Content loss: 0.2130
+0.03631706237792964
+tensor(0.3276, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4285, Loss generator: 0.3276, Loss VMAF: 0.0363, Loss SSIM: 0.2897, Loss BCE: 1.6639, Content loss: 0.3260
+0.03213424682617183
+tensor(0.2120, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.8073, Loss generator: 0.2120, Loss VMAF: 0.0321, Loss SSIM: 0.1756, Loss BCE: 4.2725, Content loss: 0.2077
+0.03086410522460936
+tensor(0.2375, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4497, Loss generator: 0.2375, Loss VMAF: 0.0309, Loss SSIM: 0.2038, Loss BCE: 2.8593, Content loss: 0.2347
+0.032957000732421915
+tensor(0.2672, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1198, Loss generator: 0.2672, Loss VMAF: 0.0330, Loss SSIM: 0.2323, Loss BCE: 1.8619, Content loss: 0.2653
+0.030858917236328165
+tensor(0.2415, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4619, Loss generator: 0.2415, Loss VMAF: 0.0309, Loss SSIM: 0.2089, Loss BCE: 1.7217, Content loss: 0.2397
+0.03173461914062503
+tensor(0.2508, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.9956, Loss generator: 0.2508, Loss VMAF: 0.0317, Loss SSIM: 0.2183, Loss BCE: 0.7350, Content loss: 0.2501
+0.03419738769531255
+tensor(0.2262, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.1851, Loss generator: 0.2262, Loss VMAF: 0.0342, Loss SSIM: 0.1911, Loss BCE: 0.9021, Content loss: 0.2253
+0.0321983337402344
+tensor(0.2377, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6198, Loss generator: 0.2377, Loss VMAF: 0.0322, Loss SSIM: 0.2030, Loss BCE: 2.4914, Content loss: 0.2352
+0.03415023803710937
+tensor(0.2642, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3886, Loss generator: 0.2642, Loss VMAF: 0.0342, Loss SSIM: 0.2278, Loss BCE: 2.3417, Content loss: 0.2619
+0.03448913574218748
+tensor(0.2734, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3796, Loss generator: 0.2734, Loss VMAF: 0.0345, Loss SSIM: 0.2359, Loss BCE: 3.0107, Content loss: 0.2704
+0.03050254821777343
+tensor(0.1996, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 2.0183, Loss generator: 0.1996, Loss VMAF: 0.0305, Loss SSIM: 0.1636, Loss BCE: 5.5515, Content loss: 0.1941
+0.03195693969726565
+tensor(0.2250, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.8325, Loss generator: 0.2250, Loss VMAF: 0.0320, Loss SSIM: 0.1898, Loss BCE: 3.2866, Content loss: 0.2218
+0.035770645141601554
+tensor(0.3105, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3753, Loss generator: 0.3105, Loss VMAF: 0.0358, Loss SSIM: 0.2725, Loss BCE: 2.2047, Content loss: 0.3083
+0.03552032470703126
+tensor(0.2683, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4278, Loss generator: 0.2683, Loss VMAF: 0.0355, Loss SSIM: 0.2321, Loss BCE: 0.7121, Content loss: 0.2676
+0.032802047729492134
+tensor(0.2447, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3119, Loss generator: 0.2447, Loss VMAF: 0.0328, Loss SSIM: 0.2094, Loss BCE: 2.4670, Content loss: 0.2422
+0.032572631835937504
+tensor(0.2263, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4124, Loss generator: 0.2263, Loss VMAF: 0.0326, Loss SSIM: 0.1928, Loss BCE: 0.8766, Content loss: 0.2254
+0.03306686401367187
+tensor(0.2336, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3166, Loss generator: 0.2336, Loss VMAF: 0.0331, Loss SSIM: 0.1987, Loss BCE: 1.8033, Content loss: 0.2318
+0.03392166137695307
+tensor(0.2790, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4824, Loss generator: 0.2790, Loss VMAF: 0.0339, Loss SSIM: 0.2439, Loss BCE: 1.2131, Content loss: 0.2778
+0.033913574218749964
+tensor(0.2417, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2700, Loss generator: 0.2417, Loss VMAF: 0.0339, Loss SSIM: 0.2052, Loss BCE: 2.5745, Content loss: 0.2391
+0.03209625244140624
+tensor(0.2049, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3412, Loss generator: 0.2049, Loss VMAF: 0.0321, Loss SSIM: 0.1713, Loss BCE: 1.5115, Content loss: 0.2034
+0.032718429565429696
+tensor(0.2666, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4146, Loss generator: 0.2666, Loss VMAF: 0.0327, Loss SSIM: 0.2326, Loss BCE: 1.2955, Content loss: 0.2653
+0.033459777832031246
+tensor(0.2791, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2545, Loss generator: 0.2791, Loss VMAF: 0.0335, Loss SSIM: 0.2437, Loss BCE: 1.8776, Content loss: 0.2772
+0.03306686401367187
+tensor(0.2372, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.7692, Loss generator: 0.2372, Loss VMAF: 0.0331, Loss SSIM: 0.2007, Loss BCE: 3.4476, Content loss: 0.2338
+0.032347717285156286
+tensor(0.2454, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3778, Loss generator: 0.2454, Loss VMAF: 0.0323, Loss SSIM: 0.2101, Loss BCE: 3.0467, Content loss: 0.2424
+0.03024688720703128
+tensor(0.2019, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.1298, Loss generator: 0.2019, Loss VMAF: 0.0302, Loss SSIM: 0.1691, Loss BCE: 2.5555, Content loss: 0.1993
+0.0342384338378906
+tensor(0.2845, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3564, Loss generator: 0.2845, Loss VMAF: 0.0342, Loss SSIM: 0.2491, Loss BCE: 1.2313, Content loss: 0.2833
+0.03198577880859377
+tensor(0.2224, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4713, Loss generator: 0.2224, Loss VMAF: 0.0320, Loss SSIM: 0.1896, Loss BCE: 0.8353, Content loss: 0.2216
+0.033191452026367196
+tensor(0.2337, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5476, Loss generator: 0.2337, Loss VMAF: 0.0332, Loss SSIM: 0.1990, Loss BCE: 1.5387, Content loss: 0.2321
+0.03750373840332033
+tensor(0.3608, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2951, Loss generator: 0.3608, Loss VMAF: 0.0375, Loss SSIM: 0.3218, Loss BCE: 1.4526, Content loss: 0.3593
+0.03261306762695315
+tensor(0.2718, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4152, Loss generator: 0.2718, Loss VMAF: 0.0326, Loss SSIM: 0.2379, Loss BCE: 1.3209, Content loss: 0.2705
+0.03223419189453125
+tensor(0.2139, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4087, Loss generator: 0.2139, Loss VMAF: 0.0322, Loss SSIM: 0.1796, Loss BCE: 2.0504, Content loss: 0.2118
+0.03519523620605469
+tensor(0.2678, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3720, Loss generator: 0.2678, Loss VMAF: 0.0352, Loss SSIM: 0.2311, Loss BCE: 1.4818, Content loss: 0.2663
+0.032292709350585924
+tensor(0.2337, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3201, Loss generator: 0.2337, Loss VMAF: 0.0323, Loss SSIM: 0.1991, Loss BCE: 2.3657, Content loss: 0.2314
+0.033146438598632866
+tensor(0.2615, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4612, Loss generator: 0.2615, Loss VMAF: 0.0331, Loss SSIM: 0.2258, Loss BCE: 2.5591, Content loss: 0.2590
+0.03090538024902345
+tensor(0.2108, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.7907, Loss generator: 0.2108, Loss VMAF: 0.0309, Loss SSIM: 0.1774, Loss BCE: 2.5135, Content loss: 0.2083
+0.0352925872802734
+tensor(0.2464, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3919, Loss generator: 0.2464, Loss VMAF: 0.0353, Loss SSIM: 0.2102, Loss BCE: 0.9507, Content loss: 0.2455
+0.034213256835937456
+tensor(0.3042, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3521, Loss generator: 0.3042, Loss VMAF: 0.0342, Loss SSIM: 0.2675, Loss BCE: 2.5312, Content loss: 0.3017
+0.03265747070312497
+tensor(0.2924, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2966, Loss generator: 0.2924, Loss VMAF: 0.0327, Loss SSIM: 0.2579, Loss BCE: 1.8081, Content loss: 0.2906
+0.035299224853515665
+tensor(0.3226, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4366, Loss generator: 0.3226, Loss VMAF: 0.0353, Loss SSIM: 0.2866, Loss BCE: 0.7335, Content loss: 0.3219
+0.034332122802734344
+tensor(0.2481, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2623, Loss generator: 0.2481, Loss VMAF: 0.0343, Loss SSIM: 0.2123, Loss BCE: 1.4722, Content loss: 0.2467
+0.03422119140625002
+tensor(0.2761, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2513, Loss generator: 0.2761, Loss VMAF: 0.0342, Loss SSIM: 0.2400, Loss BCE: 1.8779, Content loss: 0.2742
+0.030678710937499964
+tensor(0.2367, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4761, Loss generator: 0.2367, Loss VMAF: 0.0307, Loss SSIM: 0.2042, Loss BCE: 1.7842, Content loss: 0.2349
+0.03374557495117192
+tensor(0.2415, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3142, Loss generator: 0.2415, Loss VMAF: 0.0337, Loss SSIM: 0.2059, Loss BCE: 1.8435, Content loss: 0.2396
+0.03299186706542967
+tensor(0.2504, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4365, Loss generator: 0.2504, Loss VMAF: 0.0330, Loss SSIM: 0.2155, Loss BCE: 1.9549, Content loss: 0.2485
+0.03055412292480464
+tensor(0.2190, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4894, Loss generator: 0.2190, Loss VMAF: 0.0306, Loss SSIM: 0.1862, Loss BCE: 2.2234, Content loss: 0.2168
+0.03289871215820317
+tensor(0.1913, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2879, Loss generator: 0.1913, Loss VMAF: 0.0329, Loss SSIM: 0.1571, Loss BCE: 1.2785, Content loss: 0.1900
+0.03206924438476566
+tensor(0.2671, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2480, Loss generator: 0.2671, Loss VMAF: 0.0321, Loss SSIM: 0.2334, Loss BCE: 1.6337, Content loss: 0.2654
+0.034153518676757866
+tensor(0.2715, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3597, Loss generator: 0.2715, Loss VMAF: 0.0342, Loss SSIM: 0.2360, Loss BCE: 1.2574, Content loss: 0.2702
+0.03526466369628911
+tensor(0.2616, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2838, Loss generator: 0.2616, Loss VMAF: 0.0353, Loss SSIM: 0.2247, Loss BCE: 1.6391, Content loss: 0.2600
+0.033384017944335986
+tensor(0.2420, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4091, Loss generator: 0.2420, Loss VMAF: 0.0334, Loss SSIM: 0.2069, Loss BCE: 1.7981, Content loss: 0.2402
+0.034257659912109384
+tensor(0.2818, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1744, Loss generator: 0.2818, Loss VMAF: 0.0343, Loss SSIM: 0.2448, Loss BCE: 2.7228, Content loss: 0.2790
+0.03300872802734378
+tensor(0.2428, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2192, Loss generator: 0.2428, Loss VMAF: 0.0330, Loss SSIM: 0.2069, Loss BCE: 2.8783, Content loss: 0.2399
+0.03338958740234377
+tensor(0.2669, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1995, Loss generator: 0.2669, Loss VMAF: 0.0334, Loss SSIM: 0.2308, Loss BCE: 2.7627, Content loss: 0.2642
+0.03227470397949217
+tensor(0.2226, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1565, Loss generator: 0.2226, Loss VMAF: 0.0323, Loss SSIM: 0.1862, Loss BCE: 4.1303, Content loss: 0.2185
+0.034487380981445326
+tensor(0.2229, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2772, Loss generator: 0.2229, Loss VMAF: 0.0345, Loss SSIM: 0.1856, Loss BCE: 2.7335, Content loss: 0.2201
+0.03294128417968745
+tensor(0.2114, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.1137, Loss generator: 0.2114, Loss VMAF: 0.0329, Loss SSIM: 0.1731, Loss BCE: 5.3597, Content loss: 0.2061
+0.03306739807128911
+tensor(0.2389, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3552, Loss generator: 0.2389, Loss VMAF: 0.0331, Loss SSIM: 0.2032, Loss BCE: 2.6306, Content loss: 0.2362
+0.033327941894531254
+tensor(0.2422, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0759, Loss generator: 0.2422, Loss VMAF: 0.0333, Loss SSIM: 0.2063, Loss BCE: 2.5662, Content loss: 0.2396
+0.03231231689453129
+tensor(0.2200, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1043, Loss generator: 0.2200, Loss VMAF: 0.0323, Loss SSIM: 0.1858, Loss BCE: 1.8846, Content loss: 0.2181
+0.031614227294921915
+tensor(0.2357, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1619, Loss generator: 0.2357, Loss VMAF: 0.0316, Loss SSIM: 0.2026, Loss BCE: 1.4870, Content loss: 0.2342
+0.03293395996093751
+tensor(0.2310, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5525, Loss generator: 0.2310, Loss VMAF: 0.0329, Loss SSIM: 0.1972, Loss BCE: 0.8347, Content loss: 0.2301
+0.033173522949218714
+tensor(0.2688, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0657, Loss generator: 0.2688, Loss VMAF: 0.0332, Loss SSIM: 0.2326, Loss BCE: 3.0326, Content loss: 0.2658
+0.03549926757812505
+tensor(0.2873, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.9122, Loss generator: 0.2873, Loss VMAF: 0.0355, Loss SSIM: 0.2509, Loss BCE: 0.9033, Content loss: 0.2864
+0.03387687683105467
+tensor(0.2431, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1574, Loss generator: 0.2431, Loss VMAF: 0.0339, Loss SSIM: 0.2059, Loss BCE: 3.4082, Content loss: 0.2397
+0.03476104736328123
+tensor(0.2827, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0675, Loss generator: 0.2827, Loss VMAF: 0.0348, Loss SSIM: 0.2436, Loss BCE: 4.2757, Content loss: 0.2784
+0.03454566955566407
+tensor(0.2735, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2385, Loss generator: 0.2735, Loss VMAF: 0.0345, Loss SSIM: 0.2359, Loss BCE: 3.0665, Content loss: 0.2704
+0.03069335937499995
+tensor(0.1830, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 2.7147, Loss generator: 0.1830, Loss VMAF: 0.0307, Loss SSIM: 0.1456, Loss BCE: 6.7077, Content loss: 0.1763
+0.03081672668457036
+tensor(0.2398, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.7404, Loss generator: 0.2398, Loss VMAF: 0.0308, Loss SSIM: 0.2063, Loss BCE: 2.6728, Content loss: 0.2371
+0.033946685791015674
+tensor(0.2534, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2061, Loss generator: 0.2534, Loss VMAF: 0.0339, Loss SSIM: 0.2184, Loss BCE: 1.0239, Content loss: 0.2524
+0.03362045288085935
+tensor(0.2982, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.8346, Loss generator: 0.2982, Loss VMAF: 0.0336, Loss SSIM: 0.2637, Loss BCE: 0.8877, Content loss: 0.2973
+0.03250518798828128
+tensor(0.2438, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3587, Loss generator: 0.2438, Loss VMAF: 0.0325, Loss SSIM: 0.2098, Loss BCE: 1.5921, Content loss: 0.2423
+0.03179031372070318
+tensor(0.2008, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5754, Loss generator: 0.2008, Loss VMAF: 0.0318, Loss SSIM: 0.1667, Loss BCE: 2.2673, Content loss: 0.1985
+0.032288513183593714
+tensor(0.2114, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2675, Loss generator: 0.2114, Loss VMAF: 0.0323, Loss SSIM: 0.1767, Loss BCE: 2.3717, Content loss: 0.2090
+0.031184082031250004
+tensor(0.1939, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4960, Loss generator: 0.1939, Loss VMAF: 0.0312, Loss SSIM: 0.1597, Loss BCE: 2.9869, Content loss: 0.1909
+0.0324745941162109
+tensor(0.2076, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1604, Loss generator: 0.2076, Loss VMAF: 0.0325, Loss SSIM: 0.1735, Loss BCE: 1.6275, Content loss: 0.2060
+0.03565917968749999
+tensor(0.3611, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2126, Loss generator: 0.3611, Loss VMAF: 0.0357, Loss SSIM: 0.3238, Loss BCE: 1.6017, Content loss: 0.3595
+0.02999900817871093
+tensor(0.2112, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2819, Loss generator: 0.2112, Loss VMAF: 0.0300, Loss SSIM: 0.1791, Loss BCE: 2.0262, Content loss: 0.2091
+0.03510833740234376
+tensor(0.2862, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4826, Loss generator: 0.2862, Loss VMAF: 0.0351, Loss SSIM: 0.2499, Loss BCE: 1.1363, Content loss: 0.2850
+0.0314639282226562
+tensor(0.2483, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3065, Loss generator: 0.2483, Loss VMAF: 0.0315, Loss SSIM: 0.2151, Loss BCE: 1.7564, Content loss: 0.2466
+0.03130599975585935
+tensor(0.2132, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4187, Loss generator: 0.2132, Loss VMAF: 0.0313, Loss SSIM: 0.1800, Loss BCE: 1.8670, Content loss: 0.2113
+0.02996879577636724
+tensor(0.2064, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.8898, Loss generator: 0.2064, Loss VMAF: 0.0300, Loss SSIM: 0.1729, Loss BCE: 3.5369, Content loss: 0.2028
+0.03178909301757815
+tensor(0.2502, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2747, Loss generator: 0.2502, Loss VMAF: 0.0318, Loss SSIM: 0.2157, Loss BCE: 2.7280, Content loss: 0.2475
+0.03419761657714848
+tensor(0.3031, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1301, Loss generator: 0.3031, Loss VMAF: 0.0342, Loss SSIM: 0.2669, Loss BCE: 2.0385, Content loss: 0.3011
+0.0374758911132812
+tensor(0.3133, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2601, Loss generator: 0.3133, Loss VMAF: 0.0375, Loss SSIM: 0.2744, Loss BCE: 1.4478, Content loss: 0.3119
+0.03353454589843752
+tensor(0.2644, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3335, Loss generator: 0.2644, Loss VMAF: 0.0335, Loss SSIM: 0.2279, Loss BCE: 2.9732, Content loss: 0.2614
+0.032267761230468706
+tensor(0.2147, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4217, Loss generator: 0.2147, Loss VMAF: 0.0323, Loss SSIM: 0.1798, Loss BCE: 2.6575, Content loss: 0.2121
+0.030785522460937464
+tensor(0.2231, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.0177, Loss generator: 0.2231, Loss VMAF: 0.0308, Loss SSIM: 0.1894, Loss BCE: 2.9085, Content loss: 0.2202
+0.03339828491210939
+tensor(0.2766, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2026, Loss generator: 0.2766, Loss VMAF: 0.0334, Loss SSIM: 0.2413, Loss BCE: 1.8222, Content loss: 0.2747
+0.030724258422851536
+tensor(0.1974, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1471, Loss generator: 0.1974, Loss VMAF: 0.0307, Loss SSIM: 0.1649, Loss BCE: 1.7605, Content loss: 0.1957
+0.035287933349609335
+tensor(0.2810, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3150, Loss generator: 0.2810, Loss VMAF: 0.0353, Loss SSIM: 0.2449, Loss BCE: 0.8191, Content loss: 0.2802
+0.0335134887695312
+tensor(0.2810, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4608, Loss generator: 0.2810, Loss VMAF: 0.0335, Loss SSIM: 0.2467, Loss BCE: 0.8302, Content loss: 0.2802
+0.03318153381347655
+tensor(0.2562, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1394, Loss generator: 0.2562, Loss VMAF: 0.0332, Loss SSIM: 0.2212, Loss BCE: 1.8719, Content loss: 0.2543
+0.03150115966796874
+tensor(0.2456, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1833, Loss generator: 0.2456, Loss VMAF: 0.0315, Loss SSIM: 0.2118, Loss BCE: 2.3362, Content loss: 0.2433
+0.03192260742187503
+tensor(0.2197, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3981, Loss generator: 0.2197, Loss VMAF: 0.0319, Loss SSIM: 0.1859, Loss BCE: 1.8278, Content loss: 0.2178
+0.03249046325683591
+tensor(0.2806, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1888, Loss generator: 0.2806, Loss VMAF: 0.0325, Loss SSIM: 0.2455, Loss BCE: 2.6266, Content loss: 0.2780
+0.034619445800781246
+tensor(0.2568, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4078, Loss generator: 0.2568, Loss VMAF: 0.0346, Loss SSIM: 0.2209, Loss BCE: 1.3244, Content loss: 0.2555
+0.033992462158203174
+tensor(0.2586, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1461, Loss generator: 0.2586, Loss VMAF: 0.0340, Loss SSIM: 0.2216, Loss BCE: 3.0168, Content loss: 0.2556
+0.03380111694335941
+tensor(0.3149, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0744, Loss generator: 0.3149, Loss VMAF: 0.0338, Loss SSIM: 0.2775, Loss BCE: 3.6540, Content loss: 0.3113
+0.03292785644531249
+tensor(0.2551, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1772, Loss generator: 0.2551, Loss VMAF: 0.0329, Loss SSIM: 0.2180, Loss BCE: 4.1541, Content loss: 0.2509
+0.03659294128417967
+tensor(0.3436, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2231, Loss generator: 0.3436, Loss VMAF: 0.0366, Loss SSIM: 0.3037, Loss BCE: 3.3326, Content loss: 0.3403
+0.03145629882812495
+tensor(0.1932, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.2173, Loss generator: 0.1932, Loss VMAF: 0.0315, Loss SSIM: 0.1576, Loss BCE: 4.2088, Content loss: 0.1890
+0.03271408081054683
+tensor(0.2243, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1942, Loss generator: 0.2243, Loss VMAF: 0.0327, Loss SSIM: 0.1889, Loss BCE: 2.6090, Content loss: 0.2217
+0.030280151367187536
+tensor(0.1772, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.1204, Loss generator: 0.1772, Loss VMAF: 0.0303, Loss SSIM: 0.1439, Loss BCE: 3.0349, Content loss: 0.1741
+0.03644454956054688
+tensor(0.3104, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2314, Loss generator: 0.3104, Loss VMAF: 0.0364, Loss SSIM: 0.2730, Loss BCE: 0.9793, Content loss: 0.3094
+0.035049057006835915
+tensor(0.2895, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4510, Loss generator: 0.2895, Loss VMAF: 0.0350, Loss SSIM: 0.2537, Loss BCE: 0.7365, Content loss: 0.2888
+0.03389656066894531
+tensor(0.2842, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4497, Loss generator: 0.2842, Loss VMAF: 0.0339, Loss SSIM: 0.2493, Loss BCE: 1.0584, Content loss: 0.2832
+0.03469802856445314
+tensor(0.2517, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6785, Loss generator: 0.2517, Loss VMAF: 0.0347, Loss SSIM: 0.2162, Loss BCE: 0.8055, Content loss: 0.2509
+0.032769927978515634
+tensor(0.2091, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1644, Loss generator: 0.2091, Loss VMAF: 0.0328, Loss SSIM: 0.1740, Loss BCE: 2.3477, Content loss: 0.2067
+0.032923049926757764
+tensor(0.2237, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1307, Loss generator: 0.2237, Loss VMAF: 0.0329, Loss SSIM: 0.1881, Loss BCE: 2.6311, Content loss: 0.2211
+0.032406387329101616
+tensor(0.2232, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1343, Loss generator: 0.2232, Loss VMAF: 0.0324, Loss SSIM: 0.1880, Loss BCE: 2.7653, Content loss: 0.2204
+0.03276138305664067
+tensor(0.2636, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2196, Loss generator: 0.2636, Loss VMAF: 0.0328, Loss SSIM: 0.2275, Loss BCE: 3.3101, Content loss: 0.2603
+0.03666534423828127
+tensor(0.2505, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3121, Loss generator: 0.2505, Loss VMAF: 0.0367, Loss SSIM: 0.2126, Loss BCE: 1.2332, Content loss: 0.2493
+0.0323486328125
+tensor(0.2331, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2776, Loss generator: 0.2331, Loss VMAF: 0.0323, Loss SSIM: 0.1981, Loss BCE: 2.5950, Content loss: 0.2305
+0.03406730651855472
+tensor(0.2451, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3866, Loss generator: 0.2451, Loss VMAF: 0.0341, Loss SSIM: 0.2073, Loss BCE: 3.6751, Content loss: 0.2414
+0.031253051757812456
+tensor(0.1792, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4110, Loss generator: 0.1792, Loss VMAF: 0.0313, Loss SSIM: 0.1440, Loss BCE: 3.9195, Content loss: 0.1753
+0.032255401611328116
+tensor(0.2339, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3049, Loss generator: 0.2339, Loss VMAF: 0.0323, Loss SSIM: 0.1985, Loss BCE: 3.1686, Content loss: 0.2308
+0.034261627197265665
+tensor(0.2665, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3184, Loss generator: 0.2665, Loss VMAF: 0.0343, Loss SSIM: 0.2309, Loss BCE: 1.2726, Content loss: 0.2652
+0.03208770751953127
+tensor(0.2432, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1348, Loss generator: 0.2432, Loss VMAF: 0.0321, Loss SSIM: 0.2089, Loss BCE: 2.1901, Content loss: 0.2410
+0.03087219238281247
+tensor(0.2398, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1632, Loss generator: 0.2398, Loss VMAF: 0.0309, Loss SSIM: 0.2063, Loss BCE: 2.6005, Content loss: 0.2372
+0.03199684143066406
+tensor(0.2262, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2429, Loss generator: 0.2262, Loss VMAF: 0.0320, Loss SSIM: 0.1928, Loss BCE: 1.4423, Content loss: 0.2248
+0.03625991821289065
+tensor(0.2918, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3383, Loss generator: 0.2918, Loss VMAF: 0.0363, Loss SSIM: 0.2540, Loss BCE: 1.4914, Content loss: 0.2903
+0.0359523010253906
+tensor(0.2930, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6644, Loss generator: 0.2930, Loss VMAF: 0.0360, Loss SSIM: 0.2557, Loss BCE: 1.2877, Content loss: 0.2917
+0.03193908691406255
+tensor(0.2462, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2181, Loss generator: 0.2462, Loss VMAF: 0.0319, Loss SSIM: 0.2097, Loss BCE: 4.5072, Content loss: 0.2417
+0.033568420410156286
+tensor(0.2522, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3654, Loss generator: 0.2522, Loss VMAF: 0.0336, Loss SSIM: 0.2159, Loss BCE: 2.7017, Content loss: 0.2495
+0.03247207641601557
+tensor(0.2095, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1123, Loss generator: 0.2095, Loss VMAF: 0.0325, Loss SSIM: 0.1738, Loss BCE: 3.2209, Content loss: 0.2063
+0.03346969604492189
+tensor(0.2707, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1870, Loss generator: 0.2707, Loss VMAF: 0.0335, Loss SSIM: 0.2336, Loss BCE: 3.6443, Content loss: 0.2671
+0.0321528625488281
+tensor(0.2561, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1681, Loss generator: 0.2561, Loss VMAF: 0.0322, Loss SSIM: 0.2203, Loss BCE: 3.6332, Content loss: 0.2525
+0.032000732421874956
+tensor(0.2440, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5698, Loss generator: 0.2440, Loss VMAF: 0.0320, Loss SSIM: 0.2078, Loss BCE: 4.1937, Content loss: 0.2398
+0.03206443786621094
+tensor(0.2374, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4637, Loss generator: 0.2374, Loss VMAF: 0.0321, Loss SSIM: 0.2014, Loss BCE: 3.9902, Content loss: 0.2334
+0.03395286560058597
+tensor(0.2458, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1879, Loss generator: 0.2458, Loss VMAF: 0.0340, Loss SSIM: 0.2098, Loss BCE: 2.1378, Content loss: 0.2437
+0.03184371948242193
+tensor(0.2115, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2333, Loss generator: 0.2115, Loss VMAF: 0.0318, Loss SSIM: 0.1778, Loss BCE: 1.8561, Content loss: 0.2097
+0.03257354736328122
+tensor(0.2204, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3142, Loss generator: 0.2204, Loss VMAF: 0.0326, Loss SSIM: 0.1861, Loss BCE: 1.6425, Content loss: 0.2187
+0.03437194824218748
+tensor(0.2761, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4774, Loss generator: 0.2761, Loss VMAF: 0.0344, Loss SSIM: 0.2404, Loss BCE: 1.3901, Content loss: 0.2747
+0.03361885070800785
+tensor(0.2682, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2120, Loss generator: 0.2682, Loss VMAF: 0.0336, Loss SSIM: 0.2317, Loss BCE: 2.8619, Content loss: 0.2654
+0.03166641235351564
+tensor(0.2210, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2072, Loss generator: 0.2210, Loss VMAF: 0.0317, Loss SSIM: 0.1866, Loss BCE: 2.7196, Content loss: 0.2183
+0.037957153320312464
+tensor(0.3167, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1923, Loss generator: 0.3167, Loss VMAF: 0.0380, Loss SSIM: 0.2766, Loss BCE: 2.1682, Content loss: 0.3145
+0.02970123291015625
+tensor(0.1948, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.8339, Loss generator: 0.1948, Loss VMAF: 0.0297, Loss SSIM: 0.1607, Loss BCE: 4.3960, Content loss: 0.1904
+0.03262275695800776
+tensor(0.2559, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3297, Loss generator: 0.2559, Loss VMAF: 0.0326, Loss SSIM: 0.2192, Loss BCE: 4.0864, Content loss: 0.2518
+0.03142364501953121
+tensor(0.1878, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1795, Loss generator: 0.1878, Loss VMAF: 0.0314, Loss SSIM: 0.1539, Loss BCE: 2.5112, Content loss: 0.1853
+0.0349429321289062
+tensor(0.2486, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1809, Loss generator: 0.2486, Loss VMAF: 0.0349, Loss SSIM: 0.2118, Loss BCE: 1.7769, Content loss: 0.2468
+0.033871765136718746
+tensor(0.2917, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3351, Loss generator: 0.2917, Loss VMAF: 0.0339, Loss SSIM: 0.2565, Loss BCE: 1.3671, Content loss: 0.2903
+0.035814895629882826
+tensor(0.3148, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1632, Loss generator: 0.3148, Loss VMAF: 0.0358, Loss SSIM: 0.2764, Loss BCE: 2.6211, Content loss: 0.3122
+0.03338745117187503
+tensor(0.2385, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1740, Loss generator: 0.2385, Loss VMAF: 0.0334, Loss SSIM: 0.2020, Loss BCE: 3.0655, Content loss: 0.2354
+0.03296890258789065
+tensor(0.2240, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1364, Loss generator: 0.2240, Loss VMAF: 0.0330, Loss SSIM: 0.1886, Loss BCE: 2.4137, Content loss: 0.2215
+0.03694992065429692
+tensor(0.3227, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1912, Loss generator: 0.3227, Loss VMAF: 0.0369, Loss SSIM: 0.2840, Loss BCE: 1.7108, Content loss: 0.3210
+0.034014892578124956
+tensor(0.2822, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2119, Loss generator: 0.2822, Loss VMAF: 0.0340, Loss SSIM: 0.2453, Loss BCE: 2.8945, Content loss: 0.2793
+0.03273986816406249
+tensor(0.2601, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1444, Loss generator: 0.2601, Loss VMAF: 0.0327, Loss SSIM: 0.2245, Loss BCE: 2.8637, Content loss: 0.2572
+0.03323783874511721
+tensor(0.2535, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2212, Loss generator: 0.2535, Loss VMAF: 0.0332, Loss SSIM: 0.2168, Loss BCE: 3.4773, Content loss: 0.2500
+0.033639450073242205
+tensor(0.2547, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2693, Loss generator: 0.2547, Loss VMAF: 0.0336, Loss SSIM: 0.2173, Loss BCE: 3.7664, Content loss: 0.2509
+0.0358273315429688
+tensor(0.2835, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1959, Loss generator: 0.2835, Loss VMAF: 0.0358, Loss SSIM: 0.2451, Loss BCE: 2.5039, Content loss: 0.2810
+0.030803222656250018
+tensor(0.2199, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.5652, Loss generator: 0.2199, Loss VMAF: 0.0308, Loss SSIM: 0.1858, Loss BCE: 3.3484, Content loss: 0.2166
+0.035075073242187504
+tensor(0.3003, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1192, Loss generator: 0.3003, Loss VMAF: 0.0351, Loss SSIM: 0.2635, Loss BCE: 1.7836, Content loss: 0.2985
+0.034991912841796924
+tensor(0.2462, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3015, Loss generator: 0.2462, Loss VMAF: 0.0350, Loss SSIM: 0.2102, Loss BCE: 0.9618, Content loss: 0.2452
+0.03413864135742184
+tensor(0.3004, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3053, Loss generator: 0.3004, Loss VMAF: 0.0341, Loss SSIM: 0.2649, Loss BCE: 1.4062, Content loss: 0.2990
+0.03254577636718747
+tensor(0.2184, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2419, Loss generator: 0.2184, Loss VMAF: 0.0325, Loss SSIM: 0.1826, Loss BCE: 3.2241, Content loss: 0.2152
+0.03319023132324217
+tensor(0.2521, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1506, Loss generator: 0.2521, Loss VMAF: 0.0332, Loss SSIM: 0.2171, Loss BCE: 1.8518, Content loss: 0.2502
+0.03676155090332034
+tensor(0.3118, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3699, Loss generator: 0.3118, Loss VMAF: 0.0368, Loss SSIM: 0.2735, Loss BCE: 1.4803, Content loss: 0.3103
+0.031653671264648464
+tensor(0.2374, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2286, Loss generator: 0.2374, Loss VMAF: 0.0317, Loss SSIM: 0.2033, Loss BCE: 2.3755, Content loss: 0.2350
+0.03175270080566406
+tensor(0.2270, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4581, Loss generator: 0.2270, Loss VMAF: 0.0318, Loss SSIM: 0.1923, Loss BCE: 3.0210, Content loss: 0.2240
+0.03332473754882814
+tensor(0.2469, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2903, Loss generator: 0.2469, Loss VMAF: 0.0333, Loss SSIM: 0.2101, Loss BCE: 3.4807, Content loss: 0.2435
+0.032300872802734415
+tensor(0.3013, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2196, Loss generator: 0.3013, Loss VMAF: 0.0323, Loss SSIM: 0.2661, Loss BCE: 2.9317, Content loss: 0.2984
+0.03183723449707032
+tensor(0.2139, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1046, Loss generator: 0.2139, Loss VMAF: 0.0318, Loss SSIM: 0.1797, Loss BCE: 2.3362, Content loss: 0.2116
+0.03243103027343752
+tensor(0.2347, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1214, Loss generator: 0.2347, Loss VMAF: 0.0324, Loss SSIM: 0.2001, Loss BCE: 2.1544, Content loss: 0.2325
+0.03127449035644536
+tensor(0.2455, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1989, Loss generator: 0.2455, Loss VMAF: 0.0313, Loss SSIM: 0.2128, Loss BCE: 1.4529, Content loss: 0.2440
+0.031503753662109335
+tensor(0.1977, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1425, Loss generator: 0.1977, Loss VMAF: 0.0315, Loss SSIM: 0.1642, Loss BCE: 2.0371, Content loss: 0.1957
+0.0333102416992187
+tensor(0.2240, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1003, Loss generator: 0.2240, Loss VMAF: 0.0333, Loss SSIM: 0.1877, Loss BCE: 2.9455, Content loss: 0.2210
+0.03351364135742185
+tensor(0.2463, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2607, Loss generator: 0.2463, Loss VMAF: 0.0335, Loss SSIM: 0.2112, Loss BCE: 1.6152, Content loss: 0.2447
+0.03707649230957033
+tensor(0.3029, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0704, Loss generator: 0.3029, Loss VMAF: 0.0371, Loss SSIM: 0.2630, Loss BCE: 2.7590, Content loss: 0.3001
+0.032024154663085946
+tensor(0.2264, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1168, Loss generator: 0.2264, Loss VMAF: 0.0320, Loss SSIM: 0.1911, Loss BCE: 3.3406, Content loss: 0.2231
+0.032283782958984375
+tensor(0.2199, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0768, Loss generator: 0.2199, Loss VMAF: 0.0323, Loss SSIM: 0.1849, Loss BCE: 2.6840, Content loss: 0.2172
+0.0363668823242187
+tensor(0.3143, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1324, Loss generator: 0.3143, Loss VMAF: 0.0364, Loss SSIM: 0.2754, Loss BCE: 2.4872, Content loss: 0.3118
+0.036710968017578116
+tensor(0.3583, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0514, Loss generator: 0.3583, Loss VMAF: 0.0367, Loss SSIM: 0.3180, Loss BCE: 3.5712, Content loss: 0.3547
+0.03486396789550783
+tensor(0.2483, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0517, Loss generator: 0.2483, Loss VMAF: 0.0349, Loss SSIM: 0.2099, Loss BCE: 3.5668, Content loss: 0.2447
+0.03304008483886722
+tensor(0.2990, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0452, Loss generator: 0.2990, Loss VMAF: 0.0330, Loss SSIM: 0.2603, Loss BCE: 5.7410, Content loss: 0.2933
+0.03138236999511723
+tensor(0.2765, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.4050, Loss generator: 0.2765, Loss VMAF: 0.0314, Loss SSIM: 0.2398, Loss BCE: 5.3354, Content loss: 0.2711
+0.03394607543945316
+tensor(0.2975, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1629, Loss generator: 0.2975, Loss VMAF: 0.0339, Loss SSIM: 0.2608, Loss BCE: 2.7476, Content loss: 0.2947
+0.03141807556152343
+tensor(0.2478, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1131, Loss generator: 0.2478, Loss VMAF: 0.0314, Loss SSIM: 0.2115, Loss BCE: 4.9192, Content loss: 0.2429
+0.0320256042480469
+tensor(0.2303, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2313, Loss generator: 0.2303, Loss VMAF: 0.0320, Loss SSIM: 0.1945, Loss BCE: 3.8344, Content loss: 0.2265
+0.03297721862792968
+tensor(0.3077, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0651, Loss generator: 0.3077, Loss VMAF: 0.0330, Loss SSIM: 0.2725, Loss BCE: 2.2857, Content loss: 0.3054
+0.03312759399414067
+tensor(0.2842, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0623, Loss generator: 0.2842, Loss VMAF: 0.0331, Loss SSIM: 0.2490, Loss BCE: 2.0561, Content loss: 0.2821
+0.03384193420410153
+tensor(0.2987, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4343, Loss generator: 0.2987, Loss VMAF: 0.0338, Loss SSIM: 0.2635, Loss BCE: 1.3114, Content loss: 0.2973
+0.03336959838867193
+tensor(0.2504, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1158, Loss generator: 0.2504, Loss VMAF: 0.0334, Loss SSIM: 0.2137, Loss BCE: 3.3396, Content loss: 0.2471
+0.03391456604003906
+tensor(0.2550, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0243, Loss generator: 0.2550, Loss VMAF: 0.0339, Loss SSIM: 0.2168, Loss BCE: 4.2747, Content loss: 0.2507
+0.03337036132812499
+tensor(0.2896, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1085, Loss generator: 0.2896, Loss VMAF: 0.0334, Loss SSIM: 0.2531, Loss BCE: 3.0697, Content loss: 0.2865
+0.03350387573242186
+tensor(0.2405, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0876, Loss generator: 0.2405, Loss VMAF: 0.0335, Loss SSIM: 0.2041, Loss BCE: 2.8767, Content loss: 0.2376
+0.032018051147460924
+tensor(0.1959, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0584, Loss generator: 0.1959, Loss VMAF: 0.0320, Loss SSIM: 0.1598, Loss BCE: 4.1422, Content loss: 0.1918
+0.03191314697265624
+tensor(0.2253, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2301, Loss generator: 0.2253, Loss VMAF: 0.0319, Loss SSIM: 0.1879, Loss BCE: 5.4591, Content loss: 0.2198
+0.03250358581542967
+tensor(0.2335, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6998, Loss generator: 0.2335, Loss VMAF: 0.0325, Loss SSIM: 0.1961, Loss BCE: 4.8684, Content loss: 0.2286
+0.03406410217285161
+tensor(0.2504, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0256, Loss generator: 0.2504, Loss VMAF: 0.0341, Loss SSIM: 0.2133, Loss BCE: 2.9930, Content loss: 0.2474
+0.03189132690429686
+tensor(0.2080, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1166, Loss generator: 0.2080, Loss VMAF: 0.0319, Loss SSIM: 0.1741, Loss BCE: 1.9396, Content loss: 0.2060
+0.034534225463867196
+tensor(0.2507, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4486, Loss generator: 0.2507, Loss VMAF: 0.0345, Loss SSIM: 0.2143, Loss BCE: 1.8224, Content loss: 0.2488
+0.035165863037109335
+tensor(0.3035, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0921, Loss generator: 0.3035, Loss VMAF: 0.0352, Loss SSIM: 0.2654, Loss BCE: 2.9305, Content loss: 0.3005
+0.031498184204101554
+tensor(0.2673, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0227, Loss generator: 0.2673, Loss VMAF: 0.0315, Loss SSIM: 0.2320, Loss BCE: 3.8284, Content loss: 0.2635
+0.03130104064941408
+tensor(0.2120, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0436, Loss generator: 0.2120, Loss VMAF: 0.0313, Loss SSIM: 0.1755, Loss BCE: 5.2461, Content loss: 0.2068
+0.03311401367187505
+tensor(0.2564, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1548, Loss generator: 0.2564, Loss VMAF: 0.0331, Loss SSIM: 0.2185, Loss BCE: 4.7378, Content loss: 0.2516
+0.03385818481445313
+tensor(0.2956, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0348, Loss generator: 0.2956, Loss VMAF: 0.0339, Loss SSIM: 0.2579, Loss BCE: 3.8430, Content loss: 0.2918
+0.034275588989257866
+tensor(0.2884, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0486, Loss generator: 0.2884, Loss VMAF: 0.0343, Loss SSIM: 0.2508, Loss BCE: 3.3928, Content loss: 0.2850
+0.03368743896484372
+tensor(0.2719, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0534, Loss generator: 0.2719, Loss VMAF: 0.0337, Loss SSIM: 0.2347, Loss BCE: 3.5587, Content loss: 0.2684
+0.03401733398437501
+tensor(0.2631, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0181, Loss generator: 0.2631, Loss VMAF: 0.0340, Loss SSIM: 0.2246, Loss BCE: 4.4530, Content loss: 0.2586
+0.03142181396484378
+tensor(0.2104, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5720, Loss generator: 0.2104, Loss VMAF: 0.0314, Loss SSIM: 0.1754, Loss BCE: 3.5722, Content loss: 0.2069
+0.03413551330566411
+tensor(0.2575, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0615, Loss generator: 0.2575, Loss VMAF: 0.0341, Loss SSIM: 0.2204, Loss BCE: 2.9326, Content loss: 0.2546
+0.03278564453124999
+tensor(0.2669, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0390, Loss generator: 0.2669, Loss VMAF: 0.0328, Loss SSIM: 0.2307, Loss BCE: 3.3979, Content loss: 0.2635
+0.031512680053710884
+tensor(0.2176, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0834, Loss generator: 0.2176, Loss VMAF: 0.0315, Loss SSIM: 0.1815, Loss BCE: 4.6495, Content loss: 0.2130
+0.03139541625976561
+tensor(0.2229, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0179, Loss generator: 0.2229, Loss VMAF: 0.0314, Loss SSIM: 0.1876, Loss BCE: 3.8981, Content loss: 0.2190
+0.031181793212890607
+tensor(0.2201, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0635, Loss generator: 0.2201, Loss VMAF: 0.0312, Loss SSIM: 0.1861, Loss BCE: 2.8685, Content loss: 0.2173
+0.03086929321289067
+tensor(0.2139, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0847, Loss generator: 0.2139, Loss VMAF: 0.0309, Loss SSIM: 0.1793, Loss BCE: 3.6691, Content loss: 0.2102
+0.032704467773437496
+tensor(0.2435, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0359, Loss generator: 0.2435, Loss VMAF: 0.0327, Loss SSIM: 0.2078, Loss BCE: 2.9677, Content loss: 0.2405
+0.031974411010742165
+tensor(0.1962, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1280, Loss generator: 0.1962, Loss VMAF: 0.0320, Loss SSIM: 0.1621, Loss BCE: 2.0806, Content loss: 0.1941
+0.030905151367187522
+tensor(0.1992, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0518, Loss generator: 0.1992, Loss VMAF: 0.0309, Loss SSIM: 0.1650, Loss BCE: 3.2757, Content loss: 0.1959
+0.03211257934570311
+tensor(0.2170, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3885, Loss generator: 0.2170, Loss VMAF: 0.0321, Loss SSIM: 0.1812, Loss BCE: 3.7245, Content loss: 0.2133
+0.036160583496093746
+tensor(0.3179, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5758, Loss generator: 0.3179, Loss VMAF: 0.0362, Loss SSIM: 0.2803, Loss BCE: 1.3866, Content loss: 0.3165
+0.03170150756835932
+tensor(0.2426, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0994, Loss generator: 0.2426, Loss VMAF: 0.0317, Loss SSIM: 0.2071, Loss BCE: 3.7698, Content loss: 0.2388
+0.03370826721191411
+tensor(0.2581, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0749, Loss generator: 0.2581, Loss VMAF: 0.0337, Loss SSIM: 0.2212, Loss BCE: 3.1485, Content loss: 0.2549
+0.03364799499511717
+tensor(0.2463, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0686, Loss generator: 0.2463, Loss VMAF: 0.0336, Loss SSIM: 0.2099, Loss BCE: 2.7911, Content loss: 0.2435
+0.03480590820312501
+tensor(0.2813, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0609, Loss generator: 0.2813, Loss VMAF: 0.0348, Loss SSIM: 0.2420, Loss BCE: 4.5717, Content loss: 0.2768
+0.03442428588867186
+tensor(0.2923, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0316, Loss generator: 0.2923, Loss VMAF: 0.0344, Loss SSIM: 0.2543, Loss BCE: 3.5855, Content loss: 0.2887
+0.034738616943359335
+tensor(0.3054, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0207, Loss generator: 0.3054, Loss VMAF: 0.0347, Loss SSIM: 0.2666, Loss BCE: 4.0670, Content loss: 0.3013
+0.03387687683105467
+tensor(0.3085, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0173, Loss generator: 0.3085, Loss VMAF: 0.0339, Loss SSIM: 0.2696, Loss BCE: 5.1049, Content loss: 0.3034
+0.03340225219726567
+tensor(0.2964, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0474, Loss generator: 0.2964, Loss VMAF: 0.0334, Loss SSIM: 0.2588, Loss BCE: 4.2171, Content loss: 0.2922
+0.03131477355957035
+tensor(0.2195, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0251, Loss generator: 0.2195, Loss VMAF: 0.0313, Loss SSIM: 0.1835, Loss BCE: 4.6838, Content loss: 0.2148
+0.03119972229003909
+tensor(0.1718, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.4904, Loss generator: 0.1718, Loss VMAF: 0.0312, Loss SSIM: 0.1349, Loss BCE: 5.7164, Content loss: 0.1661
+0.034267425537109375
+tensor(0.3440, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0299, Loss generator: 0.3440, Loss VMAF: 0.0343, Loss SSIM: 0.3061, Loss BCE: 3.6076, Content loss: 0.3404
+0.03138778686523436
+tensor(0.1743, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0971, Loss generator: 0.1743, Loss VMAF: 0.0314, Loss SSIM: 0.1404, Loss BCE: 2.4284, Content loss: 0.1718
+0.03211326599121089
+tensor(0.2379, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2663, Loss generator: 0.2379, Loss VMAF: 0.0321, Loss SSIM: 0.2036, Loss BCE: 2.1407, Content loss: 0.2357
+0.02998329162597657
+tensor(0.1918, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1950, Loss generator: 0.1918, Loss VMAF: 0.0300, Loss SSIM: 0.1586, Loss BCE: 3.1275, Content loss: 0.1886
+0.03506317138671877
+tensor(0.2856, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.0247, Loss generator: 0.2856, Loss VMAF: 0.0351, Loss SSIM: 0.2482, Loss BCE: 2.3177, Content loss: 0.2833
+0.03337799072265624
+tensor(0.2242, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0750, Loss generator: 0.2242, Loss VMAF: 0.0334, Loss SSIM: 0.1873, Loss BCE: 3.5710, Content loss: 0.2206
+0.03447624206542965
+tensor(0.2660, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0213, Loss generator: 0.2660, Loss VMAF: 0.0345, Loss SSIM: 0.2268, Loss BCE: 4.6514, Content loss: 0.2613
+0.03520080566406247
+tensor(0.3147, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0176, Loss generator: 0.3147, Loss VMAF: 0.0352, Loss SSIM: 0.2738, Loss BCE: 5.7445, Content loss: 0.3090
+0.030220489501953107
+tensor(0.1788, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5318, Loss generator: 0.1788, Loss VMAF: 0.0302, Loss SSIM: 0.1425, Loss BCE: 6.0547, Content loss: 0.1727
+0.03284034729003904
+tensor(0.2663, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3142, Loss generator: 0.2663, Loss VMAF: 0.0328, Loss SSIM: 0.2267, Loss BCE: 6.7519, Content loss: 0.2596
+0.033544692993164094
+tensor(0.2714, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0179, Loss generator: 0.2714, Loss VMAF: 0.0335, Loss SSIM: 0.2331, Loss BCE: 4.6915, Content loss: 0.2667
+0.032588653564453174
+tensor(0.2727, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1564, Loss generator: 0.2727, Loss VMAF: 0.0326, Loss SSIM: 0.2351, Loss BCE: 4.9383, Content loss: 0.2677
+0.037138977050781286
+tensor(0.3457, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0368, Loss generator: 0.3457, Loss VMAF: 0.0371, Loss SSIM: 0.3043, Loss BCE: 4.1772, Content loss: 0.3415
+0.03217079162597658
+tensor(0.2235, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4430, Loss generator: 0.2235, Loss VMAF: 0.0322, Loss SSIM: 0.1884, Loss BCE: 2.9236, Content loss: 0.2206
+0.03324974060058594
+tensor(0.2566, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1256, Loss generator: 0.2566, Loss VMAF: 0.0332, Loss SSIM: 0.2218, Loss BCE: 1.5469, Content loss: 0.2551
+0.03462562561035154
+tensor(0.3056, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2496, Loss generator: 0.3056, Loss VMAF: 0.0346, Loss SSIM: 0.2695, Loss BCE: 1.4208, Content loss: 0.3042
+0.03344970703125005
+tensor(0.2621, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1623, Loss generator: 0.2621, Loss VMAF: 0.0334, Loss SSIM: 0.2268, Loss BCE: 1.8681, Content loss: 0.2602
+0.032894897460937544
+tensor(0.2715, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1657, Loss generator: 0.2715, Loss VMAF: 0.0329, Loss SSIM: 0.2360, Loss BCE: 2.6208, Content loss: 0.2689
+0.030358505249023393
+tensor(0.1909, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.9627, Loss generator: 0.1909, Loss VMAF: 0.0304, Loss SSIM: 0.1588, Loss BCE: 1.7969, Content loss: 0.1891
+0.030355377197265665
+tensor(0.2782, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.1907, Loss generator: 0.2782, Loss VMAF: 0.0304, Loss SSIM: 0.2429, Loss BCE: 4.9356, Content loss: 0.2733
+0.03438171386718747
+tensor(0.2460, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0635, Loss generator: 0.2460, Loss VMAF: 0.0344, Loss SSIM: 0.2082, Loss BCE: 3.4556, Content loss: 0.2425
+0.03255462646484375
+tensor(0.2709, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0771, Loss generator: 0.2709, Loss VMAF: 0.0326, Loss SSIM: 0.2333, Loss BCE: 5.0606, Content loss: 0.2658
+0.03006797790527349
+tensor(0.2166, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.0479, Loss generator: 0.2166, Loss VMAF: 0.0301, Loss SSIM: 0.1821, Loss BCE: 4.4423, Content loss: 0.2122
+0.03148170471191403
+tensor(0.2100, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0765, Loss generator: 0.2100, Loss VMAF: 0.0315, Loss SSIM: 0.1754, Loss BCE: 3.1279, Content loss: 0.2069
+0.03295852661132814
+tensor(0.2826, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1082, Loss generator: 0.2826, Loss VMAF: 0.0330, Loss SSIM: 0.2477, Loss BCE: 1.9217, Content loss: 0.2806
+0.0327658081054687
+tensor(0.2467, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2183, Loss generator: 0.2467, Loss VMAF: 0.0328, Loss SSIM: 0.2124, Loss BCE: 1.4799, Content loss: 0.2452
+0.031695556640624956
+tensor(0.2412, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1323, Loss generator: 0.2412, Loss VMAF: 0.0317, Loss SSIM: 0.2076, Loss BCE: 1.9135, Content loss: 0.2393
+0.034185333251953165
+tensor(0.2694, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3336, Loss generator: 0.2694, Loss VMAF: 0.0342, Loss SSIM: 0.2339, Loss BCE: 1.3478, Content loss: 0.2681
+0.031839141845703134
+tensor(0.2735, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0937, Loss generator: 0.2735, Loss VMAF: 0.0318, Loss SSIM: 0.2391, Loss BCE: 2.5903, Content loss: 0.2709
+0.03050445556640624
+tensor(0.1860, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1876, Loss generator: 0.1860, Loss VMAF: 0.0305, Loss SSIM: 0.1515, Loss BCE: 3.9996, Content loss: 0.1820
+0.0319038391113281
+tensor(0.2731, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2751, Loss generator: 0.2731, Loss VMAF: 0.0319, Loss SSIM: 0.2392, Loss BCE: 1.9747, Content loss: 0.2711
+0.029668960571289094
+tensor(0.2211, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6917, Loss generator: 0.2211, Loss VMAF: 0.0297, Loss SSIM: 0.1887, Loss BCE: 2.6954, Content loss: 0.2184
+0.0338284301757813
+tensor(0.3065, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3035, Loss generator: 0.3065, Loss VMAF: 0.0338, Loss SSIM: 0.2708, Loss BCE: 1.8747, Content loss: 0.3047
+0.03234237670898432
+tensor(0.2370, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0454, Loss generator: 0.2370, Loss VMAF: 0.0323, Loss SSIM: 0.2017, Loss BCE: 2.9888, Content loss: 0.2340
+0.03187225341796873
+tensor(0.2058, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1589, Loss generator: 0.2058, Loss VMAF: 0.0319, Loss SSIM: 0.1699, Loss BCE: 3.9653, Content loss: 0.2018
+0.03287010192871098
+tensor(0.2357, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0653, Loss generator: 0.2357, Loss VMAF: 0.0329, Loss SSIM: 0.1999, Loss BCE: 2.8570, Content loss: 0.2328
+0.0352273559570313
+tensor(0.2999, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0410, Loss generator: 0.2999, Loss VMAF: 0.0352, Loss SSIM: 0.2618, Loss BCE: 2.9170, Content loss: 0.2970
+0.035745468139648406
+tensor(0.3035, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0780, Loss generator: 0.3035, Loss VMAF: 0.0357, Loss SSIM: 0.2650, Loss BCE: 2.7101, Content loss: 0.3008
+0.03181854248046878
+tensor(0.1982, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0371, Loss generator: 0.1982, Loss VMAF: 0.0318, Loss SSIM: 0.1630, Loss BCE: 3.3985, Content loss: 0.1948
+0.03542358398437495
+tensor(0.2863, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1200, Loss generator: 0.2863, Loss VMAF: 0.0354, Loss SSIM: 0.2487, Loss BCE: 2.2412, Content loss: 0.2841
+0.0343043518066406
+tensor(0.2247, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1793, Loss generator: 0.2247, Loss VMAF: 0.0343, Loss SSIM: 0.1875, Loss BCE: 2.9421, Content loss: 0.2218
+0.03187026977539065
+tensor(0.2323, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3926, Loss generator: 0.2323, Loss VMAF: 0.0319, Loss SSIM: 0.1960, Loss BCE: 4.5088, Content loss: 0.2278
+0.031211395263671893
+tensor(0.2503, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0683, Loss generator: 0.2503, Loss VMAF: 0.0312, Loss SSIM: 0.2147, Loss BCE: 4.4118, Content loss: 0.2459
+0.0346066284179688
+tensor(0.2995, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0604, Loss generator: 0.2995, Loss VMAF: 0.0346, Loss SSIM: 0.2621, Loss BCE: 2.8394, Content loss: 0.2967
+0.033298721313476554
+tensor(0.2445, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0342, Loss generator: 0.2445, Loss VMAF: 0.0333, Loss SSIM: 0.2074, Loss BCE: 3.8081, Content loss: 0.2407
+0.03285842895507818
+tensor(0.2851, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0414, Loss generator: 0.2851, Loss VMAF: 0.0329, Loss SSIM: 0.2477, Loss BCE: 4.4669, Content loss: 0.2806
+0.033502655029296835
+tensor(0.2740, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0551, Loss generator: 0.2740, Loss VMAF: 0.0335, Loss SSIM: 0.2350, Loss BCE: 5.5118, Content loss: 0.2685
+0.03408515930175782
+tensor(0.2524, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0380, Loss generator: 0.2524, Loss VMAF: 0.0341, Loss SSIM: 0.2147, Loss BCE: 3.5601, Content loss: 0.2488
+0.03192687988281251
+tensor(0.2428, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0520, Loss generator: 0.2428, Loss VMAF: 0.0319, Loss SSIM: 0.2057, Loss BCE: 5.0877, Content loss: 0.2377
+0.034425506591796884
+tensor(0.2609, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0307, Loss generator: 0.2609, Loss VMAF: 0.0344, Loss SSIM: 0.2223, Loss BCE: 4.2241, Content loss: 0.2567
+0.0325778198242187
+tensor(0.2354, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0314, Loss generator: 0.2354, Loss VMAF: 0.0326, Loss SSIM: 0.1991, Loss BCE: 3.7397, Content loss: 0.2317
+0.034066925048828134
+tensor(0.2735, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0306, Loss generator: 0.2735, Loss VMAF: 0.0341, Loss SSIM: 0.2348, Loss BCE: 4.6069, Content loss: 0.2689
+0.030107116699218728
+tensor(0.2091, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2533, Loss generator: 0.2091, Loss VMAF: 0.0301, Loss SSIM: 0.1750, Loss BCE: 3.9643, Content loss: 0.2051
+0.0340855407714844
+tensor(0.2887, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1124, Loss generator: 0.2887, Loss VMAF: 0.0341, Loss SSIM: 0.2517, Loss BCE: 2.9453, Content loss: 0.2858
+0.032524261474609406
+tensor(0.2152, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0103, Loss generator: 0.2152, Loss VMAF: 0.0325, Loss SSIM: 0.1776, Loss BCE: 5.0724, Content loss: 0.2101
+0.03508865356445312
+tensor(0.2668, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1874, Loss generator: 0.2668, Loss VMAF: 0.0351, Loss SSIM: 0.2298, Loss BCE: 1.8983, Content loss: 0.2649
+0.03237701416015626
+tensor(0.2598, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0243, Loss generator: 0.2598, Loss VMAF: 0.0324, Loss SSIM: 0.2230, Loss BCE: 4.4263, Content loss: 0.2553
+0.030821533203124973
+tensor(0.1889, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1846, Loss generator: 0.1889, Loss VMAF: 0.0308, Loss SSIM: 0.1523, Loss BCE: 5.7805, Content loss: 0.1831
+0.03245880126953127
+tensor(0.2827, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1738, Loss generator: 0.2827, Loss VMAF: 0.0325, Loss SSIM: 0.2450, Loss BCE: 5.2087, Content loss: 0.2774
+0.029431457519531246
+tensor(0.1776, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.3530, Loss generator: 0.1776, Loss VMAF: 0.0294, Loss SSIM: 0.1430, Loss BCE: 5.1636, Content loss: 0.1725
+0.032998809814453134
+tensor(0.2485, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0080, Loss generator: 0.2485, Loss VMAF: 0.0330, Loss SSIM: 0.2116, Loss BCE: 3.8384, Content loss: 0.2446
+0.029654464721679652
+tensor(0.1999, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4328, Loss generator: 0.1999, Loss VMAF: 0.0297, Loss SSIM: 0.1682, Loss BCE: 2.0514, Content loss: 0.1979
+0.0331271362304687
+tensor(0.2474, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5452, Loss generator: 0.2474, Loss VMAF: 0.0331, Loss SSIM: 0.2135, Loss BCE: 0.7693, Content loss: 0.2466
+0.03438575744628902
+tensor(0.2709, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2990, Loss generator: 0.2709, Loss VMAF: 0.0344, Loss SSIM: 0.2349, Loss BCE: 1.5360, Content loss: 0.2693
+0.03451255798339847
+tensor(0.2762, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.9813, Loss generator: 0.2762, Loss VMAF: 0.0345, Loss SSIM: 0.2405, Loss BCE: 1.1273, Content loss: 0.2751
+0.02966911315917964
+tensor(0.1786, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0869, Loss generator: 0.1786, Loss VMAF: 0.0297, Loss SSIM: 0.1451, Loss BCE: 3.8041, Content loss: 0.1748
+0.03534957885742185
+tensor(0.3346, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0301, Loss generator: 0.3346, Loss VMAF: 0.0353, Loss SSIM: 0.2951, Loss BCE: 4.1663, Content loss: 0.3305
+0.03486480712890627
+tensor(0.2947, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0160, Loss generator: 0.2947, Loss VMAF: 0.0349, Loss SSIM: 0.2540, Loss BCE: 5.8630, Content loss: 0.2888
+0.03192741394042964
+tensor(0.2387, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0353, Loss generator: 0.2387, Loss VMAF: 0.0319, Loss SSIM: 0.2015, Loss BCE: 5.2281, Content loss: 0.2335
+0.03186584472656251
+tensor(0.2216, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0700, Loss generator: 0.2216, Loss VMAF: 0.0319, Loss SSIM: 0.1849, Loss BCE: 4.8571, Content loss: 0.2168
+0.03319519042968755
+tensor(0.2215, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1138, Loss generator: 0.2215, Loss VMAF: 0.0332, Loss SSIM: 0.1843, Loss BCE: 4.0053, Content loss: 0.2175
+0.034691238403320335
+tensor(0.2792, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0436, Loss generator: 0.2792, Loss VMAF: 0.0347, Loss SSIM: 0.2399, Loss BCE: 4.6637, Content loss: 0.2745
+0.03471351623535157
+tensor(0.2650, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2129, Loss generator: 0.2650, Loss VMAF: 0.0347, Loss SSIM: 0.2239, Loss BCE: 6.4146, Content loss: 0.2586
+0.03269317626953128
+tensor(0.2624, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1580, Loss generator: 0.2624, Loss VMAF: 0.0327, Loss SSIM: 0.2255, Loss BCE: 4.2683, Content loss: 0.2582
+0.03102035522460933
+tensor(0.2113, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.7960, Loss generator: 0.2113, Loss VMAF: 0.0310, Loss SSIM: 0.1747, Loss BCE: 5.5632, Content loss: 0.2057
+0.033699951171874964
+tensor(0.2669, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0292, Loss generator: 0.2669, Loss VMAF: 0.0337, Loss SSIM: 0.2292, Loss BCE: 3.9780, Content loss: 0.2629
+0.0341365051269531
+tensor(0.3064, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0467, Loss generator: 0.3064, Loss VMAF: 0.0341, Loss SSIM: 0.2693, Loss BCE: 3.0030, Content loss: 0.3034
+0.03168067932128904
+tensor(0.2075, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4047, Loss generator: 0.2075, Loss VMAF: 0.0317, Loss SSIM: 0.1719, Loss BCE: 3.8513, Content loss: 0.2036
+0.03352722167968747
+tensor(0.2648, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1611, Loss generator: 0.2648, Loss VMAF: 0.0335, Loss SSIM: 0.2300, Loss BCE: 1.2927, Content loss: 0.2635
+0.032357177734374964
+tensor(0.2426, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0650, Loss generator: 0.2426, Loss VMAF: 0.0324, Loss SSIM: 0.2079, Loss BCE: 2.3620, Content loss: 0.2403
+0.032035675048828094
+tensor(0.2416, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0722, Loss generator: 0.2416, Loss VMAF: 0.0320, Loss SSIM: 0.2067, Loss BCE: 2.8525, Content loss: 0.2388
+0.030276184082031254
+tensor(0.2323, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2173, Loss generator: 0.2323, Loss VMAF: 0.0303, Loss SSIM: 0.2002, Loss BCE: 1.8080, Content loss: 0.2305
+0.0350698852539062
+tensor(0.2472, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.2708, Loss generator: 0.2472, Loss VMAF: 0.0351, Loss SSIM: 0.2110, Loss BCE: 1.2060, Content loss: 0.2460
+0.0348777008056641
+tensor(0.2835, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2804, Loss generator: 0.2835, Loss VMAF: 0.0349, Loss SSIM: 0.2462, Loss BCE: 2.3717, Content loss: 0.2811
+0.03262084960937495
+tensor(0.2622, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0533, Loss generator: 0.2622, Loss VMAF: 0.0326, Loss SSIM: 0.2251, Loss BCE: 4.4033, Content loss: 0.2578
+0.03298370361328129
+tensor(0.2456, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0130, Loss generator: 0.2456, Loss VMAF: 0.0330, Loss SSIM: 0.2079, Loss BCE: 4.7454, Content loss: 0.2408
+0.031429595947265576
+tensor(0.1962, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5561, Loss generator: 0.1962, Loss VMAF: 0.0314, Loss SSIM: 0.1590, Loss BCE: 5.8223, Content loss: 0.1904
+0.03453056335449223
+tensor(0.2983, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0185, Loss generator: 0.2983, Loss VMAF: 0.0345, Loss SSIM: 0.2585, Loss BCE: 5.2517, Content loss: 0.2931
+0.03258193969726564
+tensor(0.2836, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1873, Loss generator: 0.2836, Loss VMAF: 0.0326, Loss SSIM: 0.2459, Loss BCE: 5.1455, Content loss: 0.2785
+0.030844421386718723
+tensor(0.1717, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.5194, Loss generator: 0.1717, Loss VMAF: 0.0308, Loss SSIM: 0.1360, Loss BCE: 4.8824, Content loss: 0.1668
+0.035177383422851594
+tensor(0.3013, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0302, Loss generator: 0.3013, Loss VMAF: 0.0352, Loss SSIM: 0.2633, Loss BCE: 2.8665, Content loss: 0.2984
+0.03150276184082035
+tensor(0.2491, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1136, Loss generator: 0.2491, Loss VMAF: 0.0315, Loss SSIM: 0.2144, Loss BCE: 3.2434, Content loss: 0.2459
+0.030621719360351518
+tensor(0.2054, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0704, Loss generator: 0.2054, Loss VMAF: 0.0306, Loss SSIM: 0.1724, Loss BCE: 2.3585, Content loss: 0.2030
+0.033877258300781254
+tensor(0.3022, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0542, Loss generator: 0.3022, Loss VMAF: 0.0339, Loss SSIM: 0.2663, Loss BCE: 1.9824, Content loss: 0.3002
+0.036608581542968754
+tensor(0.2724, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2013, Loss generator: 0.2724, Loss VMAF: 0.0366, Loss SSIM: 0.2344, Loss BCE: 1.3760, Content loss: 0.2710
+0.03333854675292969
+tensor(0.2481, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0824, Loss generator: 0.2481, Loss VMAF: 0.0333, Loss SSIM: 0.2126, Loss BCE: 2.1577, Content loss: 0.2459
+0.030690383911132768
+tensor(0.2044, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1612, Loss generator: 0.2044, Loss VMAF: 0.0307, Loss SSIM: 0.1715, Loss BCE: 2.1547, Content loss: 0.2022
+0.031882553100585964
+tensor(0.2254, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1286, Loss generator: 0.2254, Loss VMAF: 0.0319, Loss SSIM: 0.1910, Loss BCE: 2.4828, Content loss: 0.2229
+0.03204025268554689
+tensor(0.2233, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0576, Loss generator: 0.2233, Loss VMAF: 0.0320, Loss SSIM: 0.1880, Loss BCE: 3.2426, Content loss: 0.2200
+0.03362396240234378
+tensor(0.2479, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0328, Loss generator: 0.2479, Loss VMAF: 0.0336, Loss SSIM: 0.2107, Loss BCE: 3.6398, Content loss: 0.2443
+0.03174652099609376
+tensor(0.2508, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0146, Loss generator: 0.2508, Loss VMAF: 0.0317, Loss SSIM: 0.2150, Loss BCE: 4.0897, Content loss: 0.2467
+0.035064697265625
+tensor(0.2672, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0643, Loss generator: 0.2672, Loss VMAF: 0.0351, Loss SSIM: 0.2286, Loss BCE: 3.5293, Content loss: 0.2637
+0.03332092285156252
+tensor(0.2640, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0159, Loss generator: 0.2640, Loss VMAF: 0.0333, Loss SSIM: 0.2262, Loss BCE: 4.5088, Content loss: 0.2595
+0.03489440917968745
+tensor(0.2848, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0118, Loss generator: 0.2848, Loss VMAF: 0.0349, Loss SSIM: 0.2448, Loss BCE: 5.0346, Content loss: 0.2797
+0.032491912841796866
+tensor(0.2223, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0838, Loss generator: 0.2223, Loss VMAF: 0.0325, Loss SSIM: 0.1872, Loss BCE: 2.5636, Content loss: 0.2197
+0.031017837524414116
+tensor(0.2056, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1300, Loss generator: 0.2056, Loss VMAF: 0.0310, Loss SSIM: 0.1688, Loss BCE: 5.7880, Content loss: 0.1999
+0.03338623046875
+tensor(0.2458, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0308, Loss generator: 0.2458, Loss VMAF: 0.0334, Loss SSIM: 0.2086, Loss BCE: 3.7686, Content loss: 0.2420
+0.030738143920898464
+tensor(0.2104, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1427, Loss generator: 0.2104, Loss VMAF: 0.0307, Loss SSIM: 0.1749, Loss BCE: 4.7136, Content loss: 0.2056
+0.03476943969726565
+tensor(0.2917, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0283, Loss generator: 0.2917, Loss VMAF: 0.0348, Loss SSIM: 0.2515, Loss BCE: 5.5180, Content loss: 0.2862
+0.03123977661132815
+tensor(0.2365, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0198, Loss generator: 0.2365, Loss VMAF: 0.0312, Loss SSIM: 0.1987, Loss BCE: 6.5168, Content loss: 0.2300
+0.03275032043457027
+tensor(0.2401, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0060, Loss generator: 0.2401, Loss VMAF: 0.0328, Loss SSIM: 0.2020, Loss BCE: 5.3508, Content loss: 0.2348
+0.030545349121093746
+tensor(0.2363, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0380, Loss generator: 0.2363, Loss VMAF: 0.0305, Loss SSIM: 0.1986, Loss BCE: 7.1212, Content loss: 0.2292
+0.03303550720214843
+tensor(0.2456, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1881, Loss generator: 0.2456, Loss VMAF: 0.0330, Loss SSIM: 0.2067, Loss BCE: 5.8169, Content loss: 0.2398
+0.03147674560546876
+tensor(0.2328, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0084, Loss generator: 0.2328, Loss VMAF: 0.0315, Loss SSIM: 0.1949, Loss BCE: 6.4939, Content loss: 0.2263
+0.03249145507812501
+tensor(0.2405, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0273, Loss generator: 0.2405, Loss VMAF: 0.0325, Loss SSIM: 0.2041, Loss BCE: 3.9286, Content loss: 0.2366
+0.03340263366699214
+tensor(0.3155, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0056, Loss generator: 0.3155, Loss VMAF: 0.0334, Loss SSIM: 0.2766, Loss BCE: 5.4552, Content loss: 0.3100
+0.03079589843749997
+tensor(0.2043, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0495, Loss generator: 0.2043, Loss VMAF: 0.0308, Loss SSIM: 0.1694, Loss BCE: 4.0959, Content loss: 0.2002
+0.0351601409912109
+tensor(0.2503, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0146, Loss generator: 0.2503, Loss VMAF: 0.0352, Loss SSIM: 0.2115, Loss BCE: 3.6541, Content loss: 0.2467
+0.034947509765624996
+tensor(0.2785, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0546, Loss generator: 0.2785, Loss VMAF: 0.0349, Loss SSIM: 0.2399, Loss BCE: 3.6550, Content loss: 0.2748
+0.03256645202636721
+tensor(0.2277, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0129, Loss generator: 0.2277, Loss VMAF: 0.0326, Loss SSIM: 0.1911, Loss BCE: 4.1100, Content loss: 0.2236
+0.03326919555664065
+tensor(0.2576, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0121, Loss generator: 0.2576, Loss VMAF: 0.0333, Loss SSIM: 0.2185, Loss BCE: 5.8712, Content loss: 0.2518
+0.03196609497070313
+tensor(0.1995, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0060, Loss generator: 0.1995, Loss VMAF: 0.0320, Loss SSIM: 0.1618, Loss BCE: 5.8029, Content loss: 0.1937
+0.03207351684570314
+tensor(0.2057, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0888, Loss generator: 0.2057, Loss VMAF: 0.0321, Loss SSIM: 0.1711, Loss BCE: 2.4780, Content loss: 0.2032
+0.0301821899414062
+tensor(0.2097, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0177, Loss generator: 0.2097, Loss VMAF: 0.0302, Loss SSIM: 0.1726, Loss BCE: 6.9444, Content loss: 0.2027
+0.03383819580078129
+tensor(0.2696, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0099, Loss generator: 0.2696, Loss VMAF: 0.0338, Loss SSIM: 0.2312, Loss BCE: 4.6186, Content loss: 0.2650
+0.03286476135253902
+tensor(0.2398, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0164, Loss generator: 0.2398, Loss VMAF: 0.0329, Loss SSIM: 0.2012, Loss BCE: 5.7276, Content loss: 0.2341
+0.03144760131835933
+tensor(0.2312, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0043, Loss generator: 0.2312, Loss VMAF: 0.0314, Loss SSIM: 0.1930, Loss BCE: 6.6746, Content loss: 0.2245
+0.03417465209960935
+tensor(0.2773, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0243, Loss generator: 0.2773, Loss VMAF: 0.0342, Loss SSIM: 0.2388, Loss BCE: 4.2604, Content loss: 0.2730
+0.031513519287109326
+tensor(0.2372, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0442, Loss generator: 0.2372, Loss VMAF: 0.0315, Loss SSIM: 0.1986, Loss BCE: 7.0387, Content loss: 0.2301
+0.03259757995605472
+tensor(0.2353, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0019, Loss generator: 0.2353, Loss VMAF: 0.0326, Loss SSIM: 0.1954, Loss BCE: 7.3170, Content loss: 0.2280
+0.03163703918457028
+tensor(0.2351, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3751, Loss generator: 0.2351, Loss VMAF: 0.0316, Loss SSIM: 0.1980, Loss BCE: 5.5135, Content loss: 0.2296
+0.035131149291992236
+tensor(0.2877, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0151, Loss generator: 0.2877, Loss VMAF: 0.0351, Loss SSIM: 0.2479, Loss BCE: 4.6126, Content loss: 0.2831
+0.031189804077148442
+tensor(0.2867, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0118, Loss generator: 0.2867, Loss VMAF: 0.0312, Loss SSIM: 0.2483, Loss BCE: 7.1601, Content loss: 0.2795
+0.03329811096191404
+tensor(0.3032, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0021, Loss generator: 0.3032, Loss VMAF: 0.0333, Loss SSIM: 0.2638, Loss BCE: 6.0811, Content loss: 0.2971
+0.03104377746582032
+tensor(0.1978, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0501, Loss generator: 0.1978, Loss VMAF: 0.0310, Loss SSIM: 0.1609, Loss BCE: 5.8635, Content loss: 0.1920
+0.02901458740234375
+tensor(0.1703, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4469, Loss generator: 0.1703, Loss VMAF: 0.0290, Loss SSIM: 0.1345, Loss BCE: 6.8615, Content loss: 0.1635
+0.03417160034179689
+tensor(0.2771, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1143, Loss generator: 0.2771, Loss VMAF: 0.0342, Loss SSIM: 0.2418, Loss BCE: 1.1113, Content loss: 0.2760
+0.036594924926757866
+tensor(0.3210, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.7801, Loss generator: 0.3210, Loss VMAF: 0.0366, Loss SSIM: 0.2833, Loss BCE: 1.0886, Content loss: 0.3199
+0.03197975158691402
+tensor(0.2332, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0037, Loss generator: 0.2332, Loss VMAF: 0.0320, Loss SSIM: 0.1954, Loss BCE: 5.7471, Content loss: 0.2274
+0.03295021057128911
+tensor(0.2798, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0072, Loss generator: 0.2798, Loss VMAF: 0.0330, Loss SSIM: 0.2419, Loss BCE: 4.9652, Content loss: 0.2749
+0.03267456054687501
+tensor(0.2540, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0128, Loss generator: 0.2540, Loss VMAF: 0.0327, Loss SSIM: 0.2169, Loss BCE: 4.4683, Content loss: 0.2496
+0.03540664672851568
+tensor(0.2826, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0124, Loss generator: 0.2826, Loss VMAF: 0.0354, Loss SSIM: 0.2428, Loss BCE: 4.4631, Content loss: 0.2782
+0.032638397216796844
+tensor(0.2281, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0109, Loss generator: 0.2281, Loss VMAF: 0.0326, Loss SSIM: 0.1903, Loss BCE: 5.1465, Content loss: 0.2230
+0.03417915344238276
+tensor(0.2709, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0065, Loss generator: 0.2709, Loss VMAF: 0.0342, Loss SSIM: 0.2310, Loss BCE: 5.6584, Content loss: 0.2652
+0.036809082031249996
+tensor(0.2843, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0332, Loss generator: 0.2843, Loss VMAF: 0.0368, Loss SSIM: 0.2438, Loss BCE: 3.6994, Content loss: 0.2806
+0.03227172851562499
+tensor(0.2447, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0059, Loss generator: 0.2447, Loss VMAF: 0.0323, Loss SSIM: 0.2071, Loss BCE: 5.3213, Content loss: 0.2393
+0.032170944213867236
+tensor(0.2472, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0175, Loss generator: 0.2472, Loss VMAF: 0.0322, Loss SSIM: 0.2079, Loss BCE: 7.1910, Content loss: 0.2400
+0.03527877807617186
+tensor(0.2752, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0143, Loss generator: 0.2752, Loss VMAF: 0.0353, Loss SSIM: 0.2353, Loss BCE: 4.6633, Content loss: 0.2705
+0.03466690063476563
+tensor(0.2455, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0413, Loss generator: 0.2455, Loss VMAF: 0.0347, Loss SSIM: 0.2065, Loss BCE: 4.2583, Content loss: 0.2412
+0.03389160156250004
+tensor(0.2345, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0043, Loss generator: 0.2345, Loss VMAF: 0.0339, Loss SSIM: 0.1943, Loss BCE: 6.3114, Content loss: 0.2282
+0.03623718261718745
+tensor(0.2793, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0197, Loss generator: 0.2793, Loss VMAF: 0.0362, Loss SSIM: 0.2388, Loss BCE: 4.2382, Content loss: 0.2751
+0.030129089355468763
+tensor(0.1587, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 2.4194, Loss generator: 0.1587, Loss VMAF: 0.0301, Loss SSIM: 0.1219, Loss BCE: 6.6946, Content loss: 0.1520
+0.03692733764648437
+tensor(0.3318, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0069, Loss generator: 0.3318, Loss VMAF: 0.0369, Loss SSIM: 0.2904, Loss BCE: 4.4064, Content loss: 0.3274
+0.03339271545410161
+tensor(0.2079, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0274, Loss generator: 0.2079, Loss VMAF: 0.0334, Loss SSIM: 0.1693, Loss BCE: 5.1650, Content loss: 0.2027
+0.03544677734375001
+tensor(0.2742, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0752, Loss generator: 0.2742, Loss VMAF: 0.0354, Loss SSIM: 0.2362, Loss BCE: 2.5602, Content loss: 0.2716
+0.03309814453125004
+tensor(0.2511, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0200, Loss generator: 0.2511, Loss VMAF: 0.0331, Loss SSIM: 0.2132, Loss BCE: 4.7947, Content loss: 0.2463
+0.035690689086914085
+tensor(0.2926, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1237, Loss generator: 0.2926, Loss VMAF: 0.0357, Loss SSIM: 0.2548, Loss BCE: 2.1066, Content loss: 0.2905
+0.032939910888671875
+tensor(0.2271, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0418, Loss generator: 0.2271, Loss VMAF: 0.0329, Loss SSIM: 0.1905, Loss BCE: 3.6952, Content loss: 0.2234
+0.03381141662597653
+tensor(0.2509, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0183, Loss generator: 0.2509, Loss VMAF: 0.0338, Loss SSIM: 0.2135, Loss BCE: 3.6556, Content loss: 0.2473
+0.030216140747070352
+tensor(0.1971, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1731, Loss generator: 0.1971, Loss VMAF: 0.0302, Loss SSIM: 0.1638, Loss BCE: 3.0547, Content loss: 0.1941
+0.03152755737304691
+tensor(0.2153, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0571, Loss generator: 0.2153, Loss VMAF: 0.0315, Loss SSIM: 0.1804, Loss BCE: 3.3313, Content loss: 0.2119
+0.030585250854492152
+tensor(0.2021, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1551, Loss generator: 0.2021, Loss VMAF: 0.0306, Loss SSIM: 0.1673, Loss BCE: 4.1309, Content loss: 0.1979
+0.03278579711914065
+tensor(0.2192, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0367, Loss generator: 0.2192, Loss VMAF: 0.0328, Loss SSIM: 0.1810, Loss BCE: 5.4347, Content loss: 0.2138
+0.037156829833984384
+tensor(0.3187, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0091, Loss generator: 0.3187, Loss VMAF: 0.0372, Loss SSIM: 0.2768, Loss BCE: 4.7512, Content loss: 0.3140
+0.033160095214843754
+tensor(0.2644, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0122, Loss generator: 0.2644, Loss VMAF: 0.0332, Loss SSIM: 0.2268, Loss BCE: 4.3712, Content loss: 0.2600
+0.031650543212890625
+tensor(0.2871, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0336, Loss generator: 0.2871, Loss VMAF: 0.0317, Loss SSIM: 0.2498, Loss BCE: 5.6512, Content loss: 0.2814
+0.03150276184082035
+tensor(0.2397, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3187, Loss generator: 0.2397, Loss VMAF: 0.0315, Loss SSIM: 0.2039, Loss BCE: 4.2404, Content loss: 0.2355
+0.034421310424804674
+tensor(0.3384, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0080, Loss generator: 0.3384, Loss VMAF: 0.0344, Loss SSIM: 0.2998, Loss BCE: 4.2556, Content loss: 0.3342
+0.033488464355468706
+tensor(0.3022, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0106, Loss generator: 0.3022, Loss VMAF: 0.0335, Loss SSIM: 0.2647, Loss BCE: 4.0093, Content loss: 0.2981
+0.03157119750976567
+tensor(0.2263, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0561, Loss generator: 0.2263, Loss VMAF: 0.0316, Loss SSIM: 0.1905, Loss BCE: 4.1766, Content loss: 0.2221
+0.031611633300781206
+tensor(0.2198, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0190, Loss generator: 0.2198, Loss VMAF: 0.0316, Loss SSIM: 0.1846, Loss BCE: 3.6220, Content loss: 0.2162
+0.033497619628906294
+tensor(0.2445, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0483, Loss generator: 0.2445, Loss VMAF: 0.0335, Loss SSIM: 0.2080, Loss BCE: 3.0162, Content loss: 0.2415
+0.032613906860351594
+tensor(0.2380, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0166, Loss generator: 0.2380, Loss VMAF: 0.0326, Loss SSIM: 0.2014, Loss BCE: 4.0076, Content loss: 0.2340
+0.03448379516601563
+tensor(0.2947, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2074, Loss generator: 0.2947, Loss VMAF: 0.0345, Loss SSIM: 0.2583, Loss BCE: 1.9957, Content loss: 0.2927
+0.030780029296874956
+tensor(0.1789, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0221, Loss generator: 0.1789, Loss VMAF: 0.0308, Loss SSIM: 0.1436, Loss BCE: 4.4590, Content loss: 0.1744
+0.032122802734374956
+tensor(0.2196, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0764, Loss generator: 0.2196, Loss VMAF: 0.0321, Loss SSIM: 0.1841, Loss BCE: 3.4164, Content loss: 0.2162
+0.03280487060546877
+tensor(0.2493, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0218, Loss generator: 0.2493, Loss VMAF: 0.0328, Loss SSIM: 0.2127, Loss BCE: 3.7828, Content loss: 0.2455
+0.0324960327148438
+tensor(0.2478, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0198, Loss generator: 0.2478, Loss VMAF: 0.0325, Loss SSIM: 0.2115, Loss BCE: 3.8215, Content loss: 0.2440
+0.033007812499999956
+tensor(0.2561, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0058, Loss generator: 0.2561, Loss VMAF: 0.0330, Loss SSIM: 0.2182, Loss BCE: 4.8877, Content loss: 0.2512
+0.033685455322265634
+tensor(0.2893, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0070, Loss generator: 0.2893, Loss VMAF: 0.0337, Loss SSIM: 0.2507, Loss BCE: 4.8164, Content loss: 0.2844
+0.03184371948242193
+tensor(0.2204, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0150, Loss generator: 0.2204, Loss VMAF: 0.0318, Loss SSIM: 0.1844, Loss BCE: 4.1298, Content loss: 0.2162
+0.03745330810546876
+tensor(0.3157, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0276, Loss generator: 0.3157, Loss VMAF: 0.0375, Loss SSIM: 0.2744, Loss BCE: 3.8826, Content loss: 0.3118
+0.031987304687499996
+tensor(0.2277, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0255, Loss generator: 0.2277, Loss VMAF: 0.0320, Loss SSIM: 0.1893, Loss BCE: 6.3740, Content loss: 0.2213
+0.031989898681640594
+tensor(0.3032, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3609, Loss generator: 0.3032, Loss VMAF: 0.0320, Loss SSIM: 0.2652, Loss BCE: 5.9939, Content loss: 0.2972
+0.031442413330078134
+tensor(0.2212, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0788, Loss generator: 0.2212, Loss VMAF: 0.0314, Loss SSIM: 0.1848, Loss BCE: 4.9451, Content loss: 0.2163
+0.03330131530761715
+tensor(0.2426, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0171, Loss generator: 0.2426, Loss VMAF: 0.0333, Loss SSIM: 0.2059, Loss BCE: 3.4384, Content loss: 0.2392
+0.03175804138183591
+tensor(0.2308, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0105, Loss generator: 0.2308, Loss VMAF: 0.0318, Loss SSIM: 0.1941, Loss BCE: 4.8764, Content loss: 0.2259
+0.03454727172851557
+tensor(0.2815, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0091, Loss generator: 0.2815, Loss VMAF: 0.0345, Loss SSIM: 0.2427, Loss BCE: 4.2662, Content loss: 0.2772
+0.039902648925781214
+tensor(0.3457, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0495, Loss generator: 0.3457, Loss VMAF: 0.0399, Loss SSIM: 0.3031, Loss BCE: 2.6866, Content loss: 0.3430
+0.03530906677246093
+tensor(0.2902, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0060, Loss generator: 0.2902, Loss VMAF: 0.0353, Loss SSIM: 0.2499, Loss BCE: 4.9282, Content loss: 0.2852
+0.03317573547363284
+tensor(0.2777, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0180, Loss generator: 0.2777, Loss VMAF: 0.0332, Loss SSIM: 0.2400, Loss BCE: 4.5399, Content loss: 0.2732
+0.033459014892578076
+tensor(0.2646, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0067, Loss generator: 0.2646, Loss VMAF: 0.0335, Loss SSIM: 0.2261, Loss BCE: 5.0277, Content loss: 0.2595
+0.03358963012695315
+tensor(0.2506, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0268, Loss generator: 0.2506, Loss VMAF: 0.0336, Loss SSIM: 0.2131, Loss BCE: 3.9681, Content loss: 0.2467
+0.030817565917968803
+tensor(0.2074, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0070, Loss generator: 0.2074, Loss VMAF: 0.0308, Loss SSIM: 0.1714, Loss BCE: 5.2222, Content loss: 0.2022
+0.03166679382324222
+tensor(0.2249, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0504, Loss generator: 0.2249, Loss VMAF: 0.0317, Loss SSIM: 0.1900, Loss BCE: 3.1907, Content loss: 0.2217
+0.03226623535156248
+tensor(0.2297, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0105, Loss generator: 0.2297, Loss VMAF: 0.0323, Loss SSIM: 0.1926, Loss BCE: 4.8734, Content loss: 0.2249
+0.031523208618164045
+tensor(0.3319, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0086, Loss generator: 0.3319, Loss VMAF: 0.0315, Loss SSIM: 0.2947, Loss BCE: 5.6943, Content loss: 0.3262
+0.03421684265136715
+tensor(0.2972, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0098, Loss generator: 0.2972, Loss VMAF: 0.0342, Loss SSIM: 0.2581, Loss BCE: 4.8424, Content loss: 0.2923
+0.033941192626953165
+tensor(0.2805, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0031, Loss generator: 0.2805, Loss VMAF: 0.0339, Loss SSIM: 0.2406, Loss BCE: 5.9971, Content loss: 0.2745
+0.032733612060546924
+tensor(0.2699, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0466, Loss generator: 0.2699, Loss VMAF: 0.0327, Loss SSIM: 0.2313, Loss BCE: 5.9336, Content loss: 0.2640
+0.03309524536132813
+tensor(0.2914, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1138, Loss generator: 0.2914, Loss VMAF: 0.0331, Loss SSIM: 0.2524, Loss BCE: 5.9485, Content loss: 0.2855
+0.033526611328124956
+tensor(0.2548, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0309, Loss generator: 0.2548, Loss VMAF: 0.0335, Loss SSIM: 0.2175, Loss BCE: 3.8058, Content loss: 0.2510
+0.031747894287109335
+tensor(0.2520, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0033, Loss generator: 0.2520, Loss VMAF: 0.0317, Loss SSIM: 0.2145, Loss BCE: 5.7877, Content loss: 0.2462
+0.03535568237304687
+tensor(0.2694, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0102, Loss generator: 0.2694, Loss VMAF: 0.0354, Loss SSIM: 0.2296, Loss BCE: 4.4844, Content loss: 0.2649
+0.03289710998535156
+tensor(0.2377, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0116, Loss generator: 0.2377, Loss VMAF: 0.0329, Loss SSIM: 0.2006, Loss BCE: 4.1983, Content loss: 0.2335
+0.03202102661132811
+tensor(0.2039, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0044, Loss generator: 0.2039, Loss VMAF: 0.0320, Loss SSIM: 0.1668, Loss BCE: 5.0427, Content loss: 0.1988
+0.03355514526367187
+tensor(0.2534, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0495, Loss generator: 0.2534, Loss VMAF: 0.0336, Loss SSIM: 0.2169, Loss BCE: 2.9869, Content loss: 0.2505
+0.03174903869628909
+tensor(0.2340, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0143, Loss generator: 0.2340, Loss VMAF: 0.0317, Loss SSIM: 0.1960, Loss BCE: 6.1832, Content loss: 0.2278
+0.03316520690917968
+tensor(0.2488, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0771, Loss generator: 0.2488, Loss VMAF: 0.0332, Loss SSIM: 0.2124, Loss BCE: 3.1763, Content loss: 0.2456
+0.032939910888671875
+tensor(0.2425, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0095, Loss generator: 0.2425, Loss VMAF: 0.0329, Loss SSIM: 0.2047, Loss BCE: 4.8702, Content loss: 0.2376
+0.032745513916015656
+tensor(0.2814, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0038, Loss generator: 0.2814, Loss VMAF: 0.0327, Loss SSIM: 0.2428, Loss BCE: 5.7794, Content loss: 0.2756
+0.03256561279296877
+tensor(0.2429, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0036, Loss generator: 0.2429, Loss VMAF: 0.0326, Loss SSIM: 0.2049, Loss BCE: 5.4317, Content loss: 0.2375
+0.029346389770507852
+tensor(0.1744, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 2.2966, Loss generator: 0.1744, Loss VMAF: 0.0293, Loss SSIM: 0.1392, Loss BCE: 5.8556, Content loss: 0.1686
+0.029806518554687522
+tensor(0.1668, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0373, Loss generator: 0.1668, Loss VMAF: 0.0298, Loss SSIM: 0.1331, Loss BCE: 3.8733, Content loss: 0.1629
+0.03252861022949216
+tensor(0.2007, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0635, Loss generator: 0.2007, Loss VMAF: 0.0325, Loss SSIM: 0.1667, Loss BCE: 1.4431, Content loss: 0.1993
+0.034402694702148406
+tensor(0.2517, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1079, Loss generator: 0.2517, Loss VMAF: 0.0344, Loss SSIM: 0.2151, Loss BCE: 2.1601, Content loss: 0.2495
+0.03448242187499995
+tensor(0.2608, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1133, Loss generator: 0.2608, Loss VMAF: 0.0345, Loss SSIM: 0.2241, Loss BCE: 2.2706, Content loss: 0.2586
+0.029299621582031254
+tensor(0.1687, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1147, Loss generator: 0.1687, Loss VMAF: 0.0293, Loss SSIM: 0.1367, Loss BCE: 2.6995, Content loss: 0.1660
+0.03486022949218748
+tensor(0.2745, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0686, Loss generator: 0.2745, Loss VMAF: 0.0349, Loss SSIM: 0.2373, Loss BCE: 2.3939, Content loss: 0.2721
+0.034259490966796924
+tensor(0.2642, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.8327, Loss generator: 0.2642, Loss VMAF: 0.0343, Loss SSIM: 0.2281, Loss BCE: 1.8512, Content loss: 0.2624
+0.03179275512695312
+tensor(0.2563, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0454, Loss generator: 0.2563, Loss VMAF: 0.0318, Loss SSIM: 0.2207, Loss BCE: 3.8025, Content loss: 0.2525
+0.035195846557617205
+tensor(0.2633, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0504, Loss generator: 0.2633, Loss VMAF: 0.0352, Loss SSIM: 0.2245, Loss BCE: 3.6315, Content loss: 0.2597
+0.03469024658203124
+tensor(0.2909, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0041, Loss generator: 0.2909, Loss VMAF: 0.0347, Loss SSIM: 0.2505, Loss BCE: 5.7159, Content loss: 0.2852
+0.032119903564453156
+tensor(0.2546, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0036, Loss generator: 0.2546, Loss VMAF: 0.0321, Loss SSIM: 0.2166, Loss BCE: 5.8883, Content loss: 0.2487
+0.03145439147949214
+tensor(0.2516, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0514, Loss generator: 0.2516, Loss VMAF: 0.0315, Loss SSIM: 0.2140, Loss BCE: 6.1468, Content loss: 0.2455
+0.031104888916015594
+tensor(0.2586, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0050, Loss generator: 0.2586, Loss VMAF: 0.0311, Loss SSIM: 0.2208, Loss BCE: 6.6265, Content loss: 0.2519
+0.03113845825195316
+tensor(0.2231, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.8976, Loss generator: 0.2231, Loss VMAF: 0.0311, Loss SSIM: 0.1852, Loss BCE: 6.8141, Content loss: 0.2163
+0.03312255859375002
+tensor(0.2276, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0173, Loss generator: 0.2276, Loss VMAF: 0.0331, Loss SSIM: 0.1890, Loss BCE: 5.4550, Content loss: 0.2221
+0.033115081787109424
+tensor(0.2492, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0094, Loss generator: 0.2492, Loss VMAF: 0.0331, Loss SSIM: 0.2106, Loss BCE: 5.4720, Content loss: 0.2437
+0.03252777099609372
+tensor(0.2419, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0119, Loss generator: 0.2419, Loss VMAF: 0.0325, Loss SSIM: 0.2048, Loss BCE: 4.4762, Content loss: 0.2374
+0.033007507324218754
+tensor(0.2629, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0735, Loss generator: 0.2629, Loss VMAF: 0.0330, Loss SSIM: 0.2250, Loss BCE: 4.8212, Content loss: 0.2580
+0.03473350524902341
+tensor(0.3178, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0131, Loss generator: 0.3178, Loss VMAF: 0.0347, Loss SSIM: 0.2789, Loss BCE: 4.1316, Content loss: 0.3137
+0.032255630493164045
+tensor(0.2448, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0082, Loss generator: 0.2448, Loss VMAF: 0.0323, Loss SSIM: 0.2081, Loss BCE: 4.4202, Content loss: 0.2404
+0.031124114990234375
+tensor(0.2195, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0639, Loss generator: 0.2195, Loss VMAF: 0.0311, Loss SSIM: 0.1842, Loss BCE: 4.1796, Content loss: 0.2153
+0.03201942443847661
+tensor(0.2387, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0137, Loss generator: 0.2387, Loss VMAF: 0.0320, Loss SSIM: 0.2022, Loss BCE: 4.4948, Content loss: 0.2342
+0.03518310546875003
+tensor(0.2674, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0178, Loss generator: 0.2674, Loss VMAF: 0.0352, Loss SSIM: 0.2283, Loss BCE: 3.9235, Content loss: 0.2635
+0.03347480773925782
+tensor(0.2542, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0198, Loss generator: 0.2542, Loss VMAF: 0.0335, Loss SSIM: 0.2166, Loss BCE: 4.0978, Content loss: 0.2501
+0.033895950317382795
+tensor(0.2604, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0159, Loss generator: 0.2604, Loss VMAF: 0.0339, Loss SSIM: 0.2229, Loss BCE: 3.6485, Content loss: 0.2568
+0.03406265258789065
+tensor(0.2701, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0427, Loss generator: 0.2701, Loss VMAF: 0.0341, Loss SSIM: 0.2328, Loss BCE: 3.2631, Content loss: 0.2669
+0.034743576049804714
+tensor(0.3027, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1947, Loss generator: 0.3027, Loss VMAF: 0.0347, Loss SSIM: 0.2657, Loss BCE: 2.2497, Content loss: 0.3005
+0.03144226074218748
+tensor(0.2339, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0151, Loss generator: 0.2339, Loss VMAF: 0.0314, Loss SSIM: 0.1982, Loss BCE: 4.3001, Content loss: 0.2296
+0.03281242370605464
+tensor(0.2322, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0076, Loss generator: 0.2322, Loss VMAF: 0.0328, Loss SSIM: 0.1947, Loss BCE: 4.6430, Content loss: 0.2275
+0.03447883605957036
+tensor(0.2829, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0176, Loss generator: 0.2829, Loss VMAF: 0.0345, Loss SSIM: 0.2447, Loss BCE: 3.7615, Content loss: 0.2792
+0.03313385009765624
+tensor(0.2537, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0105, Loss generator: 0.2537, Loss VMAF: 0.0331, Loss SSIM: 0.2154, Loss BCE: 5.1603, Content loss: 0.2486
+0.032918319702148424
+tensor(0.2604, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0499, Loss generator: 0.2604, Loss VMAF: 0.0329, Loss SSIM: 0.2218, Loss BCE: 5.6093, Content loss: 0.2547
+0.03371719360351566
+tensor(0.2826, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0043, Loss generator: 0.2826, Loss VMAF: 0.0337, Loss SSIM: 0.2435, Loss BCE: 5.4402, Content loss: 0.2772
+0.03076728820800778
+tensor(0.2038, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0040, Loss generator: 0.2038, Loss VMAF: 0.0308, Loss SSIM: 0.1671, Loss BCE: 5.9182, Content loss: 0.1979
+0.03352508544921873
+tensor(0.2615, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0082, Loss generator: 0.2615, Loss VMAF: 0.0335, Loss SSIM: 0.2230, Loss BCE: 4.9964, Content loss: 0.2565
+0.031242523193359406
+tensor(0.1797, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0127, Loss generator: 0.1797, Loss VMAF: 0.0312, Loss SSIM: 0.1434, Loss BCE: 5.0147, Content loss: 0.1747
+0.03329315185546877
+tensor(0.2707, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0150, Loss generator: 0.2707, Loss VMAF: 0.0333, Loss SSIM: 0.2331, Loss BCE: 4.3524, Content loss: 0.2664
+0.03426460266113285
+tensor(0.2383, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0119, Loss generator: 0.2383, Loss VMAF: 0.0343, Loss SSIM: 0.1987, Loss BCE: 5.2608, Content loss: 0.2330
+0.0331112670898438
+tensor(0.2618, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0833, Loss generator: 0.2618, Loss VMAF: 0.0331, Loss SSIM: 0.2230, Loss BCE: 5.6960, Content loss: 0.2561
+0.03362060546875001
+tensor(0.2250, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0057, Loss generator: 0.2250, Loss VMAF: 0.0336, Loss SSIM: 0.1862, Loss BCE: 5.2548, Content loss: 0.2198
+0.03220474243164062
+tensor(0.2071, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0105, Loss generator: 0.2071, Loss VMAF: 0.0322, Loss SSIM: 0.1695, Loss BCE: 5.4002, Content loss: 0.2017
+0.03501815795898433
+tensor(0.3108, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0065, Loss generator: 0.3108, Loss VMAF: 0.0350, Loss SSIM: 0.2706, Loss BCE: 5.1310, Content loss: 0.3056
+0.036291275024414094
+tensor(0.3003, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0024, Loss generator: 0.3003, Loss VMAF: 0.0363, Loss SSIM: 0.2584, Loss BCE: 5.6229, Content loss: 0.2947
+0.03085380554199224
+tensor(0.2118, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1426, Loss generator: 0.2118, Loss VMAF: 0.0309, Loss SSIM: 0.1770, Loss BCE: 3.9590, Content loss: 0.2079
+0.03391418457031248
+tensor(0.2890, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0079, Loss generator: 0.2890, Loss VMAF: 0.0339, Loss SSIM: 0.2497, Loss BCE: 5.3905, Content loss: 0.2836
+0.031527709960937456
+tensor(0.2229, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0071, Loss generator: 0.2229, Loss VMAF: 0.0315, Loss SSIM: 0.1860, Loss BCE: 5.4253, Content loss: 0.2175
+0.03369613647460934
+tensor(0.3048, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0038, Loss generator: 0.3048, Loss VMAF: 0.0337, Loss SSIM: 0.2647, Loss BCE: 6.3577, Content loss: 0.2984
+0.03698463439941402
+tensor(0.2857, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0019, Loss generator: 0.2857, Loss VMAF: 0.0370, Loss SSIM: 0.2424, Loss BCE: 6.2918, Content loss: 0.2794
+0.030917816162109424
+tensor(0.2493, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.7868, Loss generator: 0.2493, Loss VMAF: 0.0309, Loss SSIM: 0.2121, Loss BCE: 6.3101, Content loss: 0.2430
+0.03138610839843747
+tensor(0.2325, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0053, Loss generator: 0.2325, Loss VMAF: 0.0314, Loss SSIM: 0.1959, Loss BCE: 5.1610, Content loss: 0.2273
+0.03522941589355466
+tensor(0.2567, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0055, Loss generator: 0.2567, Loss VMAF: 0.0352, Loss SSIM: 0.2173, Loss BCE: 4.2504, Content loss: 0.2525
+0.03485229492187503
+tensor(0.2765, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0132, Loss generator: 0.2765, Loss VMAF: 0.0349, Loss SSIM: 0.2383, Loss BCE: 3.2806, Content loss: 0.2732
+0.0315499877929688
+tensor(0.2422, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0172, Loss generator: 0.2422, Loss VMAF: 0.0315, Loss SSIM: 0.2074, Loss BCE: 3.2369, Content loss: 0.2389
+0.033984374999999956
+tensor(0.2808, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2286, Loss generator: 0.2808, Loss VMAF: 0.0340, Loss SSIM: 0.2452, Loss BCE: 1.6496, Content loss: 0.2791
+0.03273086547851567
+tensor(0.2575, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0155, Loss generator: 0.2575, Loss VMAF: 0.0327, Loss SSIM: 0.2209, Loss BCE: 3.9031, Content loss: 0.2536
+0.033903045654296915
+tensor(0.2815, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0204, Loss generator: 0.2815, Loss VMAF: 0.0339, Loss SSIM: 0.2440, Loss BCE: 3.5760, Content loss: 0.2779
+0.03140991210937505
+tensor(0.1937, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0210, Loss generator: 0.1937, Loss VMAF: 0.0314, Loss SSIM: 0.1589, Loss BCE: 3.3962, Content loss: 0.1903
+0.03136154174804684
+tensor(0.2305, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0412, Loss generator: 0.2305, Loss VMAF: 0.0314, Loss SSIM: 0.1958, Loss BCE: 3.3638, Content loss: 0.2271
+0.03316444396972651
+tensor(0.2150, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0186, Loss generator: 0.2150, Loss VMAF: 0.0332, Loss SSIM: 0.1779, Loss BCE: 3.9056, Content loss: 0.2111
+0.03181823730468747
+tensor(0.2183, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0084, Loss generator: 0.2183, Loss VMAF: 0.0318, Loss SSIM: 0.1816, Loss BCE: 4.8801, Content loss: 0.2134
+0.034566268920898424
+tensor(0.2513, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0454, Loss generator: 0.2513, Loss VMAF: 0.0346, Loss SSIM: 0.2133, Loss BCE: 3.4667, Content loss: 0.2478
+0.03616577148437505
+tensor(0.2670, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0164, Loss generator: 0.2670, Loss VMAF: 0.0362, Loss SSIM: 0.2269, Loss BCE: 3.8941, Content loss: 0.2631
+0.031899414062499964
+tensor(0.2414, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0193, Loss generator: 0.2414, Loss VMAF: 0.0319, Loss SSIM: 0.2056, Loss BCE: 3.9100, Content loss: 0.2375
+0.03403991699218745
+tensor(0.3022, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0197, Loss generator: 0.3022, Loss VMAF: 0.0340, Loss SSIM: 0.2641, Loss BCE: 4.0489, Content loss: 0.2981
+0.034533157348632826
+tensor(0.3205, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0054, Loss generator: 0.3205, Loss VMAF: 0.0345, Loss SSIM: 0.2807, Loss BCE: 5.2308, Content loss: 0.3153
+0.03049522399902349
+tensor(0.2009, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0081, Loss generator: 0.2009, Loss VMAF: 0.0305, Loss SSIM: 0.1653, Loss BCE: 5.0458, Content loss: 0.1958
+0.0346504211425781
+tensor(0.2807, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0171, Loss generator: 0.2807, Loss VMAF: 0.0347, Loss SSIM: 0.2419, Loss BCE: 4.2119, Content loss: 0.2765
+0.03084884643554686
+tensor(0.2004, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0123, Loss generator: 0.2004, Loss VMAF: 0.0308, Loss SSIM: 0.1639, Loss BCE: 5.6390, Content loss: 0.1948
+0.0321347045898438
+tensor(0.2307, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0065, Loss generator: 0.2307, Loss VMAF: 0.0321, Loss SSIM: 0.1932, Loss BCE: 5.3556, Content loss: 0.2253
+0.031577377319335964
+tensor(0.2900, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0044, Loss generator: 0.2900, Loss VMAF: 0.0316, Loss SSIM: 0.2515, Loss BCE: 6.9057, Content loss: 0.2831
+0.034871749877929736
+tensor(0.2674, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0040, Loss generator: 0.2674, Loss VMAF: 0.0349, Loss SSIM: 0.2269, Loss BCE: 5.6173, Content loss: 0.2618
+0.03328681945800782
+tensor(0.2751, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0028, Loss generator: 0.2751, Loss VMAF: 0.0333, Loss SSIM: 0.2359, Loss BCE: 5.9143, Content loss: 0.2692
+0.03299896240234379
+tensor(0.2855, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0017, Loss generator: 0.2855, Loss VMAF: 0.0330, Loss SSIM: 0.2453, Loss BCE: 7.2604, Content loss: 0.2783
+0.03045944213867191
+tensor(0.1640, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.4066, Loss generator: 0.1640, Loss VMAF: 0.0305, Loss SSIM: 0.1289, Loss BCE: 4.6360, Content loss: 0.1593
+0.03374000549316403
+tensor(0.2418, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0019, Loss generator: 0.2418, Loss VMAF: 0.0337, Loss SSIM: 0.2032, Loss BCE: 4.7782, Content loss: 0.2370
+0.03329971313476565
+tensor(0.2494, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0071, Loss generator: 0.2494, Loss VMAF: 0.0333, Loss SSIM: 0.2124, Loss BCE: 3.7170, Content loss: 0.2457
+0.03410873413085935
+tensor(0.2501, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0500, Loss generator: 0.2501, Loss VMAF: 0.0341, Loss SSIM: 0.2136, Loss BCE: 2.3535, Content loss: 0.2477
+0.03336807250976559
+tensor(0.3209, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0634, Loss generator: 0.3209, Loss VMAF: 0.0334, Loss SSIM: 0.2844, Loss BCE: 3.1078, Content loss: 0.3178
+0.031179046630859353
+tensor(0.2213, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0094, Loss generator: 0.2213, Loss VMAF: 0.0312, Loss SSIM: 0.1859, Loss BCE: 4.2522, Content loss: 0.2171
+0.032000427246093754
+tensor(0.2914, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0188, Loss generator: 0.2914, Loss VMAF: 0.0320, Loss SSIM: 0.2555, Loss BCE: 3.8748, Content loss: 0.2875
+0.035137176513671875
+tensor(0.3030, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2102, Loss generator: 0.3030, Loss VMAF: 0.0351, Loss SSIM: 0.2654, Loss BCE: 2.5306, Content loss: 0.3005
+0.03406890869140622
+tensor(0.2559, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0346, Loss generator: 0.2559, Loss VMAF: 0.0341, Loss SSIM: 0.2176, Loss BCE: 4.2609, Content loss: 0.2516
+0.03329391479492183
+tensor(0.2351, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0163, Loss generator: 0.2351, Loss VMAF: 0.0333, Loss SSIM: 0.1971, Loss BCE: 4.6991, Content loss: 0.2304
+0.030933685302734326
+tensor(0.2507, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0343, Loss generator: 0.2507, Loss VMAF: 0.0309, Loss SSIM: 0.2153, Loss BCE: 4.4890, Content loss: 0.2462
+0.032980422973632795
+tensor(0.2596, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0163, Loss generator: 0.2596, Loss VMAF: 0.0330, Loss SSIM: 0.2224, Loss BCE: 4.1919, Content loss: 0.2554
+0.03648384094238277
+tensor(0.3188, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0109, Loss generator: 0.3188, Loss VMAF: 0.0365, Loss SSIM: 0.2770, Loss BCE: 5.2454, Content loss: 0.3135
+0.031131668090820352
+tensor(0.2345, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0024, Loss generator: 0.2345, Loss VMAF: 0.0311, Loss SSIM: 0.1975, Loss BCE: 5.9294, Content loss: 0.2286
+0.03052230834960934
+tensor(0.2268, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1050, Loss generator: 0.2268, Loss VMAF: 0.0305, Loss SSIM: 0.1893, Loss BCE: 6.9813, Content loss: 0.2199
+0.03308921813964849
+tensor(0.2535, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0055, Loss generator: 0.2535, Loss VMAF: 0.0331, Loss SSIM: 0.2131, Loss BCE: 7.3166, Content loss: 0.2461
+0.03240539550781252
+tensor(0.2220, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0023, Loss generator: 0.2220, Loss VMAF: 0.0324, Loss SSIM: 0.1835, Loss BCE: 6.0925, Content loss: 0.2159
+0.0360562133789063
+tensor(0.3150, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0134, Loss generator: 0.3150, Loss VMAF: 0.0361, Loss SSIM: 0.2746, Loss BCE: 4.3707, Content loss: 0.3106
+0.03180084228515623
+tensor(0.2543, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0028, Loss generator: 0.2543, Loss VMAF: 0.0318, Loss SSIM: 0.2159, Loss BCE: 6.6098, Content loss: 0.2477
+0.03298828124999997
+tensor(0.2450, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0039, Loss generator: 0.2450, Loss VMAF: 0.0330, Loss SSIM: 0.2063, Loss BCE: 5.6971, Content loss: 0.2393
+0.030445022583007852
+tensor(0.1935, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0035, Loss generator: 0.1935, Loss VMAF: 0.0304, Loss SSIM: 0.1572, Loss BCE: 5.8319, Content loss: 0.1877
+0.03413833618164064
+tensor(0.2527, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0012, Loss generator: 0.2527, Loss VMAF: 0.0341, Loss SSIM: 0.2120, Loss BCE: 6.5944, Content loss: 0.2461
+0.03343498229980468
+tensor(0.2645, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0047, Loss generator: 0.2645, Loss VMAF: 0.0334, Loss SSIM: 0.2253, Loss BCE: 5.8241, Content loss: 0.2587
+0.030466842651367232
+tensor(0.2108, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0079, Loss generator: 0.2108, Loss VMAF: 0.0305, Loss SSIM: 0.1716, Loss BCE: 8.7495, Content loss: 0.2020
+0.032205657958984335
+tensor(0.2726, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0010, Loss generator: 0.2726, Loss VMAF: 0.0322, Loss SSIM: 0.2334, Loss BCE: 6.9846, Content loss: 0.2656
+0.028900146484375
+tensor(0.1625, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 1.7065, Loss generator: 0.1625, Loss VMAF: 0.0289, Loss SSIM: 0.1266, Loss BCE: 7.0352, Content loss: 0.1555
+0.03126419067382813
+tensor(0.2496, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0019, Loss generator: 0.2496, Loss VMAF: 0.0313, Loss SSIM: 0.2125, Loss BCE: 5.8964, Content loss: 0.2437
+0.03119293212890628
+tensor(0.1902, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0171, Loss generator: 0.1902, Loss VMAF: 0.0312, Loss SSIM: 0.1564, Loss BCE: 2.5744, Content loss: 0.1876
+0.032099380493164076
+tensor(0.2031, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0262, Loss generator: 0.2031, Loss VMAF: 0.0321, Loss SSIM: 0.1680, Loss BCE: 2.9433, Content loss: 0.2001
+0.032602920532226576
+tensor(0.2638, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0230, Loss generator: 0.2638, Loss VMAF: 0.0326, Loss SSIM: 0.2280, Loss BCE: 3.1813, Content loss: 0.2606
+0.03288276672363277
+tensor(0.2434, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0654, Loss generator: 0.2434, Loss VMAF: 0.0329, Loss SSIM: 0.2080, Loss BCE: 2.4873, Content loss: 0.2409
+0.03291610717773441
+tensor(0.2354, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0686, Loss generator: 0.2354, Loss VMAF: 0.0329, Loss SSIM: 0.2000, Loss BCE: 2.4924, Content loss: 0.2329
+0.030157470703125022
+tensor(0.1872, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1431, Loss generator: 0.1872, Loss VMAF: 0.0302, Loss SSIM: 0.1547, Loss BCE: 2.4224, Content loss: 0.1848
+0.036138687133789094
+tensor(0.2940, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1866, Loss generator: 0.2940, Loss VMAF: 0.0361, Loss SSIM: 0.2555, Loss BCE: 2.4328, Content loss: 0.2916
+0.03371246337890621
+tensor(0.3297, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0400, Loss generator: 0.3297, Loss VMAF: 0.0337, Loss SSIM: 0.2923, Loss BCE: 3.6885, Content loss: 0.3260
+0.03652053833007818
+tensor(0.2846, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0479, Loss generator: 0.2846, Loss VMAF: 0.0365, Loss SSIM: 0.2445, Loss BCE: 3.5618, Content loss: 0.2810
+0.03500427246093751
+tensor(0.3244, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0068, Loss generator: 0.3244, Loss VMAF: 0.0350, Loss SSIM: 0.2840, Loss BCE: 5.3716, Content loss: 0.3190
+0.032717590332031254
+tensor(0.2908, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0034, Loss generator: 0.2908, Loss VMAF: 0.0327, Loss SSIM: 0.2522, Loss BCE: 5.9361, Content loss: 0.2849
+0.0319515991210938
+tensor(0.2420, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0037, Loss generator: 0.2420, Loss VMAF: 0.0320, Loss SSIM: 0.2042, Loss BCE: 5.8081, Content loss: 0.2362
+0.032112274169921906
+tensor(0.2470, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0023, Loss generator: 0.2470, Loss VMAF: 0.0321, Loss SSIM: 0.2089, Loss BCE: 5.9714, Content loss: 0.2410
+0.03582557678222653
+tensor(0.2907, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0042, Loss generator: 0.2907, Loss VMAF: 0.0358, Loss SSIM: 0.2484, Loss BCE: 6.5422, Content loss: 0.2842
+0.030697708129882817
+tensor(0.1978, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.6948, Loss generator: 0.1978, Loss VMAF: 0.0307, Loss SSIM: 0.1610, Loss BCE: 6.1380, Content loss: 0.1917
+0.03568077087402344
+tensor(0.3421, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0112, Loss generator: 0.3421, Loss VMAF: 0.0357, Loss SSIM: 0.3029, Loss BCE: 3.5430, Content loss: 0.3385
+0.032000427246093754
+tensor(0.2445, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0032, Loss generator: 0.2445, Loss VMAF: 0.0320, Loss SSIM: 0.2076, Loss BCE: 4.8785, Content loss: 0.2396
+0.034662322998046835
+tensor(0.2542, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.2451, Loss generator: 0.2542, Loss VMAF: 0.0347, Loss SSIM: 0.2174, Loss BCE: 2.0952, Content loss: 0.2521
+0.03335144042968752
+tensor(0.2485, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0235, Loss generator: 0.2485, Loss VMAF: 0.0334, Loss SSIM: 0.2110, Loss BCE: 4.0971, Content loss: 0.2444
+0.033420333862304696
+tensor(0.2560, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3389, Loss generator: 0.2560, Loss VMAF: 0.0334, Loss SSIM: 0.2195, Loss BCE: 3.0803, Content loss: 0.2529
+0.035192413330078165
+tensor(0.3029, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0142, Loss generator: 0.3029, Loss VMAF: 0.0352, Loss SSIM: 0.2623, Loss BCE: 5.3742, Content loss: 0.2975
+0.03367553710937499
+tensor(0.2779, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0437, Loss generator: 0.2779, Loss VMAF: 0.0337, Loss SSIM: 0.2376, Loss BCE: 6.5505, Content loss: 0.2713
+0.03300712585449217
+tensor(0.2880, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0033, Loss generator: 0.2880, Loss VMAF: 0.0330, Loss SSIM: 0.2485, Loss BCE: 6.5515, Content loss: 0.2815
+0.03047760009765621
+tensor(0.2063, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0502, Loss generator: 0.2063, Loss VMAF: 0.0305, Loss SSIM: 0.1703, Loss BCE: 5.4540, Content loss: 0.2008
+0.03226280212402344
+tensor(0.2341, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0234, Loss generator: 0.2341, Loss VMAF: 0.0323, Loss SSIM: 0.1946, Loss BCE: 7.2577, Content loss: 0.2268
+0.03200378417968752
+tensor(0.2207, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0055, Loss generator: 0.2207, Loss VMAF: 0.0320, Loss SSIM: 0.1829, Loss BCE: 5.7374, Content loss: 0.2149
+0.03354309082031248
+tensor(0.2613, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0048, Loss generator: 0.2613, Loss VMAF: 0.0335, Loss SSIM: 0.2209, Loss BCE: 6.7917, Content loss: 0.2545
+0.03257934570312504
+tensor(0.2404, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0173, Loss generator: 0.2404, Loss VMAF: 0.0326, Loss SSIM: 0.1998, Loss BCE: 7.9839, Content loss: 0.2324
+0.030686035156250013
+tensor(0.2022, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.1494, Loss generator: 0.2022, Loss VMAF: 0.0307, Loss SSIM: 0.1652, Loss BCE: 6.3219, Content loss: 0.1959
+0.03188613891601566
+tensor(0.2606, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0117, Loss generator: 0.2606, Loss VMAF: 0.0319, Loss SSIM: 0.2226, Loss BCE: 6.1207, Content loss: 0.2545
+0.03407104492187496
+tensor(0.2550, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0236, Loss generator: 0.2550, Loss VMAF: 0.0341, Loss SSIM: 0.2136, Loss BCE: 7.2859, Content loss: 0.2477
+0.03260612487792969
+tensor(0.2544, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0076, Loss generator: 0.2544, Loss VMAF: 0.0326, Loss SSIM: 0.2159, Loss BCE: 5.8801, Content loss: 0.2485
+0.03443084716796874
+tensor(0.2797, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0040, Loss generator: 0.2797, Loss VMAF: 0.0344, Loss SSIM: 0.2392, Loss BCE: 6.0559, Content loss: 0.2737
+0.03234054565429689
+tensor(0.2314, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0161, Loss generator: 0.2314, Loss VMAF: 0.0323, Loss SSIM: 0.1928, Loss BCE: 6.1994, Content loss: 0.2252
+0.034051437377929705
+tensor(0.2972, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0082, Loss generator: 0.2972, Loss VMAF: 0.0341, Loss SSIM: 0.2567, Loss BCE: 6.3993, Content loss: 0.2908
+0.03289505004882809
+tensor(0.2304, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0142, Loss generator: 0.2304, Loss VMAF: 0.0329, Loss SSIM: 0.1926, Loss BCE: 4.9089, Content loss: 0.2255
+0.03540229797363281
+tensor(0.2853, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0055, Loss generator: 0.2853, Loss VMAF: 0.0354, Loss SSIM: 0.2447, Loss BCE: 5.2639, Content loss: 0.2801
+0.03063461303710935
+tensor(0.2075, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.3238, Loss generator: 0.2075, Loss VMAF: 0.0306, Loss SSIM: 0.1715, Loss BCE: 5.2898, Content loss: 0.2022
+0.03453041076660157
+tensor(0.2453, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0030, Loss generator: 0.2453, Loss VMAF: 0.0345, Loss SSIM: 0.2054, Loss BCE: 5.3684, Content loss: 0.2399
+0.03480667114257807
+tensor(0.3012, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0217, Loss generator: 0.3012, Loss VMAF: 0.0348, Loss SSIM: 0.2634, Loss BCE: 2.9783, Content loss: 0.2982
+0.033434753417968754
+tensor(0.2740, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.0262, Loss generator: 0.2740, Loss VMAF: 0.0334, Loss SSIM: 0.2376, Loss BCE: 3.0072, Content loss: 0.2710

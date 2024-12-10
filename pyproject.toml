@@ -1,0 +1,32 @@
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[project]
+name = "Fast-sr-unet"
+authors = [
+    {name = "Lorenzo Baiardi", email = "lorenzo.baiardi@edu.unifi.it"},
+]
+description = "Fast-sr-unet"
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["pytorch"]
+classifiers = [
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Topic :: Scientific/Engineering :: Artificial Intelligence',
+]
+dependencies = [
+    'torch',
+    'torchvision',
+    'numpy',
+    'pandas',
+    'yuvio',
+    'regex',
+    'tqdm',
+    'wandb',
+    'lpips',
+    'pyiqa'
+]
+dynamic = ["version"]

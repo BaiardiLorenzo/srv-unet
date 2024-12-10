@@ -1,0 +1,37 @@
+Training epoch 0/80:   0%|                                                                                         | 0/1280 [02:58<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/lbaiardi/fast-sr-unet/train_vmaf.py", line 116, in <module>
+    pred_fake = critic(y_fake.detach())  # Forward pass on critic for fake images
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/models.py", line 362, in forward
+    output = self.conv_blocks(imgs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/models.py", line 109, in forward
+    output = self.conv_block(input)  # (N, out_channels, w, h)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 554, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 549, in _conv_forward
+    return F.conv2d(
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 72.00 MiB. GPU 0 has a total capacity of 23.64 GiB of which 58.50 MiB is free. Process 3793428 has 3.43 GiB memory in use. Process 3046189 has 6.53 GiB memory in use. Process 666477 has 3.19 GiB memory in use. Process 811079 has 6.52 GiB memory in use. Process 859373 has 882.00 MiB memory in use. Including non-PyTorch memory, this process has 2.36 GiB memory in use. Process 905233 has 682.00 MiB memory in use. Of the allocated memory 2.13 GiB is allocated by PyTorch, and 34.63 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

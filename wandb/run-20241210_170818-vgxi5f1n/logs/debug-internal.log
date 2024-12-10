@@ -1,0 +1,8 @@
+{"time":"2024-12-10T17:08:18.793039917+01:00","level":"INFO","msg":"using version","core version":"0.19.0"}
+{"time":"2024-12-10T17:08:18.793069667+01:00","level":"INFO","msg":"created symlink","path":"/home/lbaiardi/fast-sr-unet/wandb/run-20241210_170818-vgxi5f1n/logs/debug-core.log"}
+{"time":"2024-12-10T17:08:19.005438217+01:00","level":"INFO","msg":"created new stream","id":"vgxi5f1n"}
+{"time":"2024-12-10T17:08:19.00548224+01:00","level":"INFO","msg":"stream: started","id":"vgxi5f1n"}
+{"time":"2024-12-10T17:08:19.005505245+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"vgxi5f1n"}
+{"time":"2024-12-10T17:08:19.005539095+01:00","level":"INFO","msg":"sender: started","stream_id":"vgxi5f1n"}
+{"time":"2024-12-10T17:08:19.005529033+01:00","level":"INFO","msg":"handler: started","stream_id":"vgxi5f1n"}
+{"time":"2024-12-10T17:08:19.458138447+01:00","level":"INFO","msg":"Starting system monitor"}

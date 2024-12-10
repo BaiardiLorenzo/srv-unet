@@ -1,0 +1,44 @@
+Training epoch 0/80:   0%|                                                                                         | 0/1280 [00:00<?, ?it/s]
+torch.Size([32, 1, 192, 192]) torch.Size([32, 1, 192, 192])
+tensor([[96.2019],
+        [97.4154],
+        [97.6350],
+        [97.8001],
+        [97.5348],
+        [97.7455],
+        [98.2945],
+        [97.4351],
+        [97.5925],
+        [97.5043],
+        [97.4497],
+        [97.6363],
+        [96.7284],
+        [97.5189],
+        [97.4872],
+        [97.6103],
+        [97.4669],
+        [98.1790],
+        [97.9790],
+        [97.9384],
+        [97.3726],
+        [97.5392],
+        [97.6611],
+        [97.4859],
+        [98.4954],
+        [97.6090],
+        [97.8090],
+        [98.2697],
+        [98.0035],
+        [97.7074],
+        [97.5836],
+        [97.6731]], device='cuda:0', grad_fn=<DivBackward0>)
+Traceback (most recent call last):
+  File "/home/lbaiardi/fast-sr-unet/train_vmaf.py", line 144, in <module>
+    loss_gen.backward()
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/autograd/__init__.py", line 340, in backward
+    grad_tensors_ = _make_grads(tensors, grad_tensors_, is_grads_batched=False)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/autograd/__init__.py", line 198, in _make_grads
+    raise RuntimeError(
+RuntimeError: grad can be implicitly created only for scalar outputs

@@ -1,0 +1,31 @@
+Training epoch 0/80:   0%|                                                                                        | 0/40960 [00:05<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/lbaiardi/fast-sr-unet/train_vmaf.py", line 114, in <module>
+    y_fake = generator(x)  # Forward pass on generator
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/pytorch_unet.py", line 274, in forward
+    conv1 = self.dconv_down1(x)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/pytorch_unet.py", line 51, in forward
+    x = self.conv1(input)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 554, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/lbaiardi/fast-sr-unet/.env/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 549, in _conv_forward
+    return F.conv2d(
+RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor

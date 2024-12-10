@@ -1,0 +1,16 @@
+{"time":"2024-12-10T15:50:51.115105968+01:00","level":"INFO","msg":"using version","core version":"0.19.0"}
+{"time":"2024-12-10T15:50:51.115123657+01:00","level":"INFO","msg":"created symlink","path":"/home/lbaiardi/fast-sr-unet/wandb/run-20241210_155051-1jtuqrop/logs/debug-core.log"}
+{"time":"2024-12-10T15:50:51.225348408+01:00","level":"INFO","msg":"created new stream","id":"1jtuqrop"}
+{"time":"2024-12-10T15:50:51.225388504+01:00","level":"INFO","msg":"stream: started","id":"1jtuqrop"}
+{"time":"2024-12-10T15:50:51.225442964+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"1jtuqrop"}
+{"time":"2024-12-10T15:50:51.225456438+01:00","level":"INFO","msg":"sender: started","stream_id":"1jtuqrop"}
+{"time":"2024-12-10T15:50:51.225513131+01:00","level":"INFO","msg":"handler: started","stream_id":"1jtuqrop"}
+{"time":"2024-12-10T15:50:51.566252225+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-10T15:52:45.069306123+01:00","level":"INFO","msg":"stream: closing","id":"1jtuqrop"}
+{"time":"2024-12-10T15:52:45.0693477+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-10T15:52:45.069868849+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-10T15:52:45.75103304+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-10T15:52:46.226068667+01:00","level":"INFO","msg":"handler: closed","stream_id":"1jtuqrop"}
+{"time":"2024-12-10T15:52:46.226123168+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"1jtuqrop"}
+{"time":"2024-12-10T15:52:46.22618441+01:00","level":"INFO","msg":"sender: closed","stream_id":"1jtuqrop"}
+{"time":"2024-12-10T15:52:46.226217787+01:00","level":"INFO","msg":"stream: closed","id":"1jtuqrop"}

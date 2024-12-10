@@ -1,0 +1,8 @@
+Training epoch 0/80:   0%|                                                                                        | 0/20480 [00:56<?, ?it/s]
+96.68302154541016
+tensor(97.3546, device='cuda:0', grad_fn=<AddBackward0>)
+Epoch: 0, Loss discriminator: 0.7066, Loss generator: 97.3546, Loss VMAF: 96.6830, Loss SSIM: 0.6698, Loss BCE: 1.8074, Content loss: 97.3528
+Traceback (most recent call last):
+  File "/home/lbaiardi/fast-sr-unet/train_vmaf.py", line 152, in <module>
+    if args.WANDB:
+AttributeError: 'ARArgs' object has no attribute 'WANDB'
