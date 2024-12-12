@@ -51,8 +51,8 @@ if __name__ == '__main__':
     arch_name = args.ARCHITECTURE
     dataset_upscale_factor = args.UPSCALE_FACTOR
     epochs = args.N_EPOCHS
-    crf = 37
-    batch_size = 16
+    crf = 22
+    batch_size = 32
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")
 
@@ -117,7 +117,7 @@ if __name__ == '__main__':
 
             loss_true = bce_loss_critic(pred_true, torch.ones_like(pred_true))
             loss_fake = bce_loss_critic(pred_fake, torch.zeros_like(pred_fake))
-            loss_critic = (loss_true + loss_fake)/2
+            loss_critic = (loss_true + loss_fake)*0.5
 
             loss_critic.backward()
             critic_opt.step()
@@ -129,8 +129,9 @@ if __name__ == '__main__':
 
             y_y_fake = utils.convert_rgb_to_y_tensor(y_fake)
             y_y_true = utils.convert_rgb_to_y_tensor(y_true)
-            loss_vmaf = vmaf(y_y_true, y_y_fake).item()
-            loss_vmaf = 1.0 - loss_vmaf/100.0
+            
+            # loss_vmaf = 1.0 - vmaf(y_y_true, y_y_fake).mean()/100.0
+            # loss_vmaf = 100.0 - vmaf(y_y_true, y_y_fake).mean()
             loss_ssim = 1.0 - ssim(y_fake, y_true)
             bce = bce_loss_critic(pred_fake, torch.ones_like(pred_fake))
             content_loss = w0 * loss_vmaf + w1 * loss_ssim
@@ -172,8 +173,10 @@ if __name__ == '__main__':
 
                     y_fake = generator(x)
 
+                    y_y_fake = utils.convert_rgb_to_y_tensor(y_fake)
+                    y_y_true = utils.convert_rgb_to_y_tensor(y_true)
                     ssim_val = ssim(y_fake, y_true).item()
-                    vmaf_val = vmaf(y_fake, y_true).item()
+                    vmaf_val = vmaf(y_y_true, y_y_fake).item()
 
                     ssim_validation.append(ssim_val)
                     vmaf_validation.append(vmaf_val)
@@ -183,7 +186,7 @@ if __name__ == '__main__':
 
             print(f"Validation SSIM: {ssim_mean:.4f}, Validation VMAF: {vmaf_mean:.4f}")
 
-            if args.WANDB:
+            if args.WB_NAME:
                 wandb.log({
                     "epoch": epoch,
                     "Validation SSIM": ssim_mean,
@@ -198,9 +201,11 @@ if __name__ == '__main__':
             torch.save(generator.state_dict(), generator_path)
 
             # having critic's weights saved was not useful, better sparing storage!
+            """
             if args.SAVE_CRITIC:
                 critic_path = os.path.join(
                     args.EXPORT_DIR, 
                     f"critic_epoch{epoch}_ssim{ssim_mean:.4f}_vmaf{vmaf_mean:.4f}_crf{args.CRF}.pkl"
                 )
                 torch.save(critic.state_dict(), critic_path)
+            """

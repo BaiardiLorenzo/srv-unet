@@ -8,3 +8,6 @@ generated/**
 *.webm
 *.pth
 *.idea
+.env
+.pdm-build
+wandb

@@ -51,8 +51,8 @@ if __name__ == '__main__':
     dataset_upscale_factor = args.UPSCALE_FACTOR
     epochs = args.N_EPOCHS
     crf = 22
-    batch_size = 16
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    batch_size = 32
+    device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 
     # Model
     generator = configure_generator(arch_name, args)
@@ -80,10 +80,10 @@ if __name__ == '__main__':
     dataset_test = dl.ARDataLoader2(path=str(args.DATASET_DIR), crf=crf, patch_size=96, eval=True, use_ar=True)
 
     train_loader = DataLoader(
-        dataset=dataset_train, batch_size=batch_size, num_workers=12, shuffle=True, pin_memory=True
+        dataset=dataset_train, batch_size=batch_size, num_workers=2, shuffle=True, pin_memory=True
     )
     eval_loader = DataLoader(
-        dataset=dataset_test, batch_size=batch_size, num_workers=12, shuffle=True, pin_memory=True
+        dataset=dataset_test, batch_size=batch_size, num_workers=2, shuffle=True, pin_memory=True
     )
 
     print(f"Total epochs: {epochs}; Steps per epoch: {len(train_loader)}")
@@ -199,9 +199,11 @@ if __name__ == '__main__':
             torch.save(generator.state_dict(), generator_path)
 
             # having critic's weights saved was not useful, better sparing storage!
+            """
             if args.SAVE_CRITIC:
                 critic_path = os.path.join(
                     args.EXPORT_DIR, 
                     f"critic_epoch{epoch}_ssim{ssim_mean:.4f}_lpips{lpips_mean:.4f}_crf{args.CRF}.pkl"
                 )
                 torch.save(critic.state_dict(), critic_path)
+            """
