@@ -67,7 +67,7 @@ if __name__ == '__main__':
     lpips_alex = lpips.LPIPS(net='alex', version='0.1')
     ssim = pytorch_ssim.SSIM()
 
-    bce_loss_critic = nn.BCEWithLogitsLoss()
+    bce = nn.BCEWithLogitsLoss()
 
     # Move to device
     generator.to(device)
@@ -91,9 +91,12 @@ if __name__ == '__main__':
     # Wandb logging
     if args.WB_NAME:
         import wandb
-        wandb.init(project=args.WB_NAME, name=f'train-{crf}', config=args)
-        # wandb.watch(generator)
-        # wandb.watch(critic)
+        wandb.init(
+            project=args.WB_NAME, 
+            name=f'train_lpsis_crf-{crf}', 
+            config=args
+        )
+
 
     # Settings weights and lambda parameters for the loss
     w0, w1, l0 = args.W0, args.W1, args.L0
@@ -117,11 +120,12 @@ if __name__ == '__main__':
 
             y_fake = generator(x)  # Forward pass on generator
             pred_true = critic(y_true)  # Forward pass on critic for real images
-            pred_fake = critic(y_fake.detach())  # Forward pass on critic for fake images
+            loss_true = bce(pred_true, torch.ones_like(pred_true))
 
-            loss_true = bce_loss_critic(pred_true, torch.ones_like(pred_true))
-            loss_fake = bce_loss_critic(pred_fake, torch.zeros_like(pred_fake))
-            loss_critic = (loss_true + loss_fake)/2
+            pred_fake = critic(y_fake.detach())  # Forward pass on critic for fake images
+            loss_fake = bce(pred_fake, torch.zeros_like(pred_fake))
+
+            loss_critic = (loss_true + loss_fake)*0.5
 
             loss_critic.backward()
             critic_opt.step()
@@ -129,13 +133,14 @@ if __name__ == '__main__':
             # Train generator
             gan_opt.zero_grad()
 
-            pred_fake = critic(y_fake)
-
             loss_lpips = lpips_loss(y_fake, y_true).mean()
-            loss_ssim = 1.0 - ssim(y_fake, y_true)
-            bce = bce_loss_critic(pred_fake, torch.ones_like(pred_fake))
+            ssim_val = ssim(y_fake, y_true)
+            loss_ssim = 1.0 - ssim_val
+
+            pred_fake = critic(y_fake)
+            bce_gen = bce(pred_fake, torch.ones_like(pred_fake))
             content_loss = w0 * loss_lpips + w1 * loss_ssim
-            loss_gen = content_loss + l0 * bce
+            loss_gen = content_loss + l0 * bce_gen
 
             loss_gen.backward()
             gan_opt.step()
@@ -144,10 +149,12 @@ if __name__ == '__main__':
             print(f"Epoch: {epoch}, "
                   f"Loss discriminator: {loss_critic:.4f}, "
                   f"Loss generator: {loss_gen:.4f}, "
+                  f"Content loss: {content_loss:.4f}, "
                   f"Loss LPIPS: {loss_lpips:.4f}, "
                   f"Loss SSIM: {loss_ssim:.4f}, "
-                  f"Loss BCE: {bce:.4f}, "
-                  f"Content loss: {content_loss:.4f}")
+                  f"Loss BCE: {bce_gen:.4f}, "
+                  f"SSIM: {ssim_val:.4f}"
+                  )
             
             if args.WB_NAME:
                 wandb.log({
@@ -156,8 +163,9 @@ if __name__ == '__main__':
                     "Loss generator": loss_gen,
                     "Loss LPIPS": loss_lpips,
                     "Loss SSIM": loss_ssim,
-                    "Loss BCE": bce,
-                    "Content loss": content_loss
+                    "Loss BCE": bce_gen,
+                    "Content loss": content_loss,
+                    "SSIM": ssim_val
                 })
 
         # Validation
@@ -173,8 +181,8 @@ if __name__ == '__main__':
 
                     y_fake = generator(x)
 
-                    ssim_val = ssim(y_fake, y_true).item()
-                    lpips_val = lpips_alex(y_fake, y_true).item()
+                    ssim_val = ssim(y_fake, y_true).mean()
+                    lpips_val = lpips_alex(y_fake, y_true).mean()
 
                     ssim_validation.append(ssim_val)
                     lpips_validation.append(lpips_val)

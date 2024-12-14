@@ -16,7 +16,7 @@ from .motion import Motion
 from .adm import ADM
 from .vif import VIF
 from .svm_predict import SVMPredict
-
+from .utils import rgb_tensor_to_y_tensor
 
 class VMAF(torch.nn.Module):
     """VMAF module
@@ -50,6 +50,18 @@ class VMAF(torch.nn.Module):
         self.svm = SVMPredict(clip_score=clip_score, model_json_path=model_json_path)
 
     def forward(self, ref, dist):
+        """Forward pass
+        Args:
+            ref: An input tensor with [N, 1, H, W] or [N, 3, H, W] shape, reference image, Y channel only or RGB, in range [0,255]
+                first dimension is frame dimension for video or batch dimension for batch of images
+            dist: An input tensor with [N, 1, H, W] or [N, 3, H, W] shape, distorted image, Y channel only or RGB, in range [0,255],
+                order of arguments matters!
+        """
+
+        # Convert RGB tensors to Y channel if necessary
+        if ref.shape[1] == 3 and dist.shape[1] == 3:
+            ref = rgb_tensor_to_y_tensor(ref)
+            dist = rgb_tensor_to_y_tensor(dist)
         return self.compute_vmaf_score(ref, dist)
 
     def compute_vmaf_score(self, ref, dist):

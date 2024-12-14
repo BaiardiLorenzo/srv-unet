@@ -4,6 +4,9 @@ args = utils.ARArgs()
 # os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 # os.environ["CUDA_VISIBLE_DEVICES"] = args.CUDA_DEVICE
 
+# loss_vmaf = -torch.log(vmaf_value/100.0)
+# loss_vmaf = torch.exp(-(5)*vmaf_value/100.0)
+
 import numpy as np
 import torch
 import data_loader as dl
@@ -47,13 +50,17 @@ if __name__ == '__main__':
     args = utils.ARArgs()
     torch.autograd.set_detect_anomaly(True)
 
+    # Seed
+    utils.seed_everything()
+
+    # Arguments
     print_model = args.VERBOSE
     arch_name = args.ARCHITECTURE
     dataset_upscale_factor = args.UPSCALE_FACTOR
+    batch_size = args.BATCH_SIZE
     epochs = args.N_EPOCHS
-    crf = 22
-    batch_size = 32
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    crf = args.CRF
+    device = torch.device(f"cuda:{args.CUDA_DEVICE}" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")
 
     # Model
@@ -62,13 +69,14 @@ if __name__ == '__main__':
 
     # Optimizers
     critic_opt = torch.optim.Adam(lr=1e-4, params=critic.parameters())
-    gan_opt = torch.optim.Adam(lr=1e-4, params=generator.parameters())
+    gen_opt = torch.optim.Adam(lr=1e-4, params=generator.parameters())
 
     # Metrics
     vmaf = VMAF(temporal_pooling=True, enable_motion=False)
     ssim = pytorch_ssim.SSIM()
 
-    bce_loss_critic = nn.BCEWithLogitsLoss()
+    # Losses
+    bce = nn.BCEWithLogitsLoss()
 
     # Move to device
     generator.to(device)
@@ -92,75 +100,84 @@ if __name__ == '__main__':
     # Wandb logging
     if args.WB_NAME:
         import wandb
-        wandb.init(project=args.WB_NAME, name=f"Train-{crf}", config=args)
-        # wandb.watch(generator)
-        # wandb.watch(critic)
+        wandb.init(
+            project=args.WB_NAME, 
+            name=f"Train_VMAF_crf:{crf}", 
+            tags=["VMAF", arch_name, crf],
+            config=args,
+        )
+        
 
     # Settings weights and lambda parameters for the loss
     w0, w1, l0 = args.W0, args.W1, args.L0
 
-    # Training loop
+    ### Training loop
     for epoch in range(epochs):
-        # Training
+        ### Training
         generator.train()
         critic.train()
         for i, batch in enumerate(tqdm(train_loader, total=len(train_loader), desc=f'Training epoch {epoch}/{epochs}')):
             x, y_true = batch
             x, y_true = x.to(device), y_true.to(device)
 
-            # Train critic
+            ## Train critic
             critic_opt.zero_grad()
 
             y_fake = generator(x)  # Forward pass on generator
             pred_true = critic(y_true)  # Forward pass on critic for real images
             pred_fake = critic(y_fake.detach())  # Forward pass on critic for fake images
 
-            loss_true = bce_loss_critic(pred_true, torch.ones_like(pred_true))
-            loss_fake = bce_loss_critic(pred_fake, torch.zeros_like(pred_fake))
+            loss_true = bce(pred_true, torch.ones_like(pred_true))
+            loss_fake = bce(pred_fake, torch.zeros_like(pred_fake))
             loss_critic = (loss_true + loss_fake)*0.5
 
             loss_critic.backward()
             critic_opt.step()
 
-            # Train generator
-            gan_opt.zero_grad()
+            ## Train generator
+            gen_opt.zero_grad()
+            
+            vmaf_value = vmaf(y_true, y_fake)
+            ssim_value = ssim(y_fake, y_true)
+
+            loss_vmaf = 1.0 - vmaf_value/100.0  
+            loss_ssim = 1.0 - ssim_value
 
             pred_fake = critic(y_fake)
 
-            y_y_fake = utils.convert_rgb_to_y_tensor(y_fake)
-            y_y_true = utils.convert_rgb_to_y_tensor(y_true)
-            
-            # loss_vmaf = 1.0 - vmaf(y_y_true, y_y_fake).mean()/100.0
-            # loss_vmaf = 100.0 - vmaf(y_y_true, y_y_fake).mean()
-            loss_ssim = 1.0 - ssim(y_fake, y_true)
-            bce = bce_loss_critic(pred_fake, torch.ones_like(pred_fake))
+            bce_gen = bce(pred_fake, torch.ones_like(pred_fake))
             content_loss = w0 * loss_vmaf + w1 * loss_ssim
-            loss_gen = content_loss + l0 * bce
+            loss_gen = content_loss + l0 * bce_gen
 
             loss_gen.backward()
-            gan_opt.step()
+            gen_opt.step()
 
             # Logging
             print(f"Epoch: {epoch}, "
-                  f"Loss discriminator: {loss_critic:.4f}, "
-                  f"Loss generator: {loss_gen:.4f}, "
-                  f"Loss VMAF: {loss_vmaf:.4f}, "
-                  f"Loss SSIM: {loss_ssim:.4f}, "
-                  f"Loss BCE: {bce:.4f}, "
-                  f"Content loss: {content_loss:.4f}")
+                  f"Loss discriminator: {loss_critic.item():.4f}, "
+                  f"Loss generator: {loss_gen.item():.4f}, "
+                  f"Content loss: {content_loss.item():.4f}, "
+                  f"Loss VMAF: {loss_vmaf.item():.4f}, "
+                  f"Loss SSIM: {loss_ssim.item():.4f}, "
+                  f"Loss BCE: {bce_gen.item():.4f}, "
+                  f"VMAF: {vmaf_value.item():.4f}, "
+                  f"SSIM: {ssim_value.item():.4f}"
+                  )
             
             if args.WB_NAME:
                 wandb.log({
                     "epoch": epoch,
-                    "Loss discriminator": loss_critic,
-                    "Loss generator": loss_gen,
-                    "Loss VMAF": loss_vmaf,
-                    "Loss SSIM": loss_ssim,
-                    "Loss BCE": bce,
-                    "Content loss": content_loss
+                    "Loss discriminator": loss_critic.item(),
+                    "Loss generator": loss_gen.item(),
+                    "Content loss": content_loss.item(),
+                    "Loss VMAF": loss_vmaf.item(),
+                    "Loss SSIM": loss_ssim.item(),
+                    "Loss BCE": bce_gen.item(),
+                    "VMAF": vmaf_value.item(),
+                    "SSIM": ssim_value.item(),
                 })
 
-        # Validation
+        ### Validation
         if (epoch + 1) % args.VALIDATION_FREQ == 0:
             ssim_validation = []
             vmaf_validation = []
@@ -173,30 +190,29 @@ if __name__ == '__main__':
 
                     y_fake = generator(x)
 
-                    y_y_fake = utils.convert_rgb_to_y_tensor(y_fake)
-                    y_y_true = utils.convert_rgb_to_y_tensor(y_true)
-                    ssim_val = ssim(y_fake, y_true).item()
-                    vmaf_val = vmaf(y_y_true, y_y_fake).item()
+                    ssim_val = ssim(y_fake, y_true).mean()
+                    vmaf_val = vmaf(y_true, y_fake).mean()
 
-                    ssim_validation.append(ssim_val)
-                    vmaf_validation.append(vmaf_val)
+                    ssim_validation.append(ssim_val.item())
+                    vmaf_validation.append(vmaf_val.item())
 
             ssim_mean = np.mean(ssim_validation)
             vmaf_mean = np.mean(vmaf_validation)
 
-            print(f"Validation SSIM: {ssim_mean:.4f}, Validation VMAF: {vmaf_mean:.4f}")
+            print(f"Epoch: {epoch}, "
+                  f"Validation SSIM: {ssim_mean:.4f}, "
+                  f"Validation VMAF: {vmaf_mean:.4f}")
 
             if args.WB_NAME:
                 wandb.log({
-                    "epoch": epoch,
                     "Validation SSIM": ssim_mean,
                     "Validation VMAF": vmaf_mean
-                })
+                }, step=epoch)
 
-            # Save models
+            ## Save models
             generator_path = os.path.join(
                 args.EXPORT_DIR, 
-                f"{arch_name}_epoch{epoch}_ssim{ssim_mean:.4f}_vmaf{vmaf_mean:.4f}_crf{args.CRF}.pkl"
+                f"{arch_name}_epoch:{epoch}_ssim:{ssim_mean:.4f}_lin-vmaf:{vmaf_mean:.4f}_crf:{crf}.pkl"
             )
             torch.save(generator.state_dict(), generator_path)
 

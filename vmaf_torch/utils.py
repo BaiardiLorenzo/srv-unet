@@ -103,6 +103,13 @@ def tensor_to_yuv(t_y, t_u, t_v, yuv_path):
     # return frames
 
 
+def rgb_tensor_to_y_tensor(rgb_tensor):
+    '''Convert RGB tensor to Y channel tensor'''
+    weights = torch.tensor([0.299, 0.587, 0.114], device=rgb_tensor.device).view(1, 3, 1, 1)
+    y_tensor = torch.sum(rgb_tensor * weights, dim=1, keepdim=True)
+    return y_tensor
+
+
 class VMAF_C():
     '''Utility class for calling reference vmaf executable'''
 
