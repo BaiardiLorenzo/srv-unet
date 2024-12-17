@@ -48,7 +48,7 @@ def configure_generator(arch_name, args):
 
 if __name__ == '__main__':
     args = utils.ARArgs()
-    torch.autograd.set_detect_anomaly(True)
+    # torch.autograd.set_detect_anomaly(True)
 
     # Seed
     utils.seed_everything()
@@ -72,7 +72,7 @@ if __name__ == '__main__':
     gen_opt = torch.optim.Adam(lr=1e-4, params=generator.parameters())
 
     # Metrics
-    vmaf = VMAF(temporal_pooling=True, enable_motion=False)
+    vmaf = VMAF(temporal_pooling=True, enable_motion=False, clip_score=True)
     ssim = pytorch_ssim.SSIM()
 
     # Losses
@@ -89,10 +89,10 @@ if __name__ == '__main__':
     dataset_test = dl.ARDataLoader2(path=str(args.DATASET_DIR), patch_size=96, crf=crf, eval=True, use_ar=True)
 
     train_loader = DataLoader(
-        dataset=dataset_train, batch_size=batch_size, num_workers=12, shuffle=True, pin_memory=True
+        dataset=dataset_train, batch_size=batch_size, num_workers=4, shuffle=True, pin_memory=True
     )
     eval_loader = DataLoader(
-        dataset=dataset_test, batch_size=batch_size, num_workers=12, shuffle=True, pin_memory=True
+        dataset=dataset_test, batch_size=batch_size, num_workers=4, shuffle=True, pin_memory=True
     )
 
     print(f"Total epochs: {epochs}; Steps per epoch: {len(train_loader)}")
@@ -103,7 +103,7 @@ if __name__ == '__main__':
         wandb.init(
             project=args.WB_NAME, 
             name=f"Train_VMAF_crf:{crf}", 
-            tags=["VMAF", arch_name, crf],
+            tags=["VMAF", str(arch_name), str(crf)],
             config=args,
         )
         
@@ -140,7 +140,7 @@ if __name__ == '__main__':
             vmaf_value = vmaf(y_true, y_fake)
             ssim_value = ssim(y_fake, y_true)
 
-            loss_vmaf = 1.0 - vmaf_value/100.0  
+            loss_vmaf = 100.0 - vmaf_value  
             loss_ssim = 1.0 - ssim_value
 
             pred_fake = critic(y_fake)
@@ -207,12 +207,12 @@ if __name__ == '__main__':
                 wandb.log({
                     "Validation SSIM": ssim_mean,
                     "Validation VMAF": vmaf_mean
-                }, step=epoch)
+                })
 
             ## Save models
             generator_path = os.path.join(
                 args.EXPORT_DIR, 
-                f"{arch_name}_epoch:{epoch}_ssim:{ssim_mean:.4f}_lin-vmaf:{vmaf_mean:.4f}_crf:{crf}.pkl"
+                f"{arch_name}_epoch:{epoch}_ssim:{ssim_mean:.4f}_vmaf:{vmaf_mean:.4f}_crf:{crf}.pth"
             )
             torch.save(generator.state_dict(), generator_path)
 

@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 BVI_DVC_PATH = "/andromeda/datasets/BVI_DVC"
-MODELS_PATH = "/datasets/lbaiardi/sr-unet/models"
+MODELS_PATH = "models"
 
 class ARArgs:
 
@@ -41,7 +41,7 @@ class ARArgs:
                         help="Which network architecture to train.")
         
         ap.add_argument("--w0", type=float, default=1.0,
-                        help="LPIPS weight")
+                        help="LPIPS weight/VMAF weight")
         
         ap.add_argument("--w1", type=float, default=1.0,
                         help="SSIM Weight")

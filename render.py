@@ -98,7 +98,7 @@ if __name__ == '__main__':
         raise Exception("Unknown architecture. Select one between:", args.archs)
 
     model_path = args.MODEL_NAME
-    model.load_state_dict(torch.load(model_path))
+    model.load_state_dict(torch.load(model_path, weights_only=True))
 
     model = model.cuda()
     model.reparametrize()
@@ -146,7 +146,7 @@ if __name__ == '__main__':
             out = q.get()
             scale = 1
             cv2_out = torchToCv2(out, rescale_factor=scale)
-            cv2.imshow('rendering', cv2_out)
+            # cv2.imshow('rendering', cv2_out)
             cv2.waitKey(1)
 
 
