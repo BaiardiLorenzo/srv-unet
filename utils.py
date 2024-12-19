@@ -29,10 +29,10 @@ class ARArgs:
         ap.add_argument("--export", type=str, default=CHECKPOINTS_PATH,
                         help="Where to export models.")
         
-        ap.add_argument("-b", "--batch_size", type=int, default=64,
+        ap.add_argument("-b", "--batch_size", type=int, default=32,
                         help="Batch size.")
         
-        ap.add_argument("-e", "--epochs", type=int, default=8,
+        ap.add_argument("-e", "--epochs", type=int, default=5,
                         help="Number of epochs you want to train the model.")
         
         ap.add_argument("--clipname", type=str, default="",
