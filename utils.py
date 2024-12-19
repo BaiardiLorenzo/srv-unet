@@ -3,7 +3,8 @@ import os
 from pathlib import Path
 
 BVI_DVC_PATH = "/andromeda/datasets/BVI_DVC"
-MODELS_PATH = "models"
+CHECKPOINTS_PATH = "/mnt/data4tb/lbaiardi/checkpoints" #"checkpoints"
+VMAF_NEG = True
 
 class ARArgs:
 
@@ -25,13 +26,13 @@ class ARArgs:
         ap.add_argument("--vidpatches", type=str, default="",
                         help="Where to store/load video patches.")
         
-        ap.add_argument("--export", type=str, default=MODELS_PATH,
+        ap.add_argument("--export", type=str, default=CHECKPOINTS_PATH,
                         help="Where to export models.")
         
         ap.add_argument("-b", "--batch_size", type=int, default=64,
                         help="Batch size.")
         
-        ap.add_argument("-e", "--epochs", type=int, default=80,
+        ap.add_argument("-e", "--epochs", type=int, default=8,
                         help="Number of epochs you want to train the model.")
         
         ap.add_argument("--clipname", type=str, default="",
@@ -41,7 +42,7 @@ class ARArgs:
                         help="Which network architecture to train.")
         
         ap.add_argument("--w0", type=float, default=1.0,
-                        help="LPIPS weight/VMAF weight")
+                        help="VMAF weight/LPIPS weight")
         
         ap.add_argument("--w1", type=float, default=1.0,
                         help="SSIM Weight")
@@ -76,6 +77,9 @@ class ARArgs:
         ap.add_argument('--show-only-upscaled', dest='show-only-upscaled', action='store_true',
                         help="[RENDER.PY ONLY] If you want to show only the neural net upscaled version of the video")
         
+        ap.add_argument('--vmaf-neg', dest='vmaf-neg', action='store_true', default=VMAF_NEG,
+                        help="If you want to use the negative VMAF score")
+
         ap.add_argument('--wb-name', type=str, default='sr-unet',
                         help="Name of the Weights and Biases project")
         
@@ -107,11 +111,16 @@ class ARArgs:
         self.CRF = args['crf']
         self.TEST_DIR = args['testdir']
         self.SHOW_ONLY_HQ = args['show-only-upscaled']
+        self.VMAF_NEG = args['vmaf-neg']
         self.WB_NAME = args['wb_name']
 
         self.archs = archs
+        if self.VMAF_NEG:
+            folder_run = f"{str(self.ARCHITECTURE).upper}_VMAF-NEG_CRF:{self.CRF}_W0:{self.W0}_W1:{self.W1}"
+        else:
+            fodler_run = f"{str(self.ARCHITECTURE).upper}_VMAF_CRF:{self.CRF}_W0:{self.W0}_W1:{self.W1}"
+        self.EXPORT_DIR = os.path.join(self.EXPORT_DIR, folder_run)
         os.makedirs(self.EXPORT_DIR, exist_ok=True)
-
 
 
 def adjust_learning_rate(optimizer, shrink_factor):

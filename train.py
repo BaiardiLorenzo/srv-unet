@@ -50,68 +50,75 @@ if __name__ == '__main__':
     args = utils.ARArgs()
     # torch.autograd.set_detect_anomaly(True)
 
-    # Seed
+    ### Seed
     utils.seed_everything()
 
-    # Arguments
-    print_model = args.VERBOSE
+    ### Arguments
     arch_name = args.ARCHITECTURE
     dataset_upscale_factor = args.UPSCALE_FACTOR
     batch_size = args.BATCH_SIZE
     epochs = args.N_EPOCHS
     crf = args.CRF
+    vmaf_neg = args.VMAF_NEG
     device = torch.device(f"cuda:{args.CUDA_DEVICE}" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")
 
-    # Model
+    ### Model
     generator = configure_generator(arch_name, args)
     critic = Discriminator()
 
-    # Optimizers
+    ### Optimizers
     critic_opt = torch.optim.Adam(lr=1e-4, params=critic.parameters())
     gen_opt = torch.optim.Adam(lr=1e-4, params=generator.parameters())
 
-    # Metrics
-    vmaf = VMAF(temporal_pooling=True, enable_motion=False, clip_score=True)
+    ### Metrics and losses
+    vmaf = VMAF(
+        temporal_pooling=True, enable_motion=False, clip_score=True, NEG=vmaf_neg,
+    )
     ssim = pytorch_ssim.SSIM()
-
-    # Losses
     bce = nn.BCEWithLogitsLoss()
 
-    # Move to device
+    ### Settings weights and lambda parameters for the loss
+    w0, w1, l0 = args.W0, args.W1, args.L0
+
+    ### Move to device
     generator.to(device)
     critic.to(device)
     vmaf.to(device)
-    vmaf.compile()
+    # vmaf.compile()
 
-    # Data loaders
+    ### Dataset and data loaders
+    print("Loading data...")
     dataset_train = dl.ARDataLoader2(path=str(args.DATASET_DIR), patch_size=96, crf=crf, eval=False, use_ar=True)
     dataset_test = dl.ARDataLoader2(path=str(args.DATASET_DIR), patch_size=96, crf=crf, eval=True, use_ar=True)
+    print(f"Train samples: {len(dataset_train)}; Test samples: {len(dataset_test)}")
 
+    print("Creating data loaders...")
     train_loader = DataLoader(
-        dataset=dataset_train, batch_size=batch_size, num_workers=4, shuffle=True, pin_memory=True
+        dataset=dataset_train, batch_size=batch_size, num_workers=12, shuffle=True, pin_memory=True
     )
     eval_loader = DataLoader(
-        dataset=dataset_test, batch_size=batch_size, num_workers=4, shuffle=True, pin_memory=True
+        dataset=dataset_test, batch_size=batch_size, num_workers=12, shuffle=True, pin_memory=True
     )
 
-    print(f"Total epochs: {epochs}; Steps per epoch: {len(train_loader)}")
-
-    # Wandb logging
+    ### Wandb logging
     if args.WB_NAME:
         import wandb
+        if vmaf_neg:
+            name_run = f"VMAF-NEG_CRF:{crf}_W0:{w0}_W1:{w1}"
+            tag_run = "VMAF_NEG"
+        else:
+            name_run = f"VMAF_CRF:{crf}_W0:{w0}_W1:{w1}"
+            tag_run = "VMAF"
         wandb.init(
             project=args.WB_NAME, 
-            name=f"Train_VMAF_crf:{crf}", 
-            tags=["VMAF", str(arch_name), str(crf)],
+            name=name_run,
+            tags=[tag_run, str(arch_name), f"CRF:{crf}", f"W0:{w0}", f"W1:{w1}"],
             config=args,
         )
         
-
-    # Settings weights and lambda parameters for the loss
-    w0, w1, l0 = args.W0, args.W1, args.L0
-
     ### Training loop
+    print(f"Total epochs: {epochs}; Steps per epoch: {len(train_loader)}")
     for epoch in range(epochs):
         ### Training
         generator.train()
@@ -140,10 +147,10 @@ if __name__ == '__main__':
             vmaf_value = vmaf(y_true, y_fake)
             ssim_value = ssim(y_fake, y_true)
 
-            loss_vmaf = 100.0 - vmaf_value  
+            loss_vmaf = 1.0 - vmaf_value/100.0  
             loss_ssim = 1.0 - ssim_value
 
-            pred_fake = critic(y_fake)
+            pred_fake = critic(y_fake)  # Forward pass on critic for fake images
 
             bce_gen = bce(pred_fake, torch.ones_like(pred_fake))
             content_loss = w0 * loss_vmaf + w1 * loss_ssim

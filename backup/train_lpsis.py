@@ -44,14 +44,14 @@ def configure_generator(arch_name, args):
 
 if __name__ == '__main__':
     args = utils.ARArgs()
-    torch.autograd.set_detect_anomaly(True)
+    # torch.autograd.set_detect_anomaly(True)
 
     print_model = args.VERBOSE
     arch_name = args.ARCHITECTURE
     dataset_upscale_factor = args.UPSCALE_FACTOR
     epochs = args.N_EPOCHS
-    crf = 22
-    batch_size = 32
+    crf = args.CRF
+    batch_size = args.BATCH_SIZE
     device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 
     # Model
@@ -80,10 +80,10 @@ if __name__ == '__main__':
     dataset_test = dl.ARDataLoader2(path=str(args.DATASET_DIR), crf=crf, patch_size=96, eval=True, use_ar=True)
 
     train_loader = DataLoader(
-        dataset=dataset_train, batch_size=batch_size, num_workers=2, shuffle=True, pin_memory=True
+        dataset=dataset_train, batch_size=batch_size, num_workers=4, shuffle=True, pin_memory=True
     )
     eval_loader = DataLoader(
-        dataset=dataset_test, batch_size=batch_size, num_workers=2, shuffle=True, pin_memory=True
+        dataset=dataset_test, batch_size=batch_size, num_workers=4, shuffle=True, pin_memory=True
     )
 
     print(f"Total epochs: {epochs}; Steps per epoch: {len(train_loader)}")
@@ -184,8 +184,8 @@ if __name__ == '__main__':
                     ssim_val = ssim(y_fake, y_true).mean()
                     lpips_val = lpips_alex(y_fake, y_true).mean()
 
-                    ssim_validation.append(ssim_val)
-                    lpips_validation.append(lpips_val)
+                    ssim_validation.append(ssim_val.item())
+                    lpips_validation.append(lpips_val.item())
 
             ssim_mean = np.mean(ssim_validation)
             lpips_mean = np.mean(lpips_validation)

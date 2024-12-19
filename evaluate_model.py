@@ -11,7 +11,6 @@ from pathlib import Path
 import tqdm
 import data_loader as dl
 import pytorch_ssim as torch_ssim
-import lpips
 import numpy as np
 
 from models import *
@@ -21,6 +20,7 @@ import cv2
 from queue import Queue
 from threading import Thread
 import shutil
+from vmaf_torch import VMAF
 
 
 def cat_dim(t1, t2):
@@ -59,14 +59,15 @@ def evaluate_model(test_dir_prefix, output_generated, video_prefix, filename, fr
         raise Exception("Unknown architecture. Select one between:", args.archs)
 
     print("Loading model: ", filename)
-    state_dict = torch.load(filename)
+    state_dict = torch.load(filename, weights_only=True)
     model.load_state_dict(state_dict)
-    model = model.to(device)
+    model = model.cuda()
 
     # model = amp.initialize(model, opt_level='O2')
 
-    lpips_metric = lpips.LPIPS(net='alex')
-    lpips_metric = lpips_metric.to(device)
+    vmaf_metric = VMAF(temporal_pooling=True, enable_motion=True)
+    vmaf_metric.to(device)
+    vmaf_metric.compile()
     ssim = torch_ssim.SSIM(window_size=11)
     ssim = ssim.to(device)
 
@@ -75,7 +76,7 @@ def evaluate_model(test_dir_prefix, output_generated, video_prefix, filename, fr
     if crf is not None:
         crf_ = crf
     else:
-        crf_ = 23
+        crf_ = 22
 
     lq_file_path = str(test_dir_prefix) + f"/encoded{resolution_lq}CRF{crf_}/" + video_prefix + ".mp4"
 
@@ -139,13 +140,13 @@ def evaluate_model(test_dir_prefix, output_generated, video_prefix, filename, fr
                 break
 
     ssim_ = []
-    lpips_ = []
+    vmaf_ = []
     tLP = []
     tOF = []
 
     ssim_x = []
-    lpips_x = []
-    tLP_x = []
+    vmaf_x = []
+    tVMAF_x = []
     tOF_x = []
     print("Evaluation")
     tqdm_ = tqdm.tqdm(range(to_frame - from_frame))
@@ -214,36 +215,38 @@ def evaluate_model(test_dir_prefix, output_generated, video_prefix, filename, fr
             if not skip_model_testing:
                 y_true = y_true.to(device)
                 ssim_loss = ssim(y_fake, y_true).mean()
-                lpips_loss = lpips_metric(y_fake, y_true).mean()
+                vmaf_loss = vmaf_metric(y_true, y_fake)
+                # print("VMAF LOSS ", vmaf_loss)
 
                 ssim_ += [float(ssim_loss)]
-                lpips_ += [float(lpips_loss)]
+                vmaf_ += [float(vmaf_loss)]
 
             if prev_gt is not None and not skip_model_testing:
                 # compute tLP
                 if test_tlp:
-                    lp_gt = lpips_metric(prev_gt, y_true)
-                    lp_sr = lpips_metric(prev_sr, y_fake)
-                    tlp_step = abs(float(lp_gt - lp_sr))
-                    tLP += [tlp_step]
+                    vmaf_gt = vmaf_metric(y_true, prev_gt)
+                    vmaf_sr = vmaf_metric(y_fake, prev_sr)
+                    tvmaf_step = abs(float(vmaf_gt - vmaf_sr))
+                    tLP += [tvmaf_step]
 
             if test_lq:
                 x = x[:, :, :H_x, :W_x]
                 x_rescaled = F.interpolate(x, scale_factor=args.UPSCALE_FACTOR, mode='bicubic')
                 ssim_loss_x = ssim(x_rescaled, y_true).mean()
-                lpips_loss_x = lpips_metric(x_rescaled, y_true).mean()
+                vmaf_loss_x = vmaf_metric(y_true, x_rescaled)
+                # print("VMAF LOSS X " , vmaf_loss_x)
 
                 if prev_gt is not None:
                     prev_x = prev_x[:, :, :H_y, :W_y]
 
                     if test_tlp:
-                        lp_gt = lpips_metric(prev_gt, y_true)
-                        lp_x = lpips_metric(prev_x, x_rescaled)
-                        tlp_step = abs(float(lp_gt - lp_x))
-                        tLP_x += [tlp_step]
+                        vmaf_gt = vmaf_metric(prev_gt, y_true)
+                        vmaf_x = vmaf_metric(x_rescaled, prev_x)
+                        tvmaf_step = abs(float(vmaf_gt - vmaf_x))
+                        tVMAF_x += [tvmaf_step]
 
                 ssim_x += [float(ssim_loss_x)]
-                lpips_x += [float(lpips_loss_x)]
+                vmaf_x += [float(vmaf_loss_x)]
 
             prev_gt = y_true.clone()
             prev_x = F.interpolate(x.clone(), scale_factor=args.UPSCALE_FACTOR, mode='bicubic')
@@ -257,12 +260,12 @@ def evaluate_model(test_dir_prefix, output_generated, video_prefix, filename, fr
     out_dict = {'vid': vid, 'encode_res': resolution_lq, 'dest_res': resolution_hq}
 
     out_dict['ssim'] = np.mean(ssim_)
-    out_dict['lpips'] = np.mean(lpips_)
+    out_dict['vmaf'] = np.mean(vmaf_)
     out_dict['size'] = video_size
     out_dict['time'] = time_length
 
     print("Mean ssim:", np.mean(ssim_))
-    print("Mean lpips:", np.mean(lpips_))
+    print("Mean vmaf:", np.mean(vmaf_))
     if test_tlp:
         print("Mean tLP:", np.mean(tLP))
         out_dict['tLP'] = np.mean(tLP)
@@ -273,65 +276,23 @@ def evaluate_model(test_dir_prefix, output_generated, video_prefix, filename, fr
 
     if test_lq:
         print("Mean ssim_encoded:", np.mean(ssim_x))
-        print("Mean lpips_encoded:", np.mean(lpips_x))
+        print("Mean vmaf_encoded:", np.mean(vmaf_x))
 
         out_dict['ssim_encoded'] = np.mean(ssim_x)
-        out_dict['lpips_encoded'] = np.mean(lpips_x)
+        out_dict['vmaf_encoded'] = np.mean(vmaf_x)
 
         if test_tlp:
-            out_dict['tLP_encoded'] = np.mean(tLP_x)
-            print("Mean tLP H264:", np.mean(tLP_x))
+            out_dict['tVMAF_encoded'] = np.mean(tVMAF_x)
+            print("Mean tVMAF H264:", np.mean(tVMAF_x))
         if test_tof:
             out_dict['tOF_encoded'] = np.mean(tOF_x)
             print("Mean tOF H264:", np.mean(tOF_x))
 
-    from_minute = from_second // 60
-    to_minute = to_second // 60
-
-    from_second_ = from_second % 60
-    to_second_ = to_second % 60
-
     if output_generated and not skip_model_testing:
         ffmpeg_command = f"ffmpeg -nostats -loglevel 0 -framerate {fps} -start_number 0 -i\
-         {test_dir_prefix}/out/{video_prefix}_%d.png -crf 5  -c:v libx264 -r {fps} -pix_fmt yuv420p {dest_dir / 'output_testing.mp4 -y'}"
+         {test_dir_prefix}/out/{video_prefix}_%d.png -crf 5  -c:v libx264 -r {fps} -pix_fmt yuv420p {dest_dir / f'{video_prefix}_output.mp4 -y'}"
         print("Putting output images together.\n", ffmpeg_command)
         os.system(ffmpeg_command)
-
-        ## test vmaf
-        vmaf_command = f"./ffmpeg -nostats -loglevel 0\
-            -r {fps} -i {dest_dir / (video_prefix + '.mp4')} \
-            -r {fps} -i {dest_dir / 'output_testing.mp4'} \
-            -ss 00:{from_minute}:{from_second_} -to 00:{to_minute}:{to_second_} \
-            -lavfi '[0:v]setpts=PTS-STARTPTS[reference]; \
-                [1:v]scale=-1:{resolution_hq}:flags=bicubic,setpts=PTS-STARTPTS[distorted]; \
-                [distorted][reference]libvmaf=log_fmt=xml:log_path=/dev/stdout' \
-            -f null - | grep -i 'aggregateVMAF'"
-        print(vmaf_command)
-        out = os.popen(vmaf_command).read()
-
-        # parse output
-        aggregate_vmaf = float(out.split(" ")[2][len('aggregateVMAF="'):-1])
-
-        print("VMAF: ", aggregate_vmaf)
-        out_dict['vmaf'] = aggregate_vmaf
-
-        shutil.rmtree(test_dir_prefix + "/out")
-    if test_lq:
-        vmaf_command = f"./ffmpeg -nostats -loglevel 0\
-                -r {fps} -i {dest_dir / (video_prefix + '.mp4')} \
-                -r {fps} -i {dest_dir / f'encoded{resolution_lq}CRF{crf_}' / (video_prefix + '.mp4')} \
-                -ss 00:{from_minute}:{from_second_} -to 00:{to_minute}:{to_second_} \
-                -lavfi '[0:v]setpts=PTS-STARTPTS[reference]; \
-                    [1:v]scale=-1:{resolution_hq}:flags=bicubic,setpts=PTS-STARTPTS[distorted]; \
-                    [distorted][reference]libvmaf=log_fmt=xml:log_path=/dev/stdout' \
-                -f null - | grep -i 'aggregateVMAF'"
-        print(vmaf_command)
-        out = os.popen(vmaf_command).read()
-        # parse output
-        aggregate_vmaf_x = float(out.split(" ")[2][len('aggregateVMAF="'):-1])
-
-        print("VMAF base: ", aggregate_vmaf_x)
-        out_dict['vmaf_encoded'] = aggregate_vmaf_x
 
     print("Test completed")
 
