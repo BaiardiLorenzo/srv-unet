@@ -73,7 +73,7 @@ if __name__ == '__main__':
 
     ### Metrics and losses
     vmaf = VMAF(
-        temporal_pooling=True, enable_motion=False, clip_score=True, NEG=vmaf_neg,
+        temporal_pooling=True, enable_motion=False, NEG=vmaf_neg,
     )
     ssim = pytorch_ssim.SSIM()
     bce = nn.BCEWithLogitsLoss()
