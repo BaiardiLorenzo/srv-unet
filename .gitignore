@@ -2,6 +2,7 @@
 wandb
 clips
 models
+/checkpoints
 
 # Files and directories to ignore
 *.pkl
