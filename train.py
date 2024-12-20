@@ -73,7 +73,7 @@ if __name__ == '__main__':
 
     ### Metrics and losses
     vmaf = VMAF(
-        temporal_pooling=True, enable_motion=False, clip_score=True, NEG=vmaf_neg,
+        temporal_pooling=True, enable_motion=False, NEG=vmaf_neg,
     )
     ssim = pytorch_ssim.SSIM()
     bce = nn.BCEWithLogitsLoss()
@@ -95,10 +95,10 @@ if __name__ == '__main__':
 
     print("Creating data loaders...")
     train_loader = DataLoader(
-        dataset=dataset_train, batch_size=batch_size, num_workers=12, shuffle=True, pin_memory=True
+        dataset=dataset_train, batch_size=batch_size, num_workers=1, shuffle=True, pin_memory=True
     )
     eval_loader = DataLoader(
-        dataset=dataset_test, batch_size=batch_size, num_workers=12, shuffle=True, pin_memory=True
+        dataset=dataset_test, batch_size=batch_size, num_workers=1, shuffle=True, pin_memory=True
     )
 
     ### Wandb logging
