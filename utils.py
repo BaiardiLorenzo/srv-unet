@@ -3,8 +3,8 @@ import os
 from pathlib import Path
 
 BVI_DVC_PATH = "/andromeda/datasets/BVI_DVC"
-CHECKPOINTS_PATH = "/mnt/data4tb/lbaiardi/checkpoints" #"checkpoints"
-VMAF_NEG = True
+CHECKPOINTS_PATH = "/mnt/data4tb/lbaiardi/srcheckpoints" #"checkpoints"
+TEST_DIR_PATH = "/mnt/data4tb/lbaiardi/srunet_hdd/clips"
 
 class ARArgs:
 
@@ -77,7 +77,7 @@ class ARArgs:
         ap.add_argument('--show-only-upscaled', dest='show-only-upscaled', action='store_true',
                         help="[RENDER.PY ONLY] If you want to show only the neural net upscaled version of the video")
         
-        ap.add_argument('--vmaf-neg', dest='vmaf-neg', action='store_true', default=VMAF_NEG,
+        ap.add_argument('--vmaf-neg', dest='vmaf-neg', action='store_true', default=False,
                         help="If you want to use the negative VMAF score")
 
         ap.add_argument('--wb-name', type=str, default='sr-unet',
@@ -116,9 +116,9 @@ class ARArgs:
 
         self.archs = archs
         if self.VMAF_NEG:
-            folder_run = f"{str(self.ARCHITECTURE).upper}_VMAF-NEG_CRF:{self.CRF}_W0:{self.W0}_W1:{self.W1}"
+            folder_run = f"VMAF-NEG_CRF:{self.CRF}_W0:{self.W0}_W1:{self.W1}"
         else:
-            fodler_run = f"{str(self.ARCHITECTURE).upper}_VMAF_CRF:{self.CRF}_W0:{self.W0}_W1:{self.W1}"
+            folder_run = f"VMAF_CRF:{self.CRF}_W0:{self.W0}_W1:{self.W1}"
         self.EXPORT_DIR = os.path.join(self.EXPORT_DIR, folder_run)
         os.makedirs(self.EXPORT_DIR, exist_ok=True)
 

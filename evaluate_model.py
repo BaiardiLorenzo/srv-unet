@@ -67,7 +67,7 @@ def evaluate_model(test_dir_prefix, output_generated, video_prefix, filename, fr
 
     vmaf_metric = VMAF(temporal_pooling=True, enable_motion=True)
     vmaf_metric.to(device)
-    vmaf_metric.compile()
+    # vmaf_metric.compile()
     ssim = torch_ssim.SSIM(window_size=11)
     ssim = ssim.to(device)
 
@@ -178,7 +178,6 @@ def evaluate_model(test_dir_prefix, output_generated, video_prefix, filename, fr
     new_H = H_x + padH
     new_W = W_x + padW
 
-
     model.batch_size = 1
     model.width = new_W  # x.shape[-1] + (patch_size - modW) % patch_size
     model.height = new_H  # x.shape[-2] + (patch_size - modW) % patch_size
@@ -216,7 +215,6 @@ def evaluate_model(test_dir_prefix, output_generated, video_prefix, filename, fr
                 y_true = y_true.to(device)
                 ssim_loss = ssim(y_fake, y_true).mean()
                 vmaf_loss = vmaf_metric(y_true, y_fake)
-                # print("VMAF LOSS ", vmaf_loss)
 
                 ssim_ += [float(ssim_loss)]
                 vmaf_ += [float(vmaf_loss)]
@@ -234,7 +232,6 @@ def evaluate_model(test_dir_prefix, output_generated, video_prefix, filename, fr
                 x_rescaled = F.interpolate(x, scale_factor=args.UPSCALE_FACTOR, mode='bicubic')
                 ssim_loss_x = ssim(x_rescaled, y_true).mean()
                 vmaf_loss_x = vmaf_metric(y_true, x_rescaled)
-                # print("VMAF LOSS X " , vmaf_loss_x)
 
                 if prev_gt is not None:
                     prev_x = prev_x[:, :, :H_y, :W_y]
@@ -290,7 +287,7 @@ def evaluate_model(test_dir_prefix, output_generated, video_prefix, filename, fr
 
     if output_generated and not skip_model_testing:
         ffmpeg_command = f"ffmpeg -nostats -loglevel 0 -framerate {fps} -start_number 0 -i\
-         {test_dir_prefix}/out/{video_prefix}_%d.png -crf 5  -c:v libx264 -r {fps} -pix_fmt yuv420p {dest_dir / f'{video_prefix}_output.mp4 -y'}"
+         {test_dir_prefix}/out/{video_prefix}_%d.png -crf 5  -c:v libx264 -r {fps} -pix_fmt yuv420p {dest_dir / f'{video_prefix}_result.mp4 -y'}"
         print("Putting output images together.\n", ffmpeg_command)
         os.system(ffmpeg_command)
 
@@ -320,6 +317,6 @@ if __name__ == '__main__':
             output += [dict]
 
         df = pd.DataFrame(output)
-        print(df.mean(axis=0, skipna=True))
+        print(df)
         name = filename.strip(".pkl") + f"_{output[0]['encode_res']}_{output[0]['dest_res']}_TEST_CRF{crf}.csv"
         df.to_csv(name)

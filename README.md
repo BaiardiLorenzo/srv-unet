@@ -101,7 +101,13 @@ the following command:
 
 ```bash
 $ python evaluate_model.py --model [MODEL_NAME] --arch srunet --layer_mult 0.7 --n_filters 48 \
---downsample 0.75 --device 0 --upscale 2 --crf 23 --test_dir [TEST_DIR] --testinputres 720 --testoutputres 1080
+--downsample 0.75 --device 0 --upscale 2 --crf 23 --testdir [TEST_DIR] --testinputres 720 --testoutputres 1080
+```
+
+For the 2x upscale model, the command is:
+
+```bash
+$ python evaluate_model.py --model /mnt/data4tb/lbaiardi/srunet_hdd/checkpoints/srunet_crf_30_w0:1_W1:1/srunet_epoch:0_ssim:0.5718_vmaf:95.4761_crf:30.pth --device 0 --crf 30 --testdir /mnt/data4tb/lbaiardi/srunet_hdd/clips --testinputres 540 --testoutputres 1080
 ```
 
 Ultimately will be printed on screen the experimental results, and also will be saved a .csv file contained these infos.
