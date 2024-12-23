@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 BVI_DVC_PATH = "/andromeda/datasets/BVI_DVC"
-CHECKPOINTS_PATH = "/mnt/data4tb/lbaiardi/srcheckpoints" #"checkpoints"
+CHECKPOINTS_PATH = "/mnt/data4tb/lbaiardi/srunet_hdd/checkpoints" #"checkpoints"
 TEST_DIR_PATH = "/mnt/data4tb/lbaiardi/srunet_hdd/clips"
 
 class ARArgs:
@@ -46,6 +46,9 @@ class ARArgs:
         
         ap.add_argument("--w1", type=float, default=1.0,
                         help="SSIM Weight")
+        
+        ap.add_argument("--w2", type=float, default=1.0,
+                        help="VMAF-NEG Weight")
         
         ap.add_argument("--l0", type=float, default=0.001,
                         help="Adversarial Component Weight")
@@ -101,6 +104,7 @@ class ARArgs:
         self.VALIDATION_FREQ = 1
         self.W0 = args['w0']
         self.W1 = args['w1']
+        self.W2 = args['w2']
         self.L0 = args['l0']
         self.UPSCALE_FACTOR = args['upscale']
         self.LAYER_MULTIPLIER = args['layer_mult']
@@ -115,13 +119,7 @@ class ARArgs:
         self.WB_NAME = args['wb_name']
 
         self.archs = archs
-        if self.VMAF_NEG:
-            folder_run = f"VMAF-NEG_CRF:{self.CRF}_W0:{self.W0}_W1:{self.W1}"
-        else:
-            folder_run = f"VMAF_CRF:{self.CRF}_W0:{self.W0}_W1:{self.W1}"
-        self.EXPORT_DIR = os.path.join(self.EXPORT_DIR, folder_run)
-        os.makedirs(self.EXPORT_DIR, exist_ok=True)
-
+        
 
 def adjust_learning_rate(optimizer, shrink_factor):
     """

@@ -46,39 +46,49 @@ if __name__ == '__main__':
     args = utils.ARArgs()
     # torch.autograd.set_detect_anomaly(True)
 
-    print_model = args.VERBOSE
+    ### Seed
+    utils.seed_everything()
+
+    ### Arguments
     arch_name = args.ARCHITECTURE
     dataset_upscale_factor = args.UPSCALE_FACTOR
+    batch_size = args.BATCH_SIZE
     epochs = args.N_EPOCHS
     crf = args.CRF
     batch_size = args.BATCH_SIZE
-    device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
+    device = torch.device(f"cuda:{args.CUDA_DEVICE}" if torch.cuda.is_available() else "cpu")
+    print(f"Device: {device}")
 
-    # Model
+    ### Model
     generator = configure_generator(arch_name, args)
     critic = Discriminator()
     
-    # Optimizers
+    ### Optimizers
     critic_opt = torch.optim.Adam(lr=1e-4, params=critic.parameters())
     gan_opt = torch.optim.Adam(lr=1e-4, params=generator.parameters())
 
-    # Metrics
+    ### Metrics and losses
     lpips_loss = lpips.LPIPS(net='vgg', version='0.1')
     lpips_alex = lpips.LPIPS(net='alex', version='0.1')
     ssim = pytorch_ssim.SSIM()
-
     bce = nn.BCEWithLogitsLoss()
 
-    # Move to device
+    ### Settings weights and lambda parameters for the loss
+    w0, w1, l0 = args.W0, args.W1, args.L0
+
+    ### Move to device
     generator.to(device)
     lpips_loss.to(device)
     lpips_alex.to(device)
     critic.to(device)
 
-    # Data loaders
+    ### Dataset and dataloader
+    print("Loading dataset...")
     dataset_train = dl.ARDataLoader2(path=str(args.DATASET_DIR), crf=crf, patch_size=96, eval=False, use_ar=True)
     dataset_test = dl.ARDataLoader2(path=str(args.DATASET_DIR), crf=crf, patch_size=96, eval=True, use_ar=True)
+    print(f"Train samples: {len(dataset_train)}, Test samples: {len(dataset_test)}")
 
+    print("Creating dataloaders...")
     train_loader = DataLoader(
         dataset=dataset_train, batch_size=batch_size, num_workers=4, shuffle=True, pin_memory=True
     )
@@ -86,29 +96,26 @@ if __name__ == '__main__':
         dataset=dataset_test, batch_size=batch_size, num_workers=4, shuffle=True, pin_memory=True
     )
 
-    print(f"Total epochs: {epochs}; Steps per epoch: {len(train_loader)}")
-
     # Wandb logging
     if args.WB_NAME:
         import wandb
+        tag_run = "LPSIS"
         wandb.init(
             project=args.WB_NAME, 
-            name=f'train_lpsis_crf-{crf}', 
+            name=f'LPSIS_CRF:{crf}_W0:{w0}_W1:{w1}', 
+            tags=[tag_run, str(arch_name), f"CRF:{crf}", f"W0:{w0}", f"W1:{w1}"],
             config=args
         )
 
+    ### Export directory
+    folder_run = f"LPSIS_CRF:{crf}_W0:{w0}_W1:{w1}"
+    args.EXPORT_DIR = os.path.join(args.EXPORT_DIR, folder_run)
+    os.makedirs(args.EXPORT_DIR, exist_ok=True)
 
-    # Settings weights and lambda parameters for the loss
-    w0, w1, l0 = args.W0, args.W1, args.L0
-
-    # Training loop
+    ### Training loop
+    print(f"Total epochs: {epochs}; Steps per epoch: {len(train_loader)}")
     for epoch in range(epochs):
-
-        # if e == max(n_epochs - starting_epoch, 0):
-        #     utils.adjust_learning_rate(critic_opt, 0.1)
-        #     utils.adjust_learning_rate(gan_opt, 0.1)
-
-        # Training
+        ### Training
         generator.train()
         critic.train()
         for i, batch in enumerate(tqdm(train_loader, total=len(train_loader), desc=f'Training epoch {epoch}/{epochs}')):
@@ -120,11 +127,10 @@ if __name__ == '__main__':
 
             y_fake = generator(x)  # Forward pass on generator
             pred_true = critic(y_true)  # Forward pass on critic for real images
-            loss_true = bce(pred_true, torch.ones_like(pred_true))
-
             pred_fake = critic(y_fake.detach())  # Forward pass on critic for fake images
-            loss_fake = bce(pred_fake, torch.zeros_like(pred_fake))
 
+            loss_true = bce(pred_true, torch.ones_like(pred_true))
+            loss_fake = bce(pred_fake, torch.zeros_like(pred_fake))
             loss_critic = (loss_true + loss_fake)*0.5
 
             loss_critic.backward()
@@ -137,7 +143,8 @@ if __name__ == '__main__':
             ssim_val = ssim(y_fake, y_true)
             loss_ssim = 1.0 - ssim_val
 
-            pred_fake = critic(y_fake)
+            pred_fake = critic(y_fake) # Forward pass on critic for fake images
+
             bce_gen = bce(pred_fake, torch.ones_like(pred_fake))
             content_loss = w0 * loss_lpips + w1 * loss_ssim
             loss_gen = content_loss + l0 * bce_gen
@@ -147,28 +154,28 @@ if __name__ == '__main__':
 
             # Logging
             print(f"Epoch: {epoch}, "
-                  f"Loss discriminator: {loss_critic:.4f}, "
-                  f"Loss generator: {loss_gen:.4f}, "
-                  f"Content loss: {content_loss:.4f}, "
-                  f"Loss LPIPS: {loss_lpips:.4f}, "
-                  f"Loss SSIM: {loss_ssim:.4f}, "
-                  f"Loss BCE: {bce_gen:.4f}, "
-                  f"SSIM: {ssim_val:.4f}"
+                  f"Loss discriminator: {loss_critic.item():.4f}, "
+                  f"Loss generator: {loss_gen.item():.4f}, "
+                  f"Content loss: {content_loss.item():.4f}, "
+                  f"Loss LPIPS: {loss_lpips.item():.4f}, "
+                  f"Loss SSIM: {loss_ssim.item():.4f}, "
+                  f"Loss BCE: {bce_gen.item():.4f}, "
+                  f"SSIM: {ssim_val.item():.4f}"
                   )
             
             if args.WB_NAME:
                 wandb.log({
                     "epoch": epoch,
-                    "Loss discriminator": loss_critic,
-                    "Loss generator": loss_gen,
-                    "Loss LPIPS": loss_lpips,
-                    "Loss SSIM": loss_ssim,
-                    "Loss BCE": bce_gen,
-                    "Content loss": content_loss,
-                    "SSIM": ssim_val
+                    "Loss discriminator": loss_critic.item(),
+                    "Loss generator": loss_gen.item(),
+                    "Loss LPIPS": loss_lpips.item(),
+                    "Loss SSIM": loss_ssim.item(),
+                    "Loss BCE": bce_gen.item(),
+                    "Content loss": content_loss.item(),
+                    "SSIM": ssim_val.item()
                 })
 
-        # Validation
+        ### Validation
         if (epoch + 1) % args.VALIDATION_FREQ == 0:
             ssim_validation = []
             lpips_validation = []
@@ -190,11 +197,12 @@ if __name__ == '__main__':
             ssim_mean = np.mean(ssim_validation)
             lpips_mean = np.mean(lpips_validation)
 
-            print(f"Validation SSIM: {ssim_mean:.4f}, Validation LPIPS: {lpips_mean:.4f}")
+            print(f"Epoch: {epoch}, "
+                  f"Validation SSIM: {ssim_mean:.4f}, "
+                  f"Validation LPIPS: {lpips_mean:.4f}")
 
             if args.WB_NAME:
                 wandb.log({
-                    "epoch": epoch,
                     "Validation SSIM": ssim_mean,
                     "Validation LPIPS": lpips_mean
                 })

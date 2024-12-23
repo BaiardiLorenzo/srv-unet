@@ -1,14 +1,16 @@
+# from apex import amp
 import pandas as pd
 import utils, os
 
 args = utils.ARArgs()
+# os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+# os.environ["CUDA_VISIBLE_DEVICES"] = args.CUDA_DEVICE
 
 from pathlib import Path
 
-from tqdm import tqdm
+import tqdm
 import data_loader as dl
 import pytorch_ssim as torch_ssim
-import lpips
 import numpy as np
 
 from models import *
@@ -33,10 +35,20 @@ def save_with_cv(pic, imname):
     cv2.imwrite(imname, npimg)
 
 
-def configure_generator(arch_name, dataset_upscale_factor, args):
+def evaluate_model(test_dir_prefix, output_generated, video_prefix, filename, from_second=0, to_second=None,
+                   test_lq=True,
+                   skip_model_testing=False, crf=None):
+    device = 'cuda'
+
+    test_tof = False and not skip_model_testing
+    test_tlp = False and not skip_model_testing
+
+    arch_name = args.ARCHITECTURE
+    dataset_upscale_factor = args.UPSCALE_FACTOR
+
     if arch_name == 'srunet':
         model = SRUnet(3, residual=True, scale_factor=dataset_upscale_factor, n_filters=args.N_FILTERS,
-                    downsample=args.DOWNSAMPLE, layer_multiplier=args.LAYER_MULTIPLIER)
+                       downsample=args.DOWNSAMPLE, layer_multiplier=args.LAYER_MULTIPLIER)
     elif arch_name == 'unet':
         model = UNet(3, residual=True, scale_factor=dataset_upscale_factor, n_filters=args.N_FILTERS)
     elif arch_name == 'srgan':
@@ -47,63 +59,36 @@ def configure_generator(arch_name, dataset_upscale_factor, args):
         raise Exception("Unknown architecture. Select one between:", args.archs)
 
     print("Loading model: ", filename)
-    state_dict = torch.load(filename)
+    state_dict = torch.load(filename, weights_only=True)
     model.load_state_dict(state_dict)
+    model = model.cuda()
 
-    return model
+    # model = amp.initialize(model, opt_level='O2')
 
-
-def evaluate_model(
-        test_dir_prefix, output_generated, video_prefix, filename, from_second=0, to_second=None, 
-        test_lq=True, skip_model_testing=False, crf=None
-    ):
-    device = torch.device(f"cuda:{args.CUDA_DEVICE}" if torch.cuda.is_available() else "cpu")
-    test_tlp = False and not skip_model_testing
-
-    arch_name = args.ARCHITECTURE
-    dataset_upscale_factor = args.UPSCALE_FACTOR
-
-    ### Load model
-    model = configure_generator(arch_name, dataset_upscale_factor, args)
-    model.to(device)
-    model.eval()
-
-    ### Load all metrics
-    lpips_metric = lpips.LPIPS(net='alex')
     vmaf_metric = VMAF(temporal_pooling=True, enable_motion=True)
-    vmaf_neg_metric = VMAF(temporal_pooling=True, enable_motion=True, NEG=True)
-    ssim = torch_ssim.SSIM(window_size=11)
-
-    ### Move metrics to device
-    lpips_metric.to(device)
     vmaf_metric.to(device)
-    vmaf_neg_metric.to(device)
-    ssim.to(device)
     # vmaf_metric.compile()
-    # vmaf_neg_metric.compile()
+    ssim = torch_ssim.SSIM(window_size=11)
+    ssim = ssim.to(device)
 
-    ### Load video 
     resolution_lq = args.TEST_INPUT_RES
     resolution_hq = args.TEST_OUTPUT_RES
-    crf_ = crf if crf is not None else 22
-    print(f"Testing: {video_prefix} with CRF {crf_}")
+    if crf is not None:
+        crf_ = crf
+    else:
+        crf_ = 22
 
-    ## Low quality video
     lq_file_path = str(test_dir_prefix) + f"/encoded{resolution_lq}CRF{crf_}/" + video_prefix + ".mp4"
+
     cap_lq = cv2.VideoCapture(lq_file_path)
     video_size = cap_lq.get(cv2.CAP_PROP_BITRATE)  # os.path.getsize(lq_file_path) / 1e6
     time_length = cap_lq.get(cv2.CAP_PROP_FRAME_COUNT) / cap_lq.get(cv2.CAP_PROP_FPS)
+    cap_hq = cv2.VideoCapture(str(test_dir_prefix) + f"/{video_prefix}" + ".y4m")
 
-    ## High quality video
-    hq_file_path = str(test_dir_prefix) + f"/{video_prefix}" + ".y4m"
-    cap_hq = cv2.VideoCapture(hq_file_path)
-
-    ## Queues
     lq_queue = Queue(1)
     hq_queue = Queue(1)
     out_queue = Queue(1)
 
-    ## Frame count
     total_frames = int(cap_hq.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = int(cap_hq.get(cv2.CAP_PROP_FPS))
 
@@ -132,6 +117,8 @@ def evaluate_model(
             else:
                 cap.release()
 
+    finish = False
+
     def save_pic(q):
         count = 0
         while True:
@@ -149,36 +136,38 @@ def evaluate_model(
             else:
                 break
 
-    ## Metrics
     ssim_ = []
-    lpips_ = []
     vmaf_ = []
-    vmaf_neg_ = []
     tLP = []
+    tOF = []
 
     ssim_x = []
-    lpips_x = []
     vmaf_x = []
-    vmaf_neg_x = []
-    tLP_x = []
-    
-    ## Create output directory
+    tVMAF_x = []
+    tOF_x = []
+    print("Evaluation")
+    tqdm_ = tqdm.tqdm(range(to_frame - from_frame))
+
     dest = test_dir_prefix.split("/")
     dest_dir = Path("/".join(dest))
     dest = dest_dir / "out"
     dest.mkdir(exist_ok=True, parents=True)
+    border = 0
 
-    ## Get video resolution
-    H_x = int(cap_lq.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    W_x = int(cap_lq.get(cv2.CAP_PROP_FRAME_WIDTH))
+    H_x, W_x = cap_lq.get(cv2.CAP_PROP_FRAME_HEIGHT), cap_lq.get(cv2.CAP_PROP_FRAME_WIDTH)
+    H_y, W_y = cap_hq.get(cv2.CAP_PROP_FRAME_HEIGHT), cap_hq.get(cv2.CAP_PROP_FRAME_WIDTH)
+
+    framerate = int(cap_lq.get(cv2.CAP_PROP_FPS))
+
+    H_x = int(H_x)
+    W_x = int(W_x)
+
+    H_y = int(H_y)
+    W_y = int(W_y)
+
     print(f"Src resolution: {W_x}x{H_x}")
-
-    H_y = int(cap_hq.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    W_y = int(cap_hq.get(cv2.CAP_PROP_FRAME_WIDTH))
     print(f"Dest resolution: {W_y}x{H_y}")
 
-    ## Pad video
-    border = 0
     modH, modW = H_x % (16 + border), W_x % (16 + border)
     padW = ((16 + border) - modW) % (16 + border)
     padH = ((16 + border) - modH) % (16 + border)
@@ -189,23 +178,25 @@ def evaluate_model(
     model.batch_size = 1
     model.width = new_W  # x.shape[-1] + (patch_size - modW) % patch_size
     model.height = new_H  # x.shape[-2] + (patch_size - modW) % patch_size
+
     print(f"Padded src resolution: {new_W}x{new_H}")
 
-    ## Initialize previous frames
-    prev_sr, prev_gt, prev_x = None, None, None
+    prev_sr = None
+    prev_gt = None
+    prev_x = None
 
-    ## Start threads
     thread1 = Thread(target=read_pic, args=(cap_lq, lq_queue, from_frame, to_frame))  # .start()
     thread2 = Thread(target=read_pic, args=(cap_hq, hq_queue, from_frame, to_frame))  # .start()
     thread3 = Thread(target=save_pic, args=(out_queue,))  # .start()
+
     thread1.start()
     thread2.start()
     thread3.start()
 
-    ## Start testing
-    for i in tqdm(range(to_frame - from_frame), total=to_frame - from_frame, desc=f"Testing {video_prefix}"):
+    model = model.eval()
+
+    for i in tqdm_:
         with torch.no_grad():
-            # Get frames
             y_true, _ = hq_queue.get()
             x, x_bicubic = lq_queue.get()
 
@@ -219,91 +210,77 @@ def evaluate_model(
 
             if not skip_model_testing:
                 y_true = y_true.to(device)
-
                 ssim_loss = ssim(y_fake, y_true).mean()
-                lpips_loss = lpips_metric(y_fake, y_true).mean()
                 vmaf_loss = vmaf_metric(y_true, y_fake)
-                vmaf_neg_loss = vmaf_neg_metric(y_true, y_fake)
 
                 ssim_ += [float(ssim_loss)]
-                lpips_ += [float(lpips_loss)]
                 vmaf_ += [float(vmaf_loss)]
-                vmaf_neg_ += [float(vmaf_neg_loss)]
 
             if prev_gt is not None and not skip_model_testing:
                 # compute tLP
                 if test_tlp:
-                    lp_gt = lpips_metric(prev_gt, y_true)
-                    lp_sr = lpips_metric(prev_sr, y_fake)
-                    tlp_step = abs(float(lp_gt - lp_sr))
-                    tLP += [tlp_step]
+                    vmaf_gt = vmaf_metric(y_true, prev_gt)
+                    vmaf_sr = vmaf_metric(y_fake, prev_sr)
+                    tvmaf_step = abs(float(vmaf_gt - vmaf_sr))
+                    tLP += [tvmaf_step]
 
             if test_lq:
                 x = x[:, :, :H_x, :W_x]
                 x_rescaled = F.interpolate(x, scale_factor=args.UPSCALE_FACTOR, mode='bicubic')
-
                 ssim_loss_x = ssim(x_rescaled, y_true).mean()
-                lpips_loss_x = lpips_metric(x_rescaled, y_true).mean()
                 vmaf_loss_x = vmaf_metric(y_true, x_rescaled)
-                vmaf_neg_loss_x = vmaf_neg_metric(y_true, x_rescaled)
 
                 if prev_gt is not None:
                     prev_x = prev_x[:, :, :H_y, :W_y]
 
                     if test_tlp:
-                        lp_gt = lpips_metric(prev_gt, y_true)
-                        lp_x = lpips_metric(prev_x, x_rescaled)
-                        tlp_step = abs(float(lp_gt - lp_x))
-                        tLP_x += [tlp_step]
+                        vmaf_gt = vmaf_metric(prev_gt, y_true)
+                        vmaf_x = vmaf_metric(x_rescaled, prev_x)
+                        tvmaf_step = abs(float(vmaf_gt - vmaf_x))
+                        tVMAF_x += [tvmaf_step]
 
                 ssim_x += [float(ssim_loss_x)]
-                lpips_x += [float(lpips_loss_x)]
                 vmaf_x += [float(vmaf_loss_x)]
-                vmaf_neg_x += [float(vmaf_neg_loss_x)]
 
             prev_gt = y_true.clone()
             prev_x = F.interpolate(x.clone(), scale_factor=args.UPSCALE_FACTOR, mode='bicubic')
             if not skip_model_testing:
                 prev_sr = y_fake.clone()
 
+
+    finish = True
     out_queue.put(None)
 
-    ### Print results
-    out_dict = {
-        'vid': vid, 
-        'encode_res': resolution_lq, 
-        'dest_res': resolution_hq
-    }
+    out_dict = {'vid': vid, 'encode_res': resolution_lq, 'dest_res': resolution_hq}
 
     out_dict['ssim'] = np.mean(ssim_)
-    out_dict['lpips'] = np.mean(lpips_)
     out_dict['vmaf'] = np.mean(vmaf_)
-    out_dict['vmaf_neg'] = np.mean(vmaf_neg_)
     out_dict['size'] = video_size
     out_dict['time'] = time_length
 
     print("Mean ssim:", np.mean(ssim_))
-    print("Mean lpips:", np.mean(lpips_))
     print("Mean vmaf:", np.mean(vmaf_))
-    print("Mean vmaf_neg:", np.mean(vmaf_neg_))
     if test_tlp:
         print("Mean tLP:", np.mean(tLP))
         out_dict['tLP'] = np.mean(tLP)
 
+    if test_tof:
+        print("Mean tOF:", np.mean(tOF))
+        out_dict['tOF'] = np.mean(tOF)
+
     if test_lq:
         print("Mean ssim_encoded:", np.mean(ssim_x))
-        print("Mean lpips_encoded:", np.mean(lpips_x))
         print("Mean vmaf_encoded:", np.mean(vmaf_x))
-        print("Mean vmaf_neg_encoded:", np.mean(vmaf_neg_x))
 
         out_dict['ssim_encoded'] = np.mean(ssim_x)
-        out_dict['lpips_encoded'] = np.mean(lpips_x)
         out_dict['vmaf_encoded'] = np.mean(vmaf_x)
-        out_dict['vmaf_neg_encoded'] = np.mean(vmaf_neg_x)
 
         if test_tlp:
-            out_dict['tLP_encoded'] = np.mean(tLP_x)
-            print("Mean tLP H264:", np.mean(tLP_x))
+            out_dict['tVMAF_encoded'] = np.mean(tVMAF_x)
+            print("Mean tVMAF H264:", np.mean(tVMAF_x))
+        if test_tof:
+            out_dict['tOF_encoded'] = np.mean(tOF_x)
+            print("Mean tOF H264:", np.mean(tOF_x))
 
     if output_generated and not skip_model_testing:
         model_name = os.path.basename(os.path.dirname(os.path.normpath(filename)))
@@ -326,17 +303,17 @@ if __name__ == '__main__':
     second_start = 0
     second_finish = 120  # test no more than the 2nd minutes - none of the test videos last so much
 
-    for crf, filename in [(args.CRF, args.MODEL_NAME),]:
+    for crf, filename in [
+        (args.CRF, args.MODEL_NAME),
+    ]:
         print(f"Testing CRF {crf}")
         output = []
 
-        for i, vid in enumerate(tqdm(videos, desc=f"Testing Videos")):
-            # print(f"Testing: {vid}; {i + 1}/{len(videos)}")
-            dict = evaluate_model(
-                str(test_dir), video_prefix=vid, output_generated=True, filename=filename,
-                from_second=second_start, test_lq=True, skip_model_testing=False,
-                to_second=second_finish, crf=crf
-            )
+        for i, vid in enumerate(videos):
+            print(f"Testing: {vid}; {i + 1}/{len(videos)}")
+            dict = evaluate_model(str(test_dir), video_prefix=vid, output_generated=True, filename=filename,
+                                  from_second=second_start, test_lq=True, skip_model_testing=False,
+                                  to_second=second_finish, crf=crf)
             output += [dict]
 
         df = pd.DataFrame(output)
