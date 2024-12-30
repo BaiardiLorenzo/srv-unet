@@ -6,6 +6,7 @@ BVI_DVC_PATH = "/andromeda/datasets/BVI_DVC"
 CHECKPOINTS_PATH = "/mnt/data4tb/lbaiardi/srunet_hdd/checkpoints" #"checkpoints"
 TEST_DIR_PATH = "/mnt/data4tb/lbaiardi/srunet_hdd/clips"
 
+
 class ARArgs:
 
     def __init__(self, args=None):
@@ -65,7 +66,7 @@ class ARArgs:
         ap.add_argument("--downsample", type=float, default=1.0, 
                         help="Downsample factor, SR Unet and UNet only")
         
-        ap.add_argument("--testdir", type=str, default="test",
+        ap.add_argument("--testdir", type=str, default=TEST_DIR_PATH,
                         help="[TEST ONLY] Where the test clips are contained.")
         
         ap.add_argument("--testinputres", type=int, default=540, 

@@ -209,6 +209,9 @@ def evaluate_model(
             y_true, _ = hq_queue.get()
             x, x_bicubic = lq_queue.get()
 
+            x = x.to(device)
+            x_bicubic = x_bicubic.to(device)
+
             x = F.pad(x, [0, padW, 0, padH])
 
             if not skip_model_testing:
@@ -307,10 +310,10 @@ def evaluate_model(
 
     if output_generated and not skip_model_testing:
         model_name = os.path.basename(os.path.dirname(os.path.normpath(filename)))
-        os.makedirs(dest_dir / 'models' / model_name, exist_ok=True)
+        os.makedirs(dest_dir / 'models' / f'{crf}' / model_name, exist_ok=True)
         print(f"{dest_dir}/models/{model_name}")
         ffmpeg_command = f"ffmpeg -nostats -loglevel 0 -framerate {fps} -start_number 0 -i\
-         {test_dir_prefix}/out/{video_prefix}_%d.png -crf 5  -c:v libx264 -r {fps} -pix_fmt yuv420p {dest_dir / 'models' / model_name / f'{video_prefix}.mp4 -y'}"
+         {test_dir_prefix}/out/{video_prefix}_%d.png -crf 5  -c:v libx264 -r {fps} -pix_fmt yuv420p {dest_dir / 'models' / f'{crf}' / model_name / f'{video_prefix}.mp4 -y'}"
         print("Putting output images together.\n", ffmpeg_command)
         os.system(ffmpeg_command)
 
@@ -334,7 +337,7 @@ if __name__ == '__main__':
             # print(f"Testing: {vid}; {i + 1}/{len(videos)}")
             dict = evaluate_model(
                 str(test_dir), video_prefix=vid, output_generated=True, filename=filename,
-                from_second=second_start, test_lq=True, skip_model_testing=False,
+                from_second=second_start, test_lq=False, skip_model_testing=False,
                 to_second=second_finish, crf=crf
             )
             output += [dict]

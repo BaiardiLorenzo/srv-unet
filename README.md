@@ -110,6 +110,8 @@ For the 2x upscale model, the command is:
 $ python evaluate_model.py --model /mnt/data4tb/lbaiardi/srunet_hdd/checkpoints/srunet_crf_30_w0:1_W1:1/srunet_epoch:0_ssim:0.5718_vmaf:95.4761_crf:30.pth --device 0 --crf 30 --testdir /mnt/data4tb/lbaiardi/srunet_hdd/clips --testinputres 540 --testoutputres 1080
 ```
 
+python evaluate_model.py --model /mnt/data4tb/lbaiardi/srunet_hdd/checkpoints/CRF_42/VMAF_CRF:42_W0:1.0_W1:1.0/srunet_epoch:4_ssim:0.3624_vmaf:93.5791_crf:42.pth --crf 42
+
 Ultimately will be printed on screen the experimental results, and also will be saved a .csv file contained these infos.
 
 ## Inference

@@ -4,13 +4,15 @@ args = utils.ARArgs()
 # os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 # os.environ["CUDA_VISIBLE_DEVICES"] = args.CUDA_DEVICE
 
+# loss_vmaf = -torch.log(vmaf_value/100.0)
+# loss_vmaf = torch.exp(-(5)*vmaf_value/100.0)
+
 import numpy as np
 import torch
 import data_loader as dl
 # courtesy of https://github.com/Po-Hsun-Su/pytorch-ssim
 import pytorch_ssim  
 # courtesy of https://github.com/richzhang/PerceptualSimilarity
-import lpips  
 
 from torch import nn as nn
 from torch.utils.data import DataLoader
@@ -18,6 +20,9 @@ from tqdm import tqdm
 # courtesy of https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Super-Resolution 
 from models import Discriminator, SRResNet 
 from pytorch_unet import SRUnet, UNet, SimpleResNet
+from vmaf_torch import VMAF
+import lpips
+
 
 def configure_generator(arch_name, args):
     if arch_name == 'srunet':
@@ -55,63 +60,72 @@ if __name__ == '__main__':
     batch_size = args.BATCH_SIZE
     epochs = args.N_EPOCHS
     crf = args.CRF
-    batch_size = args.BATCH_SIZE
     device = torch.device(f"cuda:{args.CUDA_DEVICE}" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")
 
     ### Model
     generator = configure_generator(arch_name, args)
     critic = Discriminator()
-    
+
     ### Optimizers
     critic_opt = torch.optim.Adam(lr=1e-4, params=critic.parameters())
-    gan_opt = torch.optim.Adam(lr=1e-4, params=generator.parameters())
+    gen_opt = torch.optim.Adam(lr=1e-4, params=generator.parameters())
 
     ### Metrics and losses
-    lpips_loss = lpips.LPIPS(net='vgg', version='0.1')
-    lpips_alex = lpips.LPIPS(net='alex', version='0.1')
+    vmaf = VMAF(
+        temporal_pooling=True, enable_motion=False, NEG=False,
+    )
     ssim = pytorch_ssim.SSIM()
     bce = nn.BCEWithLogitsLoss()
+    ## For validation
+    vmaf_neg = VMAF(
+        temporal_pooling=True, enable_motion=False, NEG=True
+    )
+    lpips_loss = lpips.LPIPS(net='vgg', version='0.1')
+    lpips_alex = lpips.LPIPS(net='alex', version='0.1')
 
     ### Settings weights and lambda parameters for the loss
     w0, w1, l0 = args.W0, args.W1, args.L0
 
-    ### Move to device
-    generator.to(device)
-    lpips_loss.to(device)
-    lpips_alex.to(device)
-    critic.to(device)
-
-    ### Dataset and dataloader
-    print("Loading dataset...")
-    dataset_train = dl.ARDataLoader2(path=str(args.DATASET_DIR), crf=crf, patch_size=96, eval=False, use_ar=True)
-    dataset_test = dl.ARDataLoader2(path=str(args.DATASET_DIR), crf=crf, patch_size=96, eval=True, use_ar=True)
-    print(f"Train samples: {len(dataset_train)}, Test samples: {len(dataset_test)}")
-
-    print("Creating dataloaders...")
-    train_loader = DataLoader(
-        dataset=dataset_train, batch_size=batch_size, num_workers=4, shuffle=True, pin_memory=True
-    )
-    eval_loader = DataLoader(
-        dataset=dataset_test, batch_size=batch_size, num_workers=4, shuffle=True, pin_memory=True
-    )
-
-    # Wandb logging
-    if args.WB_NAME:
-        import wandb
-        tag_run = "LPSIS"
-        wandb.init(
-            project=args.WB_NAME, 
-            name=f'LPSIS_CRF:{crf}_W0:{w0}_W1:{w1}', 
-            tags=[tag_run, str(arch_name), f"CRF:{crf}", f"W0:{w0}", f"W1:{w1}"],
-            config=args
-        )
-
     ### Export directory
-    folder_run = f"LPSIS_CRF:{crf}_W0:{w0}_W1:{w1}"
+    folder_run = f"VMAF_CRF:{crf}_W0:{w0}_W1:{w1}"
     args.EXPORT_DIR = os.path.join(args.EXPORT_DIR, folder_run)
     os.makedirs(args.EXPORT_DIR, exist_ok=True)
 
+    ### Move to device
+    generator.to(device)
+    critic.to(device)
+    vmaf.to(device)
+    vmaf_neg.to(device)
+    lpips_loss.to(device)
+    lpips_alex.to(device)
+    # vmaf.compile()
+
+    ### Dataset and data loaders
+    print("Loading data...")
+    dataset_train = dl.ARDataLoader2(path=str(args.DATASET_DIR), patch_size=96, crf=crf, eval=False, use_ar=True)
+    dataset_test = dl.ARDataLoader2(path=str(args.DATASET_DIR), patch_size=96, crf=crf, eval=True, use_ar=True)
+    print(f"Train samples: {len(dataset_train)}; Test samples: {len(dataset_test)}")
+
+    print("Creating data loaders...")
+    train_loader = DataLoader(
+        dataset=dataset_train, batch_size=batch_size, num_workers=1, shuffle=True, pin_memory=True
+    )
+    eval_loader = DataLoader(
+        dataset=dataset_test, batch_size=batch_size, num_workers=1, shuffle=True, pin_memory=True
+    )
+
+    ### Wandb logging
+    if args.WB_NAME:
+        import wandb
+        tag_run = "VMAF"
+        wandb.init(
+            project=args.WB_NAME, 
+            name=folder_run,
+            tags=[tag_run, str(arch_name), f"CRF:{crf}", f"W0:{w0}", f"W1:{w1}"],
+            config=args,
+        )
+        
     ### Training loop
     print(f"Total epochs: {epochs}; Steps per epoch: {len(train_loader)}")
     for epoch in range(epochs):
@@ -122,7 +136,7 @@ if __name__ == '__main__':
             x, y_true = batch
             x, y_true = x.to(device), y_true.to(device)
 
-            # Train critic
+            ## Train critic
             critic_opt.zero_grad()
 
             y_fake = generator(x)  # Forward pass on generator
@@ -136,31 +150,34 @@ if __name__ == '__main__':
             loss_critic.backward()
             critic_opt.step()
 
-            # Train generator
-            gan_opt.zero_grad()
+            ## Train generator
+            gen_opt.zero_grad()
+            
+            vmaf_value = vmaf(y_true, y_fake)
+            ssim_value = ssim(y_fake, y_true)
 
-            loss_lpips = lpips_loss(y_fake, y_true).mean()
-            ssim_val = ssim(y_fake, y_true)
-            loss_ssim = 1.0 - ssim_val
+            loss_vmaf = 1.0 - vmaf_value/100.0  
+            loss_ssim = 1.0 - ssim_value
 
-            pred_fake = critic(y_fake) # Forward pass on critic for fake images
+            pred_fake = critic(y_fake)  # Forward pass on critic for fake images
 
             bce_gen = bce(pred_fake, torch.ones_like(pred_fake))
-            content_loss = w0 * loss_lpips + w1 * loss_ssim
+            content_loss = w0 * loss_vmaf + w1 * loss_ssim
             loss_gen = content_loss + l0 * bce_gen
 
             loss_gen.backward()
-            gan_opt.step()
+            gen_opt.step()
 
             # Logging
             print(f"Epoch: {epoch}, "
                   f"Loss discriminator: {loss_critic.item():.4f}, "
                   f"Loss generator: {loss_gen.item():.4f}, "
                   f"Content loss: {content_loss.item():.4f}, "
-                  f"Loss LPIPS: {loss_lpips.item():.4f}, "
+                  f"Loss VMAF: {loss_vmaf.item():.4f}, "
                   f"Loss SSIM: {loss_ssim.item():.4f}, "
                   f"Loss BCE: {bce_gen.item():.4f}, "
-                  f"SSIM: {ssim_val.item():.4f}"
+                  f"VMAF: {vmaf_value.item():.4f}, "
+                  f"SSIM: {ssim_value.item():.4f}"
                   )
             
             if args.WB_NAME:
@@ -168,16 +185,19 @@ if __name__ == '__main__':
                     "epoch": epoch,
                     "Loss discriminator": loss_critic.item(),
                     "Loss generator": loss_gen.item(),
-                    "Loss LPIPS": loss_lpips.item(),
+                    "Content loss": content_loss.item(),
+                    "Loss VMAF": loss_vmaf.item(),
                     "Loss SSIM": loss_ssim.item(),
                     "Loss BCE": bce_gen.item(),
-                    "Content loss": content_loss.item(),
-                    "SSIM": ssim_val.item()
+                    "VMAF": vmaf_value.item(),
+                    "SSIM": ssim_value.item(),
                 })
 
         ### Validation
         if (epoch + 1) % args.VALIDATION_FREQ == 0:
             ssim_validation = []
+            vmaf_validation = []
+            vmaf_neg_validation = []
             lpips_validation = []
 
             generator.eval()
@@ -189,28 +209,38 @@ if __name__ == '__main__':
                     y_fake = generator(x)
 
                     ssim_val = ssim(y_fake, y_true).mean()
+                    vmaf_val = vmaf(y_true, y_fake).mean()
+                    vmaf_neg_val = vmaf_neg(y_true, y_fake).mean()
                     lpips_val = lpips_alex(y_fake, y_true).mean()
 
                     ssim_validation.append(ssim_val.item())
+                    vmaf_validation.append(vmaf_val.item())
+                    vmaf_neg_validation.append(vmaf_neg_val.item())
                     lpips_validation.append(lpips_val.item())
 
             ssim_mean = np.mean(ssim_validation)
+            vmaf_mean = np.mean(vmaf_validation)
+            vmaf_neg_mean = np.mean(vmaf_neg_validation)
             lpips_mean = np.mean(lpips_validation)
 
             print(f"Epoch: {epoch}, "
                   f"Validation SSIM: {ssim_mean:.4f}, "
+                  f"Validation VMAF: {vmaf_mean:.4f}, "
+                  f"Validation VMAF-NEG: {vmaf_neg_mean:.4f}, "
                   f"Validation LPIPS: {lpips_mean:.4f}")
 
             if args.WB_NAME:
                 wandb.log({
                     "Validation SSIM": ssim_mean,
+                    "Validation VMAF": vmaf_mean,
+                    "Validation VMAF-NEG": vmaf_neg_mean,
                     "Validation LPIPS": lpips_mean
                 })
 
-            # Save models
+            ## Save models
             generator_path = os.path.join(
                 args.EXPORT_DIR, 
-                f"{arch_name}_epoch{epoch}_ssim{ssim_mean:.4f}_lpips{lpips_mean:.4f}_crf{args.CRF}.pkl"
+                f"{arch_name}_epoch:{epoch}_ssim:{ssim_mean:.4f}_vmaf:{vmaf_mean:.4f}_vmaf-neg:{vmaf_neg_mean:.4f}_lpips:{lpips_mean:.4f}_crf:{crf}.pth"
             )
             torch.save(generator.state_dict(), generator_path)
 
@@ -219,7 +249,7 @@ if __name__ == '__main__':
             if args.SAVE_CRITIC:
                 critic_path = os.path.join(
                     args.EXPORT_DIR, 
-                    f"critic_epoch{epoch}_ssim{ssim_mean:.4f}_lpips{lpips_mean:.4f}_crf{args.CRF}.pkl"
+                    f"critic_epoch{epoch}_ssim{ssim_mean:.4f}_vmaf{vmaf_mean:.4f}_crf{args.CRF}.pkl"
                 )
                 torch.save(critic.state_dict(), critic_path)
             """

@@ -1,11 +1,6 @@
 import os, utils
 
 args = utils.ARArgs()
-# os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-# os.environ["CUDA_VISIBLE_DEVICES"] = args.CUDA_DEVICE
-
-# loss_vmaf = -torch.log(vmaf_value/100.0)
-# loss_vmaf = torch.exp(-(5)*vmaf_value/100.0)
 
 import numpy as np
 import torch
@@ -21,6 +16,7 @@ from tqdm import tqdm
 from models import Discriminator, SRResNet 
 from pytorch_unet import SRUnet, UNet, SimpleResNet
 from vmaf_torch import VMAF
+import lpips  
 
 
 def configure_generator(arch_name, args):
@@ -48,7 +44,6 @@ def configure_generator(arch_name, args):
 
 if __name__ == '__main__':
     args = utils.ARArgs()
-    # torch.autograd.set_detect_anomaly(True)
 
     ### Seed
     utils.seed_everything()
@@ -74,17 +69,21 @@ if __name__ == '__main__':
     vmaf = VMAF(
         temporal_pooling=True, enable_motion=False, NEG=False,
     )
-    vmaf_neg = VMAF(
-        temporal_pooling=True, enable_motion=False, NEG=True,
-    )
+    lpips_loss = lpips.LPIPS(net='vgg', version='0.1')
     ssim = pytorch_ssim.SSIM()
     bce = nn.BCEWithLogitsLoss()
+
+    ## For validation
+    vmaf_neg = VMAF(
+        temporal_pooling=True, enable_motion=False, NEG=True
+    )
+    lpips_alex = lpips.LPIPS(net='alex', version='0.1')
 
     ### Settings weights and lambda parameters for the loss
     w0, w1, w2, l0 = args.W0, args.W1, args.W2, args.L0
 
     ### Export directory
-    folder_run = f"VMAF&VMAF-NEG_CRF:{crf}_W0:{w0}_W1:{w1}_W2:{w1}"
+    folder_run = f"VMAF_LPIPS_CRF:{crf}_W0:{w0}_W1:{w1}_W2:{w1}"
     args.EXPORT_DIR = os.path.join(args.EXPORT_DIR, folder_run)
     os.makedirs(args.EXPORT_DIR, exist_ok=True)
 
@@ -93,8 +92,9 @@ if __name__ == '__main__':
     critic.to(device)
     vmaf.to(device)
     vmaf_neg.to(device)
+    lpips_loss.to(device)
+    lpips_alex.to(device)
     # vmaf.compile()
-    # vmaf_neg.compile()
 
     ### Dataset and data loaders
     print("Loading data...")
@@ -113,11 +113,10 @@ if __name__ == '__main__':
     ### Wandb logging
     if args.WB_NAME:
         import wandb
-        name_run = f"VMAF&VMAF-NEG_CRF:{crf}_W0:{w0}_W1:{w1}_W2:{w2}"
-        tag_run = "VMAF&VMAF-NEG"
+        tag_run = "VMAF&LPIPS"
         wandb.init(
             project=args.WB_NAME, 
-            name=name_run,
+            name=folder_run,
             tags=[tag_run, str(arch_name), f"CRF:{crf}", f"W0:{w0}", f"W1:{w1}", f"W2:{w2}"],
             config=args,
         )
@@ -150,17 +149,16 @@ if __name__ == '__main__':
             gen_opt.zero_grad()
             
             vmaf_value = vmaf(y_true, y_fake)
-            vmaf_neg_value = vmaf_neg(y_true, y_fake)
             ssim_value = ssim(y_fake, y_true)
 
             loss_vmaf = 1.0 - vmaf_value/100.0  
-            loss_vmaf_neg = 1.0 - vmaf_neg_value/100.0
+            loss_lpips = lpips_loss(y_fake, y_true).mean()
             loss_ssim = 1.0 - ssim_value
 
             pred_fake = critic(y_fake)  # Forward pass on critic for fake images
 
             bce_gen = bce(pred_fake, torch.ones_like(pred_fake))
-            content_loss = w0 * loss_vmaf + w1 * loss_ssim + w2 * loss_vmaf_neg
+            content_loss = w0 * loss_vmaf + w1 * loss_ssim + w2 * loss_lpips
             loss_gen = content_loss + l0 * bce_gen
 
             loss_gen.backward()
@@ -172,7 +170,7 @@ if __name__ == '__main__':
                   f"Loss generator: {loss_gen.item():.4f}, "
                   f"Content loss: {content_loss.item():.4f}, "
                   f"Loss VMAF: {loss_vmaf.item():.4f}, "
-                  f"Loss VMAF-NEG: {loss_vmaf_neg.item():.4f}, "
+                  f"Loss LPIPS: {loss_lpips.item():.4f}, "
                   f"Loss SSIM: {loss_ssim.item():.4f}, "
                   f"Loss BCE: {bce_gen.item():.4f}, "
                   f"VMAF: {vmaf_value.item():.4f}, "
@@ -186,7 +184,7 @@ if __name__ == '__main__':
                     "Loss generator": loss_gen.item(),
                     "Content loss": content_loss.item(),
                     "Loss VMAF": loss_vmaf.item(),
-                    "Loss VMAF-NEG": loss_vmaf_neg.item(),
+                    "Loss LPIPS": loss_lpips.item(),
                     "Loss SSIM": loss_ssim.item(),
                     "Loss BCE": bce_gen.item(),
                     "VMAF": vmaf_value.item(),
@@ -198,6 +196,7 @@ if __name__ == '__main__':
             ssim_validation = []
             vmaf_validation = []
             vmaf_neg_validation = []
+            lpips_validation = []
 
             generator.eval()
             for i, batch in enumerate(tqdm(eval_loader, total=len(eval_loader), desc=f'Validation epoch {epoch}/{epochs}')):
@@ -210,31 +209,36 @@ if __name__ == '__main__':
                     ssim_val = ssim(y_fake, y_true).mean()
                     vmaf_val = vmaf(y_true, y_fake).mean()
                     vmaf_neg_val = vmaf_neg(y_true, y_fake).mean()
+                    lpips_val = lpips_alex(y_fake, y_true).mean()
 
                     ssim_validation.append(ssim_val.item())
                     vmaf_validation.append(vmaf_val.item())
                     vmaf_neg_validation.append(vmaf_neg_val.item())
+                    lpips_validation.append(lpips_val.item())
 
             ssim_mean = np.mean(ssim_validation)
             vmaf_mean = np.mean(vmaf_validation)
             vmaf_neg_mean = np.mean(vmaf_neg_validation)
+            lpips_mean = np.mean(lpips_validation)
 
             print(f"Epoch: {epoch}, "
                   f"Validation SSIM: {ssim_mean:.4f}, "
                   f"Validation VMAF: {vmaf_mean:.4f}, "
-                  f"Validation VMAF-NEG: {vmaf_neg_mean:.4f}")
+                  f"Validation VMAF-NEG: {vmaf_neg_mean:.4f}, "
+                  f"Validation LPIPS: {lpips_mean:.4f}")
 
             if args.WB_NAME:
                 wandb.log({
                     "Validation SSIM": ssim_mean,
                     "Validation VMAF": vmaf_mean,
-                    "Validation VMAF-NEG": vmaf_neg_mean
+                    "Validation VMAF-NEG": vmaf_neg_mean,
+                    "Validation LPIPS": lpips_mean
                 })
 
             ## Save models
             generator_path = os.path.join(
                 args.EXPORT_DIR, 
-                f"{arch_name}_epoch:{epoch}_ssim:{ssim_mean:.4f}_vmaf:{vmaf_mean:.4f}_vmaf-neg:{vmaf_neg_mean:.4f}_crf:{crf}.pth"
+                f"{arch_name}_epoch:{epoch}_ssim:{ssim_mean:.4f}_vmaf:{vmaf_mean:.4f}_vmaf-neg:{vmaf_neg_mean:.4f}_lpips:{lpips_mean:.4f}_crf:{crf}.pth"
             )
             torch.save(generator.state_dict(), generator_path)
 
