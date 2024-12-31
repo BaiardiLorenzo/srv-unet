@@ -13,8 +13,6 @@ from pytorch_unet import UNet, SRUnet, SimpleResNet
 from queue import Queue
 
 
-# from apex import amp
-
 def save_with_cv(pic, imname):
     pic = dl.de_normalize(pic.squeeze(0))
     npimg = np.transpose(pic.cpu().numpy(), (1, 2, 0)) * 255

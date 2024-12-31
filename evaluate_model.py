@@ -17,7 +17,6 @@ from render import cv2toTorch, torchToCv2
 import cv2
 from queue import Queue
 from threading import Thread
-import shutil
 from vmaf_torch import VMAF
 
 

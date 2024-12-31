@@ -57,6 +57,7 @@ if __name__ == '__main__':
     ### Arguments
     arch_name = args.ARCHITECTURE
     dataset_upscale_factor = args.UPSCALE_FACTOR
+    rescale_factor = args.RESCALE_FACTOR
     batch_size = args.BATCH_SIZE
     epochs = args.N_EPOCHS
     crf = args.CRF
@@ -88,7 +89,7 @@ if __name__ == '__main__':
     w0, w1, l0 = args.W0, args.W1, args.L0
 
     ### Export directory
-    folder_run = f"VMAF_CRF:{crf}_W0:{w0}_W1:{w1}_FILTERS:{args.N_FILTERS}"
+    folder_run = f"VMAF_CRF:{crf}_W0:{w0}_W1:{w1}_RF:{rescale_factor}"
     args.EXPORT_DIR = os.path.join(args.EXPORT_DIR, folder_run)
     os.makedirs(args.EXPORT_DIR, exist_ok=True)
 
@@ -103,8 +104,12 @@ if __name__ == '__main__':
 
     ### Dataset and data loaders
     print("Loading data...")
-    dataset_train = dl.ARDataLoader2(path=str(args.DATASET_DIR), patch_size=96, crf=crf, eval=False, use_ar=True)
-    dataset_test = dl.ARDataLoader2(path=str(args.DATASET_DIR), patch_size=96, crf=crf, eval=True, use_ar=True)
+    dataset_train = dl.ARDataLoader2(
+        path=str(args.DATASET_DIR), patch_size=96, crf=crf, eval=False, use_ar=True, rescale_factor=rescale_factor
+    )
+    dataset_test = dl.ARDataLoader2(
+        path=str(args.DATASET_DIR), patch_size=96, crf=crf, eval=True, use_ar=True, rescale_factor=rescale_factor
+    )
     print(f"Train samples: {len(dataset_train)}; Test samples: {len(dataset_test)}")
 
     print("Creating data loaders...")
@@ -122,7 +127,7 @@ if __name__ == '__main__':
         wandb.init(
             project=args.WB_NAME, 
             name=folder_run,
-            tags=[tag_run, str(arch_name), f"CRF:{crf}", f"W0:{w0}", f"W1:{w1}", f"FILTERS:{args.N_FILTERS}"],
+            tags=[tag_run, str(arch_name), f"CRF:{crf}", f"W0:{w0}", f"W1:{w1}", f"RF:{args.RESCALE_FACTOR}"],
             config=args,
         )
         

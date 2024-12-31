@@ -1,5 +1,4 @@
 import argparse
-import os
 from pathlib import Path
 
 BVI_DVC_PATH = "/andromeda/datasets/BVI_DVC"
@@ -56,6 +55,9 @@ class ARArgs:
         
         ap.add_argument("--upscale", type=int, default=2,
                         help="Default upscale factor, obbtained as resolution ratio between LQ and HQ samples")
+        
+        ap.add_argument("--rescale_factor", action='store_true', default=False,
+                        help="The groundtruth will be resized from upscale_factor*patch_size to rescale_factor*patch_size.")
         
         ap.add_argument("--layer_mult", type=float, default=1.0, 
                         help="Layer multiplier - SR UNet only")
@@ -117,6 +119,7 @@ class ARArgs:
         self.WB_NAME = args['wb_name']
         self.SAVE_CRITIC = args['save-critic']
 
+        self.RESCALE_FACTOR = args['rescale_factor']
         self.UPSCALE_FACTOR = args['upscale']
         self.LAYER_MULTIPLIER = args['layer_mult']
         self.N_FILTERS = args['n_filters']
@@ -131,67 +134,6 @@ class ARArgs:
 
         self.archs = archs
         
-
-def adjust_learning_rate(optimizer, shrink_factor):
-    """
-    Shrinks learning rate by a specified factor.
-
-    :param optimizer: optimizer whose learning rate must be shrunk.
-    :param shrink_factor: factor in interval (0, 1) to multiply learning rate with.
-    """
-
-    print("\nDECAYING learning rate.")
-    for param_group in optimizer.param_groups:
-        param_group['lr'] = param_group['lr'] * shrink_factor
-    print("The new learning rate is %f\n" % (optimizer.param_groups[0]['lr'],))
-
-
-def show_tensor(t):
-    import data_loader
-
-    img_tensor = t[0]
-    img = data_loader.de_transform(img_tensor)
-    img.show()
-
-
-def get_gaussian_kernel(kernel_size=3, sigma=2, channels=3):
-    import torch
-    import math
-    from torch import nn as nn
-
-    # Create a x, y coordinate grid of shape (kernel_size, kernel_size, 2)
-    x_coord = torch.arange(kernel_size)
-    x_grid = x_coord.repeat(kernel_size).view(kernel_size, kernel_size)
-    y_grid = x_grid.t()
-    xy_grid = torch.stack([x_grid, y_grid], dim=-1).float()
-
-    mean = (kernel_size - 1) / 2.
-    variance = sigma ** 2.
-
-    # Calculate the 2-dimensional gaussian kernel which is
-    # the product of two gaussian distributions for two different
-    # variables (in this case called x and y)
-    gaussian_kernel = (1. / (2. * math.pi * variance)) * \
-                      torch.exp(
-                          -torch.sum((xy_grid - mean) ** 2., dim=-1) / \
-                          (2 * variance)
-                      )
-
-    # Make sure sum of values in gaussian kernel equals 1.
-    gaussian_kernel = gaussian_kernel / torch.sum(gaussian_kernel)
-
-    # Reshape to 2d depthwise convolutional weight
-    gaussian_kernel = gaussian_kernel.view(1, 1, kernel_size, kernel_size)
-    gaussian_kernel = gaussian_kernel.repeat(channels, 1, 1, 1)
-
-    gaussian_filter = nn.Conv2d(in_channels=channels, out_channels=channels,
-                                kernel_size=kernel_size, groups=channels, bias=False, padding=kernel_size // 2)
-
-    gaussian_filter.weight.data = gaussian_kernel
-    gaussian_filter.weight.requires_grad = False
-
-    return gaussian_filter
-
 
 def seed_everything(seed=42):
     import random

@@ -51,6 +51,7 @@ if __name__ == '__main__':
     ### Arguments
     arch_name = args.ARCHITECTURE
     dataset_upscale_factor = args.UPSCALE_FACTOR
+    rescale_factor = args.RESCALE_FACTOR
     batch_size = args.BATCH_SIZE
     epochs = args.N_EPOCHS
     crf = args.CRF
@@ -83,7 +84,7 @@ if __name__ == '__main__':
     w3, w1, l0 = args.W3, args.W1, args.L0
 
     ### Export directory
-    folder_run = f"LPSIS_CRF:{crf}_W3:{w3}_W1:{w1}_FILTERS:{args.N_FILTERS}"
+    folder_run = f"LPIPS_CRF:{crf}_W3:{w3}_W1:{w1}_RF:{rescale_factor}"
     args.EXPORT_DIR = os.path.join(args.EXPORT_DIR, folder_run)
     os.makedirs(args.EXPORT_DIR, exist_ok=True)
 
@@ -97,8 +98,12 @@ if __name__ == '__main__':
 
     ### Dataset and dataloader
     print("Loading dataset...")
-    dataset_train = dl.ARDataLoader2(path=str(args.DATASET_DIR), crf=crf, patch_size=96, eval=False, use_ar=True)
-    dataset_test = dl.ARDataLoader2(path=str(args.DATASET_DIR), crf=crf, patch_size=96, eval=True, use_ar=True)
+    dataset_train = dl.ARDataLoader2(
+        path=str(args.DATASET_DIR), crf=crf, patch_size=96, eval=False, use_ar=True, rescale_factor=rescale_factor
+    )
+    dataset_test = dl.ARDataLoader2(
+        path=str(args.DATASET_DIR), crf=crf, patch_size=96, eval=True, use_ar=True, rescale_factor=rescale_factor
+    )
     print(f"Train samples: {len(dataset_train)}, Test samples: {len(dataset_test)}")
 
     print("Creating dataloaders...")
@@ -112,11 +117,11 @@ if __name__ == '__main__':
     # Wandb logging
     if args.WB_NAME:
         import wandb
-        tag_run = "LPSIS"
+        tag_run = "LPIPS"
         wandb.init(
             project=args.WB_NAME, 
             name=folder_run,
-            tags=[tag_run, str(arch_name), f"CRF:{crf}", f"W3:{w3}", f"W1:{w1}", f"FILTERS:{args.N_FILTERS}"],
+            tags=[tag_run, str(arch_name), f"CRF:{crf}", f"W3:{w3}", f"W1:{w1}", f"RF:{args.RESCALE_FACTOR}"],
             config=args
         )
 
