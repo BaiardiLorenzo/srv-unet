@@ -78,8 +78,7 @@ if __name__ == '__main__':
     bce = nn.BCEWithLogitsLoss()
 
     ### Settings weights and lambda parameters for the loss
-    w0, w1, w2, l0 = args.W0, args.W1, args.W2, args.L0
-    w3 = 1.0
+    w0, w1, w2, w3, l0 = args.W0, args.W1, args.W2, args.W3, args.L0
 
     ### Export directory
     folder_run = f"VMAF_VMAF-NEG_LPIPS_CRF:{crf}_W0:{w0}_W1:{w1}_W2:{w2}_W3:{w3}"
@@ -112,11 +111,11 @@ if __name__ == '__main__':
     ### Wandb logging
     if args.WB_NAME:
         import wandb
-        tag_run = "VMAF&NEG&LPIPS"
+        tag_run = "VMAF&VMAF-NEG&LPIPS"
         wandb.init(
             project=args.WB_NAME, 
             name=folder_run,
-            tags=[tag_run, str(arch_name), f"CRF:{crf}", f"W0:{w0}", f"W1:{w1}", f"W2:{w2}"],
+            tags=[tag_run, str(arch_name), f"CRF:{crf}", f"W0:{w0}", f"W1:{w1}", f"W2:{w2}", f"W3:{w3}"],
             config=args,
         )
         
@@ -248,11 +247,9 @@ if __name__ == '__main__':
             torch.save(generator.state_dict(), generator_path)
 
             # having critic's weights saved was not useful, better sparing storage!
-            """
             if args.SAVE_CRITIC:
                 critic_path = os.path.join(
                     args.EXPORT_DIR, 
                     f"critic_epoch{epoch}_ssim{ssim_mean:.4f}_vmaf{vmaf_mean:.4f}_crf{args.CRF}.pkl"
                 )
                 torch.save(critic.state_dict(), critic_path)
-            """

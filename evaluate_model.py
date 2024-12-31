@@ -334,7 +334,6 @@ if __name__ == '__main__':
         output = []
 
         for i, vid in enumerate(tqdm(videos, desc=f"Testing Videos")):
-            # print(f"Testing: {vid}; {i + 1}/{len(videos)}")
             dict = evaluate_model(
                 str(test_dir), video_prefix=vid, output_generated=True, filename=filename,
                 from_second=second_start, test_lq=False, skip_model_testing=False,

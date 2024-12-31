@@ -82,7 +82,7 @@ if __name__ == '__main__':
     w0, w1, w2, l0 = args.W0, args.W1, args.W2, args.L0
 
     ### Export directory
-    folder_run = f"VMAF_VMAF-NEG_CRF:{crf}_W0:{w0}_W1:{w1}_W2:{w1}"
+    folder_run = f"VMAF_VMAF-NEG_CRF:{crf}_W0:{w0}_W1:{w1}_W2:{w2}"
     args.EXPORT_DIR = os.path.join(args.EXPORT_DIR, folder_run)
     os.makedirs(args.EXPORT_DIR, exist_ok=True)
 
@@ -246,11 +246,9 @@ if __name__ == '__main__':
             torch.save(generator.state_dict(), generator_path)
 
             # having critic's weights saved was not useful, better sparing storage!
-            """
             if args.SAVE_CRITIC:
                 critic_path = os.path.join(
                     args.EXPORT_DIR, 
                     f"critic_epoch{epoch}_ssim{ssim_mean:.4f}_vmaf{vmaf_mean:.4f}_crf{args.CRF}.pkl"
                 )
                 torch.save(critic.state_dict(), critic_path)
-            """

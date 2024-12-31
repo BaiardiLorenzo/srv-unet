@@ -1,0 +1,2 @@
+Unnamed: 0,encode_res,dest_res,ssim,vmaf,size,time,ssim_encoded,vmaf_encoded,Source Directory,Source File
+4.0,540.0,1080.0,0.49615875729819714,95.31988000300784,155.11111111111111,14.806333333333335,0.48893349577280504,94.61890270772416,VMAF_CRF:42_W0:1.0_W1:1.0,srunet_epoch:4_ssim:0.3624_vmaf:93.5791_crf:42.pth_540_1080_TEST_CRF42.csv

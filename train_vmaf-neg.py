@@ -81,10 +81,10 @@ if __name__ == '__main__':
     lpips_alex = lpips.LPIPS(net='alex', version='0.1')
 
     ### Settings weights and lambda parameters for the loss
-    w0, w1, l0 = args.W0, args.W1, args.L0
+    w2, w1, l0 = args.W2, args.W1, args.L0
 
     ### Export directory
-    folder_run = f"VMAF-NEG_CRF:{crf}_W0:{w0}_W1:{w1}"
+    folder_run = f"VMAF-NEG_CRF:{crf}_W2:{w2}_W1:{w1}"
     args.EXPORT_DIR = os.path.join(args.EXPORT_DIR, folder_run)
     os.makedirs(args.EXPORT_DIR, exist_ok=True)
 
@@ -119,7 +119,7 @@ if __name__ == '__main__':
         wandb.init(
             project=args.WB_NAME, 
             name=folder_run,
-            tags=[tag_run, str(arch_name), f"CRF:{crf}", f"W0:{w0}", f"W1:{w1}"],
+            tags=[tag_run, str(arch_name), f"CRF:{crf}", f"W2:{w2}", f"W1:{w1}"],
             config=args,
         )
         
@@ -159,7 +159,7 @@ if __name__ == '__main__':
             pred_fake = critic(y_fake)  # Forward pass on critic for fake images
 
             bce_gen = bce(pred_fake, torch.ones_like(pred_fake))
-            content_loss = w0 * loss_vmaf + w1 * loss_ssim
+            content_loss = w2 * loss_vmaf + w1 * loss_ssim
             loss_gen = content_loss + l0 * bce_gen
 
             loss_gen.backward()
@@ -242,11 +242,9 @@ if __name__ == '__main__':
             torch.save(generator.state_dict(), generator_path)
 
             # having critic's weights saved was not useful, better sparing storage!
-            """
             if args.SAVE_CRITIC:
                 critic_path = os.path.join(
                     args.EXPORT_DIR, 
                     f"critic_epoch{epoch}_ssim{ssim_mean:.4f}_vmaf{vmaf_mean:.4f}_crf{args.CRF}.pkl"
                 )
                 torch.save(critic.state_dict(), critic_path)
-            """

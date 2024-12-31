@@ -36,9 +36,6 @@ class ARArgs:
         ap.add_argument("-e", "--epochs", type=int, default=5,
                         help="Number of epochs you want to train the model.")
         
-        ap.add_argument("--clipname", type=str, default="",
-                        help="[RENDER.PY ONLY] path to the clip you want to upscale")
-        
         ap.add_argument("--arch", type=str, default="srunet", choices=archs,
                         help="Which network architecture to train.")
         
@@ -50,6 +47,9 @@ class ARArgs:
         
         ap.add_argument("--w2", type=float, default=1.0,
                         help="VMAF-NEG Weight")
+        
+        ap.add_argument("--w3", type=float, default=1.0,
+                        help="LPIPS Weight")
         
         ap.add_argument("--l0", type=float, default=0.001,
                         help="Adversarial Component Weight")
@@ -66,6 +66,16 @@ class ARArgs:
         ap.add_argument("--downsample", type=float, default=1.0, 
                         help="Downsample factor, SR Unet and UNet only")
         
+        ap.add_argument("--crf", type=int, default=22, 
+                        help="Reference compression CRF")
+        
+        ap.add_argument('--wb-name', type=str, default='sr-unet',
+                        help="Name of the Weights and Biases project")
+        
+        ap.add_argument('--save-critic', dest='save-critic', action='store_true',
+                        help="Save the critic model")
+        
+        # Test only
         ap.add_argument("--testdir", type=str, default=TEST_DIR_PATH,
                         help="[TEST ONLY] Where the test clips are contained.")
         
@@ -75,17 +85,12 @@ class ARArgs:
         ap.add_argument("--testoutputres", type=int, default=1080, 
                         help="[TEST ONLY] Output testing resolution")
         
-        ap.add_argument("--crf", type=int, default=22, 
-                        help="Reference compression CRF")
-        
+        # Render only
         ap.add_argument('--show-only-upscaled', dest='show-only-upscaled', action='store_true',
                         help="[RENDER.PY ONLY] If you want to show only the neural net upscaled version of the video")
-        
-        ap.add_argument('--vmaf-neg', dest='vmaf-neg', action='store_true', default=False,
-                        help="If you want to use the negative VMAF score")
 
-        ap.add_argument('--wb-name', type=str, default='sr-unet',
-                        help="Name of the Weights and Biases project")
+        ap.add_argument("--clipname", type=str, default="",
+                        help="[RENDER.PY ONLY] path to the clip you want to upscale")
         
         if args is None:
             args = vars(ap.parse_args())
@@ -100,24 +105,29 @@ class ARArgs:
         self.EXPORT_DIR = args['export']
         self.N_EPOCHS = int(args['epochs'])
         self.BATCH_SIZE = args['batch_size']
-        self.CLIPNAME = args['clipname']
         self.ARCHITECTURE = args['arch']
         self.VALIDATION_FREQ = 1
+        self.CRF = args['crf']
         self.W0 = args['w0']
         self.W1 = args['w1']
         self.W2 = args['w2']
+        self.W3 = args['w3']
         self.L0 = args['l0']
+        
+        self.WB_NAME = args['wb_name']
+        self.SAVE_CRITIC = args['save-critic']
+
         self.UPSCALE_FACTOR = args['upscale']
         self.LAYER_MULTIPLIER = args['layer_mult']
         self.N_FILTERS = args['n_filters']
         self.DOWNSAMPLE = args['downsample']
+
         self.TEST_INPUT_RES = args['testinputres']
         self.TEST_OUTPUT_RES = args['testoutputres']
-        self.CRF = args['crf']
         self.TEST_DIR = args['testdir']
+
         self.SHOW_ONLY_HQ = args['show-only-upscaled']
-        self.VMAF_NEG = args['vmaf-neg']
-        self.WB_NAME = args['wb_name']
+        self.CLIPNAME = args['clipname']
 
         self.archs = archs
         
