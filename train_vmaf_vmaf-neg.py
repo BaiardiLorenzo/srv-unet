@@ -53,6 +53,7 @@ if __name__ == '__main__':
     dataset_upscale_factor = args.UPSCALE_FACTOR
     batch_size = args.BATCH_SIZE
     epochs = args.N_EPOCHS
+    rescale_factor = args.RESCALE_FACTOR
     crf = args.CRF
     device = torch.device(f"cuda:{args.CUDA_DEVICE}" if torch.cuda.is_available() else "cpu")
     print(f"Device: {device}")
@@ -82,7 +83,9 @@ if __name__ == '__main__':
     w0, w1, w2, l0 = args.W0, args.W1, args.W2, args.L0
 
     ### Export directory
-    folder_run = f"VMAF_VMAF-NEG_CRF:{crf}_W0:{w0}_W1:{w1}_W2:{w2}"
+    folder_run = f"VMAF_VMAF-NEG_CRF:{crf}_W0:{w0}_W1:{w1}_W2:{w2}_RF:{rescale_factor}"
+    if args.N_FILTERS == 48:
+        folder_run += "_MINI"
     args.EXPORT_DIR = os.path.join(args.EXPORT_DIR, folder_run)
     os.makedirs(args.EXPORT_DIR, exist_ok=True)
 
@@ -98,8 +101,12 @@ if __name__ == '__main__':
 
     ### Dataset and data loaders
     print("Loading data...")
-    dataset_train = dl.ARDataLoader2(path=str(args.DATASET_DIR), patch_size=96, crf=crf, eval=False, use_ar=True)
-    dataset_test = dl.ARDataLoader2(path=str(args.DATASET_DIR), patch_size=96, crf=crf, eval=True, use_ar=True)
+    dataset_train = dl.ARDataLoader2(
+        path=str(args.DATASET_DIR), patch_size=96, crf=crf, eval=False, use_ar=True, rescale_factor=rescale_factor
+    )
+    dataset_test = dl.ARDataLoader2(
+        path=str(args.DATASET_DIR), patch_size=96, crf=crf, eval=True, use_ar=True, rescale_factor=rescale_factor
+    )
     print(f"Train samples: {len(dataset_train)}; Test samples: {len(dataset_test)}")
 
     print("Creating data loaders...")

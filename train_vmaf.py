@@ -90,6 +90,8 @@ if __name__ == '__main__':
 
     ### Export directory
     folder_run = f"VMAF_CRF:{crf}_W0:{w0}_W1:{w1}_RF:{rescale_factor}"
+    if args.N_FILTERS == 48:
+        folder_run += "_MINI"
     args.EXPORT_DIR = os.path.join(args.EXPORT_DIR, folder_run)
     os.makedirs(args.EXPORT_DIR, exist_ok=True)
 

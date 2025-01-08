@@ -77,15 +77,10 @@ def blend_images(i1, i2):
     return out
 
 
-if __name__ == '__main__':
-    args = utils.ARArgs()
-    enable_write_to_video = False
-    arch_name = args.ARCHITECTURE
-    dataset_upscale_factor = args.UPSCALE_FACTOR
-
+def configure_generator(arch_name, dataset_upscale_factor, args):
     if arch_name == 'srunet':
         model = SRUnet(3, residual=True, scale_factor=dataset_upscale_factor, n_filters=args.N_FILTERS,
-                       downsample=args.DOWNSAMPLE, layer_multiplier=args.LAYER_MULTIPLIER)
+                    downsample=args.DOWNSAMPLE, layer_multiplier=args.LAYER_MULTIPLIER)
     elif arch_name == 'unet':
         model = UNet(3, residual=True, scale_factor=dataset_upscale_factor, n_filters=args.N_FILTERS)
     elif arch_name == 'srgan':
@@ -95,11 +90,26 @@ if __name__ == '__main__':
     else:
         raise Exception("Unknown architecture. Select one between:", args.archs)
 
-    model_path = args.MODEL_NAME
-    model.load_state_dict(torch.load(model_path, weights_only=True))
+    print("Loading model: ", filename)
+    model.load_state_dict(torch.load(filename, weights_only=True))
 
-    model = model.cuda()
+    return model
+
+
+if __name__ == '__main__':
+    args = utils.ARArgs()
+    enable_write_to_video = False
+    arch_name = args.ARCHITECTURE
+    dataset_upscale_factor = args.UPSCALE_FACTOR
+    filename = args.MODEL_NAME
+    device = torch.device(f"cuda:{args.CUDA_DEVICE}" if torch.cuda.is_available() else "cpu")
+    print("Using device: ", device)
+
+    # Load the model
+    model = configure_generator(arch_name, dataset_upscale_factor, args)
+    model.to(device)
     model.reparametrize()
+    model.eval()
 
     path = args.CLIPNAME
     cap = cv2.VideoCapture(path)
@@ -121,7 +131,6 @@ if __name__ == '__main__':
 
     reader.seek(0)
 
-
     def read_pic(cap, q):
         count = 0
         start = time.time()
@@ -138,22 +147,20 @@ if __name__ == '__main__':
             count += 1
             q.put((x, x_bicubic))
 
-
     def show_pic(cap, q):
         while True:
             out = q.get()
             scale = 1
             cv2_out = torchToCv2(out, rescale_factor=scale)
-            # cv2.imshow('rendering', cv2_out)
+            # cv2.imshow('rendering', cv2_out) # Comment when running on ssh
             cv2.waitKey(1)
-
 
     t1 = Thread(target=read_pic, args=(reader, frame_queue)).start()
     t2 = Thread(target=show_pic, args=(cap, out_queue)).start()
+
     target_fps = cap.get(cv2.CAP_PROP_FPS)
     target_frametime = 1000 / target_fps
 
-    model = model.eval()
     with torch.no_grad():
         tqdm_ = tqdm(range(frame_count))
         for i in tqdm_:
@@ -178,3 +185,4 @@ if __name__ == '__main__':
                     print("Releasing video")
 
             tqdm_.set_description("frame time: {}; fps: {}; {}".format(frametime * 1e3, 1000 / frametime, out_true))
+

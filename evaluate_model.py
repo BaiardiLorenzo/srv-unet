@@ -98,7 +98,7 @@ def evaluate_model(
     cap_hq = cv2.VideoCapture(hq_file_path)
 
     ## Queues
-    lq_queue = Queue(1)
+    lq_queue = Queue(1) 
     hq_queue = Queue(1)
     out_queue = Queue(1)
 
@@ -164,8 +164,16 @@ def evaluate_model(
     ## Create output directory
     dest = test_dir_prefix.split("/")
     dest_dir = Path("/".join(dest))
-    dest = dest_dir / "out"
+
+    model_name = os.path.basename(os.path.dirname(os.path.normpath(filename)))
+    res = "1.5x" if resolution_lq == 720 else "2x"
+
+    dest = dest_dir / 'models' / f'{res}' / f'{crf}' / model_name / 'out' / video_prefix
+    print("Output directory: ", dest)
     dest.mkdir(exist_ok=True, parents=True)
+
+    clip_gen_folder = dest_dir / 'models' / f'{res}' / f'{crf}' / model_name 
+    os.makedirs(clip_gen_folder, exist_ok=True)
 
     ## Get video resolution
     H_x = int(cap_lq.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -308,11 +316,9 @@ def evaluate_model(
             print("Mean tLP H264:", np.mean(tLP_x))
 
     if output_generated and not skip_model_testing:
-        model_name = os.path.basename(os.path.dirname(os.path.normpath(filename)))
-        os.makedirs(dest_dir / 'models' / f'{crf}' / model_name, exist_ok=True)
-        print(f"{dest_dir}/models/{model_name}")
         ffmpeg_command = f"ffmpeg -nostats -loglevel 0 -framerate {fps} -start_number 0 -i\
-         {test_dir_prefix}/out/{video_prefix}_%d.png -crf 5  -c:v libx264 -r {fps} -pix_fmt yuv420p {dest_dir / 'models' / f'{crf}' / model_name / f'{video_prefix}.mp4 -y'}"
+         {dest}/{video_prefix}_%d.png -crf 5  -c:v libx264 -r {fps} \
+         -pix_fmt yuv420p {clip_gen_folder / f'{video_prefix}.mp4 -y'}"
         print("Putting output images together.\n", ffmpeg_command)
         os.system(ffmpeg_command)
 
@@ -342,5 +348,5 @@ if __name__ == '__main__':
 
         df = pd.DataFrame(output)
         print(df)
-        name = filename.strip(".pkl") + f"_{output[0]['encode_res']}_{output[0]['dest_res']}_TEST_CRF{crf}.csv"
+        name = filename.strip(".pth") + f"_{output[0]['encode_res']}_{output[0]['dest_res']}_TEST_CRF{crf}.csv"
         df.to_csv(name)
