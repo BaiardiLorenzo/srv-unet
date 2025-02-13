@@ -153,7 +153,7 @@ if __name__ == '__main__':
             scale = 1
             cv2_out = torchToCv2(out, rescale_factor=scale)
             # cv2.imshow('rendering', cv2_out) # Comment when running on ssh
-            cv2.waitKey(1)
+            # cv2.waitKey(1)
 
     t1 = Thread(target=read_pic, args=(reader, frame_queue)).start()
     t2 = Thread(target=show_pic, args=(cap, out_queue)).start()

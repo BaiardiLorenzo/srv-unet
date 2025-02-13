@@ -89,6 +89,7 @@ def process_csv_files_in_directory(directory_path, output_path, all_values=False
     except Exception as e:
         print(f"Error during file processing: {e}")
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process all CSV files in a directory and create a single file with the results.")
     parser.add_argument("--directory_path", type=str, help="Path to the directory containing the CSV files.")

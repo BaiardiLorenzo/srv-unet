@@ -317,7 +317,7 @@ def evaluate_model(
 
     if output_generated and not skip_model_testing:
         ffmpeg_command = f"ffmpeg -nostats -loglevel 0 -framerate {fps} -start_number 0 -i\
-         {dest}/{video_prefix}_%d.png -crf 5  -c:v libx264 -r {fps} \
+         {dest}/{video_prefix}_%d.png -crf 5  -c:v libx265 -r {fps} \
          -pix_fmt yuv420p {clip_gen_folder / f'{video_prefix}.mp4 -y'}"
         print("Putting output images together.\n", ffmpeg_command)
         os.system(ffmpeg_command)

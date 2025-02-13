@@ -1,11 +1,9 @@
 # SRV-UNet
-
-This repository contains the implementation of [1]. It is an architecture comprised with a GAN-based training procedure
+It is an architecture comprised with a GAN-based training procedure
 for obtaining a fast neural network which enable better bitrate performances respect to the H.265 codec for the same
 quality, or better quality at the same bitrate.
 
 ## Requirements
-
 - Installing requirements: `$ pip install -r requirements.txt`
 - [VMAF Pytorch](https://github.com/alvitrioliks/VMAF-torch): Follow the instructions in the repository to install the VMAF
   metric for PyTorch.
@@ -15,7 +13,6 @@ quality, or better quality at the same bitrate.
 - [LPIPS](https://github.com/richzhang/PerceptualSimilarity): For the original implementation of [1].
 
 ## Dataset
-
 The dataset used for training is the [BVI-DVC](https://arxiv.org/pdf/2003.13552). For preparing the dataset
 there are two helper script,
 `compress_train_videos.sh` for spatially compressing and encoding each video, then with `extract_train_frames.sh` the
@@ -46,7 +43,6 @@ dataset can be prepared. The train dataset should follow this naming scheme (ass
 ```
 
 ## Training
-
 To train the model for 2x Super Resolution (as used in the model for the 540p -> 1080p
 upscaling), you can use this command.
 
@@ -134,18 +130,7 @@ You can use the script `render.py` for using the model in real-time to upscale y
 By default the output is split in two halves: on the left there is the input, on the right there is
 the upscaled version. You can show only the upscaled version by adding the flag `--show-only-upscaled`.
 
-About performances, a GTX 1080 Ti is enough for rendering at 30fps when upscaling 540p -> 1080p and 25fps when 720p ->
-1080p. Note that in the paper we also employed [Nvidia Apex](https://nvidia.github.io/apex/) for speeding up inference
-times.
-
-## Examples
-
-![TajMahal](pics/tajmahal.png)
-Check [this link](https://bit.ly/3aGPzMW) for the complete clip.  
-![Venice](pics/venice.png)
-
 ## References
-
 This code is the implementation of my Master Degree Thesis, from which my supervisors and I wrote the paper:
 
 - [1] Fast video visual quality and resolution improvement using SR-UNet. Authors Federico Vaccaro, Marco Bertini,
