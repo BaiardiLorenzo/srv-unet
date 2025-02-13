@@ -1,7 +1,7 @@
 # SRV-UNet
-It is an architecture comprised with a GAN-based training procedure
-for obtaining a fast neural network which enable better bitrate performances respect to the H.265 codec for the same
-quality, or better quality at the same bitrate.
+It is an architecture comprised with a GAN-based training procedure for obtaining a fast neural network which enable better 
+bitrate performances respect to the H.265 codec for the same quality, or better quality at the same bitrate.
+It is different from the original SR-UNet architecture in the sense that it uses a VMAF/VMAF-NEG loss function for training.
 
 ## Requirements
 - Installing requirements: `$ pip install -r requirements.txt`
@@ -13,10 +13,10 @@ quality, or better quality at the same bitrate.
 - [LPIPS](https://github.com/richzhang/PerceptualSimilarity): For the original implementation of [1].
 
 ## Dataset
-The dataset used for training is the [BVI-DVC](https://arxiv.org/pdf/2003.13552). For preparing the dataset
-there are two helper script,
-`compress_train_videos.sh` for spatially compressing and encoding each video, then with `extract_train_frames.sh` the
-dataset can be prepared. The train dataset should follow this naming scheme (assuming the videos are encoded with CRF 22):
+The dataset used for training is the [BVI-DVC](https://arxiv.org/pdf/2003.13552). 
+For preparing the dataset there are two helper script, `compress_train_videos.sh` for spatially compressing and encoding each video, 
+then with `extract_train_frames.sh` the dataset can be prepared. 
+The train dataset should follow this naming scheme (assuming the videos are encoded with CRF 22):
 
 ```bash
   [DATASET_DIR]/
@@ -43,36 +43,22 @@ dataset can be prepared. The train dataset should follow this naming scheme (ass
 ```
 
 ## Training
-To train the model for 2x Super Resolution (as used in the model for the 540p -> 1080p
-upscaling), you can use this command.
-
-```bash
-$ python train.py --arch srunet --device 0 --upscale 2 --export [EXPORT_DIR] \
---epochs 8 --dataset [DATASET_DIR] --crf 22
-```
-
-Or, since most of these arguments are defaults, simply
+To train the model for 2x Super Resolution (as used in the model for the 540p -> 1080p upscaling):
 
 ```bash
 $ python train.py --dataset [DATASET_DIR]
 ```
 
-For more information about the other parameters, inspect `utils.py` or try
-
-```bash
-& python train.py -h
-```
-
-However, in the bandwidth experiments we employed a lighter model, trained on a range of CRFs for performing an easier
-1.5x upscale (720p -> 1080p). It is obtainable with the following command:
+For performing an easier 1.5x upscale (720p -> 1080p):
 
 ```bash
 $ python train.py --arch srunet --layer_multiplier 0.7 --n_filters 48 --downsample 0.75 --device 0 \
 --upscale 2 --export [EXPORT_DIR] --epochs 80 --dataset [DATASET_DIR] --crf [CRF]
 ```
 
-## Testing
+For more information, inspect `utils.py`.
 
+## Testing
 We tested on the 1080p clips available from the [Derf's Collection](https://media.xiph.org/video/derf/) in Y4M format. 
 For preparing the test set (of encoded clips) you can use the `compress_test_videos.sh` helper script.
 The test set will be structured as follows, and there is no need of extracting each frame:
@@ -92,47 +78,14 @@ The test set will be structured as follows, and there is no need of extracting e
         touchdown_pass_1080p.y4m
 ```
 
-For testing the model (e.g. the one performing 1.5x upscale) which checkpoints are saved in _[MODEL_NAME]_, you can use
-the following command:
+For testing the model:
 
 ```bash
 $ python evaluate_model.py --model [MODEL_NAME] --arch srunet --layer_mult 0.7 --n_filters 48 \
---downsample 0.75 --device 0 --upscale 2 --crf 23 --testdir [TEST_DIR] --testinputres 720 --testoutputres 1080
+--downsample 0.75 --device 0 --upscale 2 --crf 22 --testdir [TEST_DIR] --testinputres 720 --testoutputres 1080
 ```
-
-For the 2x upscale model, the command is:
-
-```bash
-$ python evaluate_model.py --model /mnt/data4tb/lbaiardi/srunet_hdd/checkpoints/srunet_crf_30_w0:1_W1:1/srunet_epoch:0_ssim:0.5718_vmaf:95.4761_crf:30.pth --device 0 --crf 30 --testdir /mnt/data4tb/lbaiardi/srunet_hdd/clips --testinputres 540 --testoutputres 1080
-```
-
-python evaluate_model.py --model /mnt/data4tb/lbaiardi/srunet_hdd/checkpoints/CRF_42/VMAF_CRF:42_W0:1.0_W1:1.0/srunet_epoch:4_ssim:0.3624_vmaf:93.5791_crf:42.pth --crf 42
-
-Ultimately will be printed on screen the experimental results, and also will be saved a .csv file contained these infos.
-
-## Inference
-
-You can use the script `render.py` for using the model in real-time to upscale your clips. Examples:
-
-- For 2x upscaling
-
-    ```bash
-    $ python render.py --clipname path/to/clip.mp4 --model models/srunet_2x_crf23.pth
-    ```
-
-- For 1.5x upscaling
-
-    ```bash
-    $ python render.py --clipname path/to/clip.mp4 --model models/srunet_1.5x_crf23.pth \
-    --layer_mult 0.7 --n_filters 48 --downsample 0.75
-    ```
-
-By default the output is split in two halves: on the left there is the input, on the right there is
-the upscaled version. You can show only the upscaled version by adding the flag `--show-only-upscaled`.
 
 ## References
-This code is the implementation of my Master Degree Thesis, from which my supervisors and I wrote the paper:
-
 - [1] Fast video visual quality and resolution improvement using SR-UNet. Authors Federico Vaccaro, Marco Bertini,
-  Tiberio Uricchio, and Alberto Del Bimbo (accepted at ACM MM '21).
+  Tiberio Uricchio, and Alberto Del Bimbo.
   
